@@ -1,2 +1,2 @@
-# dinvei
-Apresentações do curso de Dinâmica Veicular
+# DinVei
+Acesse: [https://andresmendes.github.io/dinvei/](https://andresmendes.github.io/dinvei/)
