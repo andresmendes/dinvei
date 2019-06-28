@@ -1,0 +1,267 @@
+/* table.tableposition tbody td {
+	border-bottom: none;
+	width:50%;
+	margin:0;
+	padding:0;
+}  */
+
+/*********************************************
+ * FLEX CONTAINERS
+ *********************************************/
+
+.flex-container {
+  display: flex;
+  height: 700px;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.flex-container > div {
+	width: 100%;
+  /* margin: 10px; */
+  text-align: center;
+  /* line-height: 75px; */
+  /* font-size: 30px; */
+}
+
+/*********************************************
+ * SIDE NAVIGATION
+ *********************************************/
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  max-width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: visible;
+  overflow-y: scroll;
+  transition: 0.2s;
+  /*Adicionei a linha abaixo para não wrap o texto ao longo do transition*/
+  white-space:nowrap; 
+   /* padding-top: 60px; */
+   /*padding-bottom: 100px; */
+}
+
+.sidenav a {
+  padding: 0px 0px 0px 0px;
+  /* text-decoration: none; */
+  font-size: 25px;
+  /* color: #818181; */
+  /*display: block;*/
+  /*transition: 0.3s;*/
+}
+
+.sidenav a:hover {
+  color: #563db3;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  /*margin-left: 50px;*/
+}
+
+/*#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}*/
+
+/*Se a tela for menor do que a largura que eu especifiquei no index, faz-se o wrap do texto. 
+O valor do max width abaixo deve ser igual ao valor escolhido no index*/
+ @media screen and (max-width: 700px) {
+  .sidenav {white-space:normal;}
+} 
+
+
+/*********************************************
+ * BUTTON 1
+ *********************************************/
+
+a.button1{
+display:inline-block;
+padding:10px 15px;
+border:5px solid rgb(11, 47, 77);
+margin:0 0.3em 0.05em 0;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:600;
+font-size: 25px;
+color:rgb(11, 47, 77);
+text-align:center;
+transition: all 0.15s;
+}
+a.button1:hover{
+display:inline-block;
+padding:10px 15px;
+border:5px solid rgb(63, 109, 112);
+margin:0 0.3em 0.05em 0;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:600;
+font-size: 25px;
+color:rgb(63, 109, 112);
+text-align:center;
+transition: all 0.15s;
+
+}
+a.button1:active{
+color:#BBBBBB;
+border-color:#BBBBBB;
+}
+  /* @media all and (max-width:30em){
+   a.button1{
+    display:block;
+    margin:0.4em auto;
+   }
+  } */
+
+/*********************************************
+ * BUTTON 2
+ *********************************************/
+
+a.button2{
+display:inline-block;
+padding:5px 15px;
+border:5px solid rgb(11, 47, 77);
+margin:0 0.0em 0.3em 0;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:600;
+font-size: 25px;
+color:rgb(11, 47, 77);
+text-align:center;
+transition: all 0.15s;
+}
+a.button2:hover{
+display:inline-block;
+padding:5px 15px;
+border:5px solid rgb(63, 109, 112);
+margin:0 0.0em 0.3em 0;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:600;
+font-size: 25px;
+color:rgb(63, 109, 112);
+text-align:center;
+transition: all 0.15s;
+
+}
+a.button2:active{
+color:#BBBBBB;
+border-color:#BBBBBB;
+}
+  /* @media all and (max-width:30em){
+   a.button1{
+    display:block;
+    margin:0.4em auto;
+   }
+  } */
+
+/*********************************************
+ * SLIDER BUTTON
+ *********************************************/
+
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  /* width: 60px; */
+  /* height: 34px; */
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*********************************************
+ * TABLE
+ *********************************************/
+
+ table.tabela1 {
+  /* margin: auto; */
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+table.tabela1 th {
+  font-weight: bold; }
+
+table.tabela1 th{
+  text-align: center;
+  border-bottom: 3px solid; 
+}
+table.tabela1 td {
+  text-align: center;
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid; }
+  
+   
+table.tabela1 tr:last-child{
+border-bottom: 2px solid;
+}
+
+table.tabela1 tbody th:first-child ,
+table.tabela1 tbody td:first-child {
+  text-align: left;
+}
