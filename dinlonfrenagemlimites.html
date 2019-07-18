@@ -43,143 +43,170 @@
 
 				<p>NMA380 - Dinâmica Veicular</p>
 
-				<h5>Fundamentos de modelagem da dinâmica veicular</h5>
+				<h2>Dinâmica longitudinal</h2>
+
+				<h3>Frenagem</h3>
+
+				<h5>Limites de frenagem</h5>
 
 			</section>
 
 			<section>
 
-				<h5>SAE Vehicle Axis System</h5>
+				<h5>Requisitos de segurança</h5>
 
-				<img style="height: 400px" src="ilustracoes/modelagemSAEcon.png">
-
-				<div style="width: 50%; float: left; height: 150px;">
-				<ul class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">
-					<li><b>x</b> - Longitudinal (para frente)</li>
-					<li><b>y</b> - Lateral (para a direita)</li>
-					<li><b>z</b> - Vertical (para baixo)</li>
-				</ul>
-				</div>
-
-				<div style="width: 50%; float: left; height: 150px;">
-				<ul class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">
-					<li><b>p</b> - Rolagem (em torno de <b>x</b>)</li>
-					<li><b>q</b> - Arfagem (em torno de <b>y</b>)</li>
-					<li><b>r</b> - Guinada (em torno de <b>z</b>)</li>
-				</ul>
-				</div>
-
-				<p style="font-size: 20px; text-align: left;">Maiores detalhes em: <a href="https://www.sae.org/standards/content/j670_200801/" target="_blank">Vehicle Dynamics Terminology J670_200801</a></p>
-
-			</section>
-			
-			<section>
-
-				<p style="font-size: 40px;">Teorema do movimento do baricentro (TMB)</h5>
-
-				<p style="font-size: 30px; text-align: justify;">Em um referencial absoluto ou inercial, um ponto material de massa \(m\) sujeito à força resultante \(\vec{f}_{RES}\) move-se com aceleração.</p>
-
-				<p class="fragment fade-in" data-fragment-index="1">\(m \vec{a} = \sum_{i=1}^{n} \vec{f}_i = \vec{f}_{RES}\)</p>
-				
-				<div style="width: 50%; height: 400px;float: left;">
-					<img style="height: 400px" src="ilustracoes/modelagemPontoForcas.svg">
-				</div>
-
-				<div style="width: 50%; height: 400px;float: left;" class="fragment fade-in" data-fragment-index="2">
-					<p>\(m a_x = \sum f_x\)</p>
-					<p>\(m a_y = \sum f_y\)</p>
-					<p>\(m a_z = \sum f_z\)</p>
-				</div>
-
-			</section>
-
-			<section>
-
-				<p style="font-size: 40px;">Teorema do momento angular (TMA)</p>
-
-				<p style="font-size: 30px; text-align: justify;">O produto da aceleração angular de um corpo rígido com o momento de inérica em relação a um eixo fixo é igual ao somatório dos momentos em relação ao mesmo eixo.</p>
-
-				<div style="width: 50%; height: 400px;float: left;">
-					<img style="height: 400px" src="ilustracoes/modelagemCorpoMomento.svg">
-				</div>
-
-				<div style="width: 50%; height: 400px;float: left;">
-					<p>\( J_{xx} \alpha_x = \sum M_x\)</p>
-					<p>\( J_{yy} \alpha_y = \sum M_y\)</p>
-					<p>\( J_{zz} \alpha_z = \sum M_z\)</p>
-				</div>
-
-			</section>
-
-			<section>
-
-				<h5>TMB e TMA no carro</h5>
-
-				<img style="height: 400px" src="ilustracoes/modelagemSAEcon.png">
-
-				<div style="width: 50%; float: left; height: 150px;">
-					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_x = \sum f_x\)</p>
-					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_y = \sum f_y\)</p>
-					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_z = \sum f_z\)</p>
-				</div>
-				
-				<div style="width: 50%; float: left; height: 150px;">
-					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( J_{xx} \alpha_x = \sum M_x\)</p>
-					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( J_{yy} \alpha_y = \sum M_y\)</p>
-					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( J_{zz} \alpha_z = \sum M_z\)</p>
-				</div>
-
-			</section>
-
-			<section>
-				
-				<h5>Exemplos</h5>
-
-				<p>Considere os três cenários abaixo e determine: </p>
 				<ul>
-					<li>Equação de movimento na direção longitudinal.</li>
-					<li>Velocidade em função do tempo.</li>
+					<li>Carga do veículo</li>
+					<li>Estado de conservação do freio</li>
+					<li>Velocidade do carro</li>
+					<li>Condição de pista: seco (\(\mu\) alto) e molhado (\(\mu\) baixo)</li>
+					<li>Meta:</li>
+					<ul>
+						<li>Desacelerações médias</li>
+						<li>Distância de frenagem</li>
+					</ul>
 				</ul>
 
-				<p>
-				<img style="width: 250px" src="ilustracoes/modelagemSedanExemplo1.svg"> &nbsp; &nbsp; &nbsp;
-				<img style="width: 250px" src="ilustracoes/modelagemSedanExemplo2.svg"> &nbsp; &nbsp; &nbsp;
-				<img style="width: 250px" src="ilustracoes/modelagemSedanExemplo3.svg">
-				</p>
+			</section>
+
+			<section>
+
+				<h5>Transferência de carga</h5>
+				
+				<img style="width: 90%;" src="ilustracoes/dinlonfrenagemlimitesDCL.png">
+
+				<p style="font-size: 30px;">\(\mathrm{W}_{\mathrm{f}}=\frac{\mathrm{c}}{\mathrm{L}} \mathrm{W}+\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=\mathrm{W}_{\mathrm{fs}}+\mathrm{W}_{\mathrm{d}}\)</p>
+
+				<p style="font-size: 30px;">\(\mathrm{W}_{\mathrm{r}}=\frac{\mathrm{b}}{\mathrm{L}} \mathrm{W}-\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=\mathrm{W}_{\mathrm{rs}}-\mathrm{W}_{\mathrm{d}}\)</p>
 
 			</section>
 
 			<section>
 				
-				<h5>Diagrama de corpo livre</h5>
+				<h5>Força máxima de frenagem</h5>
 
-				<img style="width: 850px;" src="ilustracoes/modelagemDCL.png">
+				<p style="font-size: 25px;">\(\mathrm{W}_{\mathrm{f}}=\frac{\mathrm{c}}{\mathrm{L}} \mathrm{W}+\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=\mathrm{W}_{\mathrm{fs}}+\mathrm{W}_{\mathrm{d}}\)</p>
 
-				<p class="fragment fade-in" data-fragment-index="1">Aplicando o TMA em relação ao ponto A</p>
+				<p style="font-size: 25px;">\(\mathrm{W}_{\mathrm{r}}=\frac{\mathrm{b}}{\mathrm{L}} \mathrm{W}-\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=\mathrm{W}_{\mathrm{rs}}-\mathrm{W}_{\mathrm{d}}\)</p>
+
+				<img style="height: 300px;" src="ilustracoes/dinlonfrenagemlimitesWheelSlip.png">
+
+				<p style="font-size: 25px;">\(\mathrm{F}_{\mathrm{xmf}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{f}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{fs}}+\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{X}}\right)\)</p>
+
+				<p style="font-size: 25px;">\(\mathrm{F}_{\mathrm{xmr}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{r}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{rs}}-\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}\right)\)</p>
+
+			</section>
+
+			<section>
 				
-				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px;">\(W_{f} L+D_{A} h_{a}+\frac{W}{g} a_{x} h+R_{h x} h_{h}+R_{h z} d_{h}+W h \sin \Theta-W c \cos \Theta=0\)</p>
+				<h5>Força máxima de frenagem em função da desaceleração</h5>
+
+				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmf}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{f}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{fs}}+\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{X}}\right)\)</p>
+
+				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmr}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{r}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{rs}}-\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}\right)\)</p>
+
+				<div style="width: 45%;height: 300px; float: left;">
+					
+				<img style="width: 100%;" src="ilustracoes/dinlonfrenagemlimitesWheelSlip.png">
+
+				</div>
+				
+				<div style="width: 55%;height: 300px; float: left;">
+
+				<img style="width: 100%;" src="ilustracoes/dinlonfrenagemlimtesMaxBrake.png">
+
+				</div>
+
+			</section>
+
+			<section>
+				
+				<h5>Relação de frenagem</h5>
+
+				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmf}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{f}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{fs}}+\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{X}}\right)\)</p>
+
+				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmr}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{r}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{rs}}-\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}\right)\)</p>
+				
+				<div style="width: 50%;height: 150px; float: left;">
+				<p style="text-align: left">Eixo dianteiro</p>
+				<p style="font-size: 35px;">\(\mathrm{D}_{\mathrm{X}}=\frac{\left(\mathrm{F}_{\mathrm{xmf}}+\mathrm{F}_{\mathrm{xr}}\right)}{\mathrm{M}}\)</p>
+				</div>
+
+				<div style="width: 50%;height: 150px; float: left;">
+				<p style="text-align: left">Eixo traseiro</p>
+				<p style="font-size: 35px;">\(\mathrm{D}_{\mathrm{x}}=\frac{\left(\mathrm{F}_{\mathrm{xmr}}+\mathrm{F}_{\mathrm{xf}}\right)}{\mathrm{M}}\)</p>
+				</div>
+				
+				<div style="width: 50%;height: 150px; float: left;">
+				<p style="text-align: left">Eixo dianteiro</p>
+				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmf}}=\frac{\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{fs}}+\frac{\mathrm{h}}{\mathrm{L}} \mathrm{F}_{\mathrm{xr}}\right)}{1-\mu_{\mathrm{p}} \frac{\mathrm{h}}{\mathrm{L}}}\)</p>
+				</div>
+				
+				<div style="width: 50%;height: 150px; float: left;">
+				<p style="text-align: left">Eixo traseiro</p>
+				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmr}}=\frac{\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{rs}}-\frac{\mathrm{h}}{\mathrm{L}} \mathrm{F}_{\mathrm{xf}}\right)}{1+\mu_{\mathrm{p}} \frac{\mathrm{h}}{\mathrm{L}}}\)</p>
+				</div>
+
+			</section>
+
+			<section>
+
+				<h5>Relação de frenagem</h5>
+				
+				<div style="width: 60%;height: 550px; float: left;">
+					<img style="width: 100%;" src="ilustracoes/dinlonfrenagemlimitesRelacao.png">
+				</div>
+				
+				<div style="width: 40%;height: 550px; float: left;">
+					
+					<br>
+
+					<p style="font-size: 25px; text-align: left">Eixo dianteiro</p>
+					
+					<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmf}}=\frac{\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{fs}}+\frac{\mathrm{h}}{\mathrm{L}} \mathrm{F}_{\mathrm{xr}}\right)}{1-\mu_{\mathrm{p}} \frac{\mathrm{h}}{\mathrm{L}}}\)</p>
+					
+					<br>
+					
+					<p style="font-size: 25px; text-align: left">Eixo traseiro</p>
+					
+					<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmr}}=\frac{\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{rs}}-\frac{\mathrm{h}}{\mathrm{L}} \mathrm{F}_{\mathrm{xf}}\right)}{1+\mu_{\mathrm{p}} \frac{\mathrm{h}}{\mathrm{L}}}\)</p>
+				</div>
+
+			</section>
+
+			<section>
+				
+				<h5>Relação de frenagem para diferentes coeficientes de atrito</h5>
+
+				<p>LIVESCRIPT</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Relação de frenagem para diferentes condições de carga</h5>
+
+				<p>LIVESCRIPT</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Travamento de rodas</h5>
+
+			</section>
+
+			<section>
+				
+				<h5>Ganho de frenagem</h5>
+				<h5>Eficiência da frenagem</h5>
 
 			</section>
 
 
 			<section>
-
-				<h5>Exercícios</h5>
 				
-				<img style="width: 700px;" src="ilustracoes/modelagemDCL.png">
-
-				<ul style="font-size: 25px;">
-					<li>Aplique o TMA considerando todas as forças do DCL acima.</li>
-					<ul>
-						<li>Qual é a força peso sobre os eixos dianteiro e traseiro?</li>
-					</ul>
-					<li>Qual é a distribuição de peso sobre os eixos quando carro</li> 
-					<ul>
-						<li>está parado sobre uma pista de inclinação zero?</li>
-						<li>se movimenta com baixa aceleração sobre uma pista de inclinação zero?</li>
-						<li>esta parado numa rampa?</li>
-					</ul>
-				</ul>
+				<h5>Exercício Gillespie</h5>
 
 			</section>
 

@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=.2, user-scalable=yes">
+	<meta name="description" content="Apresentações do curso de Dinâmica Veicular">
+	<meta name="author" content="André de S. Mendes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<title>NMA380 - Dinâmica Veicular</title>
+
+	<link rel="stylesheet" href="mycss/revealasm.css">
+	<link rel="stylesheet" href="mycss/theme/whiteasm.css" id="theme">
+	<!-- My class files -->
+	<link rel="stylesheet" href="mycss/asm.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Para pinch zoom no celular, é preciso insterir este "data-prevent-swipe" para evitar conflito. -->
+	<div class="reveal">
+	<!-- <div class="reveal" onclick="closeNav()" data-prevent-swipe> -->
+
+		<div class="slides">
+
+			<section>
+
+				<p>NMA380 - Dinâmica Veicular</p>
+
+				<h2>Dinâmica longitudinal</h2>
+
+				<h3>Desempenho em rampa</h3>
+
+			</section>
+
+			<section>
+
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/oNvjpE-Q308?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+
+			<section>
+				
+				<h5>Objetivos</h5>
+
+				<ul>
+					<li>Partida em rampa (Startability)</li>
+					<ul>
+						<li class="fragment fade-in" data-fragment-index="1">Qual é a inclinação máxima da pista que o veículo é capaz de iniciar o movimento a partir do repouso?</li>
+					</ul>
+					<li>Capacidade máxima de subida (Gradeability)</li>
+					<ul>
+						<li class="fragment fade-in" data-fragment-index="2">Qual é a inclinação máxima da pista que o veículo é capaz de sustentar uma velocidade constante?</li>
+					</ul>
+					<li class="fragment fade-in" data-fragment-index="3">Traction-limited gradeability</li>
+				</ul>
+
+			</section>
+
+			<section>
+
+				<p style="font-size: 35px;">TEOREMA DO MOVIMENTO DO BARICENTRO (TMB)</p>
+
+				<p style="font-size: 30px; text-align: justify;">O centro de massa de qualquer sistema move-se como se fosse um ponto material, de massa igual à massa total do sistema, sujeito à força resultante.</p>
+
+				<p class="fragment fade-in" data-fragment-index="2">\(m \vec{a} = \sum_{i=1}^{n} \vec{F}_i = \vec{F}_{RES}\)</p>
+				
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px;float: left;">
+					<img style="width: 100%" src="ilustracoes/dinlondesempenhorampaPontoForcas.svg">
+				</div>
+
+				<div class="fragment fade-in" data-fragment-index="3" style="width: 50%; height: 350px;float: left;">
+					<p>\(m a_x = \sum F_x\)</p>
+					<p>\(m a_y = \sum F_y\)</p>
+					<p>\(m a_z = \sum F_z\)</p>
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=121829" target="_blank">FRANÇA, L. N. F.; MATSUMURA, A. Z.; Mecânica geral. 3. ed / 2011.</a> (Cap. 10)</p>
+				
+				<!-- <p style="font-size: 20px; text-align: left;">Fonte: <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=12841">BEER, F. P.; JOHNSTON, E. R.; Mecânica vetorial para engenheiros. 5. ed / 1991.</a> (Cap. 12)</p> -->
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 1 (Revisão)</h5>
+
+				<p style="text-align: justify; font-size: 35px;">Conforme ilustrado na figura abaixo, uma caixa de 50 kg é puxada com uma força \(P\)=400 N que faz um ângulo de 30 graus com a horizontal. O coeficiente de atrito entre a caixa e o chão é \(\mu\)=0,3. Determine:</p>
+
+				<div style="width: 50%; height: 300px; float:left;">
+
+					<ol style="font-size: 35px;">
+						<li>a força normal sobre a caixa;</li>
+						<li>a aceleração da caixa;</li>
+					</ol>
+
+				</div>
+				 
+				<div style="width: 50%; height: 300px; float:left;">
+
+					<img style="width: 100%;" src="ilustracoes/dinlondesempenhorampaRevisaoTMB.svg">
+
+				</div>
+				
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=114779">HIBBELER, R. C.; Dinâmica: mecânica para engenharia. 12. ed. / 2011.</a> (Exemplo 13.1)</p>
+
+			</section>
+
+			<section>
+
+				<p style="font-size: 35px;">TEOREMA DO MOMENTO ANGULAR (TMA)</p>
+
+				<p style="font-size: 30px; text-align: justify;">A versão simplificada do TMA é capaz de descrever o movimento de rotação de um corpo rígido em torno de um eixo fixo.</p>
+
+				<p class="fragment fade-in" data-fragment-index="2">\( \mathbf{I}_O \vec{\alpha} = \sum_{i=1}^{n} \vec{M}^i_O = \vec{M}^{RES}_O\)</p>
+
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px;float: left;">
+					<img style="width: 100%" src="ilustracoes/dinlondesempenhorampaCorpoMomento.svg">
+				</div>
+
+				<div class="fragment fade-in" data-fragment-index="3" style="width: 50%; height: 350px;float: left;">
+					<p>\( I_{x} \alpha_x = \sum M_x\)</p>
+					<p>\( I_{y} \alpha_y = \sum M_y\)</p>
+					<p>\( I_{z} \alpha_z = \sum M_z\)</p>
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=121829" target="_blank">FRANÇA, L. N. F.; MATSUMURA, A. Z.; Mecânica geral. 3. ed / 2011.</a> (Cap. 12)</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 2 (Revisão)</h5>
+
+				<p style="text-align: justify; font-size: 35px;">Conforme ilustrado na figura abaixo, considere um disco homogêneo de massa 15 kg e raio 0,5. Uma força \(T\)=180 N puxa a corda que está enrolada no disco. Determine:</p>
+
+				<div style="width: 60%; height: 350px; float:left;">
+
+					<ol style="font-size: 35px;">
+						<li>o momento em relação a G gerado pela força \(T\);</li>
+						<li>a aceleração angular do disco;</li>
+					</ol>
+
+				</div>
+				 
+				<div style="width: 40%; height: 350px; float:left;">
+
+					<img style="width: 100%;" src="ilustracoes/dinlondesempenhorampaRevisaoTMA.svg">
+
+				</div>
+				
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=12841">BEER, F. P.; JOHNSTON, E. R.; Mecânica vetorial para engenheiros. 5. ed / 1991.</a> (Problema resolvido 16.4)</p>
+
+			</section>
+
+			<section>
+
+				<h5>SAE Vehicle Axis System</h5>
+
+				<img style="height: 400px" src="ilustracoes/dinlondesempenhorampaSAEcon.png">
+
+				<div style="width: 50%; float: left; height: 150px;">
+				<ul class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">
+					<li><b>x</b> - Longitudinal (para frente)</li>
+					<li><b>y</b> - Lateral (para a direita)</li>
+					<li><b>z</b> - Vertical (para baixo)</li>
+				</ul>
+				</div>
+
+				<div style="width: 50%; float: left; height: 150px;">
+				<ul class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">
+					<li><b>p</b> - Rolagem (em torno de <b>x</b>)</li>
+					<li><b>q</b> - Arfagem (em torno de <b>y</b>)</li>
+					<li><b>r</b> - Guinada (em torno de <b>z</b>)</li>
+				</ul>
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.sae.org/standards/content/j670_200801/" target="_blank">Vehicle Dynamics Terminology J670_200801</a></p>
+
+			</section>
+
+
+			<section>
+
+				<h5>TMB e TMA no sistema do carro</h5>
+
+				<img style="height: 400px" src="ilustracoes/dinlondesempenhorampaSAEcon.png">
+
+				<div style="width: 50%; float: left; height: 150px;">
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_x = \sum F_x\)</p>
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_y = \sum F_y\)</p>
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_z = \sum F_z\)</p>
+				</div>
+				
+				<div style="width: 50%; float: left; height: 150px;">
+					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( I_{x} \alpha_x = \sum M_x\)</p>
+					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( I_{y} \alpha_y = \sum M_y\)</p>
+					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( I_{z} \alpha_z = \sum M_z\)</p>
+				</div>
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 3</h5>
+
+				<p style="text-align: left;">Considere os três cenários abaixo e determine: </p>
+				<ul>
+					<li>Equação de movimento na direção longitudinal.</li>
+					<li>Velocidade em função do tempo.</li>
+				</ul>
+
+				<p>
+				<img style="width: 250px" src="ilustracoes/dinlondesempenhorampaSedanExemplo1.svg"> &nbsp; &nbsp; &nbsp;
+				<img style="width: 250px" src="ilustracoes/dinlondesempenhorampaSedanExemplo2.svg"> &nbsp; &nbsp; &nbsp;
+				<img style="width: 250px" src="ilustracoes/dinlondesempenhorampaSedanExemplo3.svg">
+				</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Diagrama de corpo livre de um carro convencional</h5>
+
+				<img style="width: 850px;" src="ilustracoes/dinlondesempenhorampaDCL.png">
+
+			</section>
+
+			<section>
+
+				<h5>TMA: Carro convencional</h5>
+				
+				<img style="height: 350px;" src="ilustracoes/dinlondesempenhorampaDCL.png">
+
+				<p style="font-size: 25px; text-align: left">Em relação ao ponto A:</p>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px;">\(W_{f} L+D_{A} h_{a}+\frac{W}{g} a_{x} h+R_{h x} h_{h}+R_{h z} d_{h}+W h \sin \Theta-W c \cos \Theta=0\)</p>
+				
+				<p style="font-size: 25px; text-align: left">Em relação ao ponto B:</p>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 24px;">\(-W_{r} L + D_{a} h_{a} + \frac{W}{g} a_{x} h +R_{h x} h_{h}+R_{h z}\left(d_{h}+L\right) + W h \sin \Theta + W b \cos \Theta = 0 \)</p>
+				
+			</section>
+
+			<section>
+				
+				<h5>Carga sobre os eixos</h5>
+				
+				<img style="height: 200px;" src="ilustracoes/dinlondesempenhorampaDCL.png">
+
+				<p style="font-size: 25px;">\(W_{f} L+D_{A} h_{a}+\frac{W}{g} a_{x} h+R_{h x} h_{h}+R_{h z} d_{h}+W h \sin \Theta-W c \cos \Theta=0\)</p>
+				
+				<p style="font-size: 24px;">\(-W_{r} L + D_{a} h_{a} + \frac{W}{g} a_{x} h +R_{h x} h_{h}+R_{h z}\left(d_{h}+L\right) + W h \sin \Theta + W b \cos \Theta = 0 \)</p>
+
+				<p style="font-size: 25px; text-align: left">Sobre o eixo dianteiro:</p>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px;">\(W_{f}=\left(W c \cos \Theta-R_{h x} h_{h}-R_{h z} d_{h}-\frac{W}{g} a_{x} h-D_{A} h_{a}-W h \sin \Theta\right) / L\)</p>
+
+				<p style="font-size: 25px; text-align: left">Sobre o eixo traseiro:</p>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 24px;">\(W_{r}=\left(W b \cos \Theta+R_{h x} h_{h}+R_{h z}\left(d_{h}+L\right)+\frac{W}{g} a_{x} h+D_{a} h_{a}+W h \sin \Theta\right) / L\)</p>
+
+			</section>
+
+			<section>
+
+				<h5>Exercício 4</h5>
+				
+				<!-- <img style="height: 350px;" src="ilustracoes/dinlondesempenhorampaDCL.png"> -->
+
+				<p style="font-size: 25px;">\(W_{f}=\left(W c \cos \Theta-R_{h x} h_{h}-R_{h z} d_{h}-\frac{W}{g} a_{x} h-D_{A} h_{a}-W h \sin \Theta\right) / L\)</p>
+
+				<p style="font-size: 24px;">\(W_{r}=\left(W b \cos \Theta+R_{h x} h_{h}+R_{h z}\left(d_{h}+L\right)+\frac{W}{g} a_{x} h+D_{a} h_{a}+W h \sin \Theta\right) / L\)</p>
+
+				<ul style="font-size: 25px;">
+					<li>Qual é a carga [N] sobre cada eixo quando o carro está parado sobre uma pista de inclinação zero?</li>
+				</ul>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 35px; text-align: left;">\(W_{f s}=W \frac{c}{L}\)</p>
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 35px; text-align: left;">\(W_{r s}=W \frac{b}{L}\)</p>
+
+				<p style="font-size: 24px; text-align: left">Ford Escort XR3: \(m\) = 1145 kg, \(L\) = 2,532 m, \(b\) = 1,139 m, \(c\) = 1,393 m, \(g\) = 9,81 m/s<sup>2</sup></p>
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Automobile Catalog: 1993 Ford Escort XR3 2.0i (man. 5)</a></p>
+
+
+			</section>
+
+			<section>
+
+				<h5>Exercício 5</h5>
+				
+				<p style="font-size: 25px;">\(W_{f}=\left(W c \cos \Theta-R_{h x} h_{h}-R_{h z} d_{h}-\frac{W}{g} a_{x} h-D_{A} h_{a}-W h \sin \Theta\right) / L\)</p>
+
+				<p style="font-size: 24px;">\(W_{r}=\left(W b \cos \Theta+R_{h x} h_{h}+R_{h z}\left(d_{h}+L\right)+\frac{W}{g} a_{x} h+D_{a} h_{a}+W h \sin \Theta\right) / L\)</p>
+
+				<ul style="font-size: 25px;">
+					<li>Qual é a carga [N] sobre cada eixo quando o carro acelera (\(a_x\) = 2.0 m/s<sup>2</sup>) com baixa velocidade sobre uma pista de inclinação zero?</li>
+				</ul>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">\(W_{f}=W\left(\frac{c}{L}-\frac{a_{x}}{g} \frac{h}{L}\right)=W_{f s}-W \frac{a_{x}}{g} \frac{h}{L}\)</p>
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">\(W_{r}=W\left(\frac{b}{L}+\frac{a_{X}}{g} \frac{h}{L}\right)=W_{r s}+W \frac{a_{x}}{g} \frac{h}{L}\)</p>
+
+				<p style="font-size: 24px; text-align: left">Ford Escort XR3: \(m\) = 1145 kg, \(L\) = 2,532 m, \(b\) = 1,139 m, \(c\) = 1,393 m, \(g\) = 9,81 m/s<sup>2</sup>, \(h\) = 0,5 m</p>
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Automobile Catalog: 1993 Ford Escort XR3 2.0i (man. 5)</a></p>
+
+			</section>
+
+			<section>
+
+				<h5>Exercício 6</h5>
+				
+				<!-- <img style="height: 350px;" src="ilustracoes/dinlondesempenhorampaDCL.png"> -->
+
+				<p style="font-size: 25px;">\(W_{f}=\left(W c \cos \Theta-R_{h x} h_{h}-R_{h z} d_{h}-\frac{W}{g} a_{x} h-D_{A} h_{a}-W h \sin \Theta\right) / L\)</p>
+
+				<p style="font-size: 24px;">\(W_{r}=\left(W b \cos \Theta+R_{h x} h_{h}+R_{h z}\left(d_{h}+L\right)+\frac{W}{g} a_{x} h+D_{a} h_{a}+W h \sin \Theta\right) / L\)</p>
+
+				<ul style="font-size: 25px;">
+					<li>Qual é a carga [N] sobre cada eixo quando o carro esta parado numa rampa de inclinação \(\Theta\)=10%?</li>
+				</ul>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">\(W_{f}=W\left(\frac{c}{L}-\frac{h}{L} \Theta\right)=W_{f s}-W \frac{h}{L} \Theta\)</p>
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">\(W_{r}=W\left(\frac{b}{L}+\frac{h}{L} \Theta\right)=W_{r s}+W \frac{h}{L} \Theta\)</p>
+
+				<p style="font-size: 24px; text-align: left">Ford Escort XR3: \(m\) = 1145 kg, \(L\) = 2,532 m, \(b\) = 1,139 m, \(c\) = 1,393 m, \(g\) = 9,81 m/s<sup>2</sup>, \(h\) = 0,5 m</p>
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Automobile Catalog: 1993 Ford Escort XR3 2.0i (man. 5)</a></p>
+
+			</section>
+
+			<section>	
+
+				<h5>Startability</h5>
+				<p style="text-align: justify;">Startability é definido como a inclinação máxima que um veículo carregado é capaz de iniciar e sustentar o movimento numa determinada condição de aderência.</p>
+				<!-- <p>Startability is defined as the maximum grade that a fully laden1vehicle combination is capable to start in and maintain the forward motion at a certain friction level.</p> -->
+				<h5>Gradeability</h5>
+				<p style="text-align: justify;">Gradeability é definido como a inclinação máxima que um veículo carregado é capaz de sustentar uma velocidade constante numa determinada condição de aderência</p>
+				<!-- <p>Gradeability is defined as the maximum grade that a fully ladenvehicle combination is capable to maintain the forward motion on an uphill road at a certain constantspeed at a certain friction level.</p> -->
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="http://publications.lib.chalmers.se/records/fulltext/176464/176464.pdf" target="_blank">KATI, M. S.; Definitions of Performance BasedCharacteristicsfor Long Heavy Vehicle Combinations / 2013.</a></p>
+
+			</section>
+
+			<section>
+
+				<h5>Diagrama de corpo livre de um carro com reboque</h5>
+				
+				<img style="width: 90%;" src="ilustracoes/dinlondesempenhorampaCarroReboque.png">
+				
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px;">Diagrama de corpo livre:</p>
+
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 250px; float: left;">
+					<img style="width: 100%;" src="ilustracoes/dinlondesempenhorampaCarroReboqueDLC1.png">
+				</div>
+				
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 250px; float: left;">
+					<img style="width: 100%;" src="ilustracoes/dinlondesempenhorampaCarroReboqueDLC2.png">
+				</div>
+
+			</section>
+
+			<section>
+				
+				<h5>Condições de tração</h5>
+
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 40%; height: 210px; float: left;">
+					
+					<p style="font-size: 25px; text-align: left;"><b>Tração dianteira</b></p>
+
+					<p style="font-size: 25px; text-align: left;">Front-wheel-drive (FWD)</p>
+					
+					<p style="font-size: 25px; text-align: left;">Condição:</p>
+					<p style="font-size: 25px; text-align: left;">\(\left( W + W_b \right) \sin \Theta = F_{X f}= \mu W_f\)</p>
+
+				</div>
+				
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 60%; height: 210px; float: left;">
+
+					<img style="width: 100%; padding-top: 30px;" src="ilustracoes/dinlondesempenhorampaCarroReboqueFWD.svg">
+
+				</div>
+
+
+				<div class="fragment fade-in" data-fragment-index="2" style="width: 40%; height: 210px; float: left;">
+					
+					<p style="font-size: 25px; text-align: left;"><b>Tração traseira</b></p>
+
+					<p style="font-size: 25px; text-align: left;">Rear-wheel-drive (RWD)</p>
+
+					<p style="font-size: 25px; text-align: left;">Condição:</p>
+					<p style="font-size: 25px; text-align: left;">\(\left( W + W_b \right) \sin \Theta = F_{X r}= \mu W_r\)</p>
+
+				</div>
+				
+				<div class="fragment fade-in" data-fragment-index="2" style="width: 60%; height: 210px; float: left;">
+
+					<img style="width: 100%; padding-top: 30px;" src="ilustracoes/dinlondesempenhorampaCarroReboqueRWD.svg">
+
+				</div>
+
+				<div class="fragment fade-in" data-fragment-index="3" style="width: 40%; height: 210px; float: left;">
+					
+					<p style="font-size: 25px; text-align: left;"><b>Tração nas quatro rodas</b></p>
+
+					<p style="font-size: 25px; text-align: left;">4-wheel-drive (4WD)</p>
+
+					<p style="font-size: 25px; text-align: left;">Condição:</p>
+					<p style="font-size: 25px; text-align: left;">\(\left( W + W_b \right) \sin \Theta = F_{X}= \mu W\)</p>
+
+				</div>
+				
+				<div class="fragment fade-in" data-fragment-index="3" style="width: 60%; height: 210px; float: left;">
+
+					<img style="width: 100%; padding-top: 30px;" src="ilustracoes/dinlondesempenhorampaCarroReboque4WD.svg">
+
+				</div>
+
+			</section>
+
+			<section>
+
+				<h5>TMB e TMA: Carro com reboque</h5>
+				
+				<img style="width: 70%;" src="ilustracoes/dinlondesempenhorampaCarroReboque.png">
+
+				<div style="width: 50%; height: 250px; float: left;">
+					<img style="width: 100%;" src="ilustracoes/dinlondesempenhorampaCarroReboqueDLC1.png">
+				</div>
+				
+				<div style="width: 50%; height: 250px; float: left;">
+					<img style="width: 100%;" src="ilustracoes/dinlondesempenhorampaCarroReboqueDLC2.png">
+				</div>
+
+				<div style="width: 50%; height: 250px; float: left;">
+					
+					<p>Reboque</p>
+
+					<ul style="font-size: 25px;">
+						<li>TMA em relação ao eixo do reboque</li>
+						<li>TMB na direção x</li>
+					</ul>
+				</div>
+				
+				<div style="width: 50%; height: 250px; float: left;">
+					
+					<p>Carro</p>
+
+					<ul style="font-size: 25px;">
+						<li>TMA em relação ao eixo traseiro</li>
+						<li>TMA em relação ao eixo dianteiro</li>
+					</ul>
+
+				</div>
+
+			</section>
+
+
+			<section>
+
+				<h5>Carga sobre os eixos</h5>
+
+				<img style="width: 70%;" src="ilustracoes/dinlondesempenhorampaCarroReboque.png">
+				
+				<p style="font-size: 25px; text-align: left">Sobre o eixo dianteiro:</p>
+
+				<p style="font-size: 25px;">
+				\begin{eqnarray} 
+					W_f &=& W \frac{c}{L} \cos \Theta - W \frac{h_1}{L} \sin \Theta - W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_{b} \frac{d}{L} \frac{h_3}{L_t} \sin \Theta - W_b \frac{d}{L} \frac{f}{L_t} \cos \Theta - W_b \frac{d}{L} \frac{h_2}{L_t} \sin \Theta \\
+				\end{eqnarray}
+				</p>
+
+				<p style="font-size: 25px; text-align: left">Sobre o eixo traseiro:</p>
+
+				<p style="font-size: 25px;">
+				\begin{eqnarray} 
+					W_r &=& W \frac{b}{L} \cos \Theta + W \frac{h_1}{L} \sin \Theta + W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_b \frac{f}{L} \frac{(L+d)}{L_t} \cos \Theta - W_{b} \frac{h_3}{L} \frac{(L+d)}{L_t} \sin \Theta + W_b \frac{h_2}{L} \frac{(L+d)}{L_t} \sin \Theta \\
+				\end{eqnarray}
+				</p>
+
+			</section>
+
+			<section>
+
+				<h5>Gradeability - FWD</h5>
+
+				<p style="font-size: 25px; text-align: left;">Tração dianteira: Front-wheel-drive (FWD)</p>
+
+				<p style="font-size: 25px;">
+				\begin{eqnarray} 
+					W_f &=& W \frac{c}{L} \cos \Theta - W \frac{h_1}{L} \sin \Theta - W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_{b} \frac{d}{L} \frac{h_3}{L_t} \sin \Theta - W_b \frac{d}{L} \frac{f}{L_t} \cos \Theta - W_b \frac{d}{L} \frac{h_2}{L_t} \sin \Theta \\
+					W_r &=& W \frac{b}{L} \cos \Theta + W \frac{h_1}{L} \sin \Theta + W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_b \frac{f}{L} \frac{(L+d)}{L_t} \cos \Theta - W_{b} \frac{h_3}{L} \frac{(L+d)}{L_t} \sin \Theta + W_b \frac{h_2}{L} \frac{(L+d)}{L_t} \sin \Theta \\
+				\end{eqnarray}
+				</p>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">Condição: \(\left( W + W_b \right) \sin \Theta = F_{X f}= \mu W_f\)</p>
+				
+				<p class="fragment fade-in" data-fragment-index="2">\(\Theta = \mu \frac{\frac{c}{L}-\zeta \frac{d}{L} \frac{f}{L_{t}}}{1+\mu \frac{h_1}{L}+\zeta\left(1+\mu \frac{h_{2}}{L}+\mu \frac{d}{L} \frac{h_{2}-h_{3}}{L_{t}}\right)}\)</p>
+
+				<p class="fragment fade-in" data-fragment-index="2" style="text-align: left; font-size: 25px;">Onde: \(L = b + c \qquad L_t = e + f \qquad \zeta = W_b/W\)</p>
+
+			</section>
+			
+			<section>
+
+				<h5>Gradeability - RWD</h5>
+
+				<p style="font-size: 25px; text-align: left;">Tração traseira: Rear-wheel-drive (RWD)</p>
+
+				<p style="font-size: 25px;">
+				\begin{eqnarray} 
+					W_f &=& W \frac{c}{L} \cos \Theta - W \frac{h_1}{L} \sin \Theta - W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_{b} \frac{d}{L} \frac{h_3}{L_t} \sin \Theta - W_b \frac{d}{L} \frac{f}{L_t} \cos \Theta - W_b \frac{d}{L} \frac{h_2}{L_t} \sin \Theta \\
+					W_r &=& W \frac{b}{L} \cos \Theta + W \frac{h_1}{L} \sin \Theta + W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_b \frac{f}{L} \frac{(L+d)}{L_t} \cos \Theta - W_{b} \frac{h_3}{L} \frac{(L+d)}{L_t} \sin \Theta + W_b \frac{h_2}{L} \frac{(L+d)}{L_t} \sin \Theta \\
+				\end{eqnarray}
+				</p>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">Condição: \(\left( W + W_b \right) \sin \Theta = F_{X r}= \mu W_r\)</p>
+
+				<p class="fragment fade-in" data-fragment-index="2">\(\Theta=\mu \frac{\frac{b}{L}+\zeta \frac{(L+d)}{L} \frac{f}{L_{t}}}{1-\mu \frac{h_1}{L}+\zeta\left(1-\mu \frac{h_{2}}{L}-\mu \frac{(L+d)}{L} \frac{h_{2}-h_{3}}{L_{t}}\right)}\)</p>
+
+				<p class="fragment fade-in" data-fragment-index="2" style="text-align: left; font-size: 25px;">Onde: \(L = b + c \qquad L_t = e + f \qquad \zeta = W_b/W\)</p>
+
+			</section>
+
+			<section>
+
+				<h5>Gradeability - 4WD</h5>
+
+				<p style="font-size: 25px; text-align: left;">Tração nas quatro rodas: 4-wheel-drive (4WD)</p>
+
+				<p style="font-size: 25px;">
+				\begin{eqnarray} 
+					W_f &=& W \frac{c}{L} \cos \Theta - W \frac{h_1}{L} \sin \Theta - W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_{b} \frac{d}{L} \frac{h_3}{L_t} \sin \Theta - W_b \frac{d}{L} \frac{f}{L_t} \cos \Theta - W_b \frac{d}{L} \frac{h_2}{L_t} \sin \Theta \\
+					W_r &=& W \frac{b}{L} \cos \Theta + W \frac{h_1}{L} \sin \Theta + W_{b} \frac{h_2}{L} \sin \Theta + \\
+					& & + W_b \frac{f}{L} \frac{(L+d)}{L_t} \cos \Theta - W_{b} \frac{h_3}{L} \frac{(L+d)}{L_t} \sin \Theta + W_b \frac{h_2}{L} \frac{(L+d)}{L_t} \sin \Theta \\
+				\end{eqnarray}
+				</p>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">Condição: \(\left( W + W_b \right) \sin \Theta = F_{X}= \mu W\)</p>
+
+				<p class="fragment fade-in" data-fragment-index="2">\(\Theta=\mu \frac{W}{W+W_{b}}=\mu \frac{1}{1+\zeta}\)</p>
+
+				<p class="fragment fade-in" data-fragment-index="2" style="text-align: left; font-size: 25px;">Onde: \(L = b + c \qquad L_t = e + f \qquad \zeta = W_b/W\)</p>
+
+			</section>
+
+			<section>
+
+				<h5>Gradeability - Resumo</h5>
+
+				<p style="font-size: 25px; text-align: left;">Tração dianteira: Front-wheel-drive (FWD)</p>
+
+				<p>\(\Theta = \mu \frac{\frac{c}{L}-\zeta \frac{d}{L} \frac{f}{L_{t}}}{1+\mu \frac{h_1}{L}+\zeta\left(1+\mu \frac{h_{2}}{L}+\mu \frac{d}{L} \frac{h_{2}-h_{3}}{L_{t}}\right)}\)</p>
+
+				<p style="font-size: 25px; text-align: left;">Tração traseira: Rear-wheel-drive (RWD)</p>
+
+				<p>\(\Theta=\mu \frac{\frac{b}{L}+\zeta \frac{(L+d)}{L} \frac{f}{L_{t}}}{1-\mu \frac{h_1}{L}+\zeta\left(1-\mu \frac{h_{2}}{L}-\mu \frac{(L+d)}{L} \frac{h_{2}-h_{3}}{L_{t}}\right)}\)</p>
+
+				<p style="font-size: 25px; text-align: left;">Tração nas quatro rodas: 4-wheel-drive (4WD)</p>
+
+				<p>\(\Theta=\mu \frac{W}{W+W_{b}}=\mu \frac{1}{1+\zeta}\)</p>
+
+				<p style="text-align: left; font-size: 25px;">Onde: \(L = b + c \qquad L_t = e + f \qquad \zeta = W_b/W\)</p>
+
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 7</h5>
+
+				<p style="font-size: 30px; text-align: justify;">Considere um carro transportando um reboque sobre uma rua com coeficiente de atrito \(\mu\)=0,3 ao longo de toda a sua extensão. Qual é a capacidade máxima de subida deste carro nesta rua?</p>
+
+				<p style="font-size: 30px; text-align: justify;">Considere os casos FWD, RWD e 4WD.</p>
+
+				<table style="width: 80%; font-size: 25px;">
+					<tr>
+						<th>Parâmetro</th><th>Descrição</th><th>Valor</th><th>Unidade</th>
+					</tr>
+					<tr>
+						<td>\(M_f\)</td><td>Massa sobre eixo dianteiro*</td><td>1090</td><td>kg</td>
+					</tr>
+					<tr>
+						<td>\(M_r\)</td><td>Massa sobre eixo traseiro*</td><td>820</td><td>kg</td>
+					</tr>
+					<tr>
+						<td>\(M_t\)</td><td>Massa sobre eixo do reboque</td><td>1200</td><td>kg</td>
+					</tr>
+					<tr>
+						<td>\(M_{zb}\)</td><td>Massa sobre o engate</td><td>320</td><td>kg</td>
+					</tr>
+					<tr>
+						<td>\(h_1\)</td><td>Altura do CG do carro</td><td>0,60</td><td>m</td>
+					</tr>
+					<tr>
+						<td>\(h_2\)</td><td>Altura do engate</td><td>0,35</td><td>m</td>
+					</tr>
+					<tr>
+						<td>\(h_3\)</td><td>Altura do CG do reboque</td><td>0,51</td><td>m</td>
+					</tr>
+					<tr>
+						<td>\(d\)</td><td>Distância horizontal do engate</td><td>0,47</td><td>m</td>
+					</tr>
+					<tr>
+						<td>\(L\)</td><td>Distância entre eixos</td><td>3,10</td><td>m</td>
+					</tr>
+					<tr>
+						<td>\(L_{t}\)</td><td>Distância entre eixo e engate</td><td>4,00</td><td>m</td>
+					</tr>
+				</table>
+
+				<p style="font-size: 20px; text-align: left">* Medidos sem o reboque.</p>
+
+				<!-- Um carro transporta um reboque de 800 kg. No plano, as massas sobre cada eixo foram medidas com uma balança: \(m_f\)=862 kg, \(m_r\)=671 kg e \(m_b\)=705 kg, respectivamente.</p> -->
+
+				<!-- <p style="text-align: justify;">Qual é a inclinação máxima que este veículo consegue vencer sem escorregar?</p> -->
+
+			</section>
+
+			<section>
+				
+				Exemplos adicionais:
+
+				<p><a href="http://www.xcmg.com/pt-la/product/118-32969-0-0-0-0.htm" target="_blank">XCMG - Caminhão de mineração</a></p>
+				<p><a href="https://www.fordcaminhoes.com.br/content/dam/ford-brazil-trucks/pdf/c-3131/Cargo-3131.pdf" target="_blank">FORD - Cargo 3131</a></p>
+				<p><a href="https://www.agrale.com.br/pdf/pt/caminhoes_medios_caminhao_agrale_14000_s_6x2_1.pdf?date=1563369410" target="_blank">AGRALE - CAMINHÃO 14000 S 6X2</a></p>
+
+			</section>
+
+		</div>
+	</div>
+
+	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
+		<a href="https://portal.fei.edu.br/" target="_blank"><img src="ilustracoes/logoFEI.png" alt="Logo FEI"
+				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
+	</div>
+
+	<script src="reveal.js/lib/js/head.min.js"></script>
+	<script src="reveal.js/js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+				{ src: 'reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+
+				// Interpret Markdown in <section> elements
+				{ src: 'reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+
+				// Syntax highlight for <code> elements
+				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+
+				// Zoom in and out with Alt+click
+				{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+
+				// Speaker notes
+				{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+
+				// MathJax
+				{ src: 'reveal.js/plugin/math/math.js', async: true }
+			],
+
+			// math: {
+			// 	mathjax: 'MathJax/MathJax.js',
+			// 	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			// },
+			math: {
+				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			},
+
+			// Display presentation control arrows
+			controls: true,
+
+			// Help the user learn the controls by providing hints, for example by
+			// bouncing the down arrow when they first encounter a vertical slide
+			controlsTutorial: true,
+
+			// Determines where controls appear, "edges" or "bottom-right"
+			controlsLayout: 'bottom-right',
+
+			// Visibility rule for backwards navigation arrows; "faded", "hidden"
+			// or "visible"
+			controlsBackArrows: 'faded',
+
+			// Display a presentation progress bar 
+			// [removido, pois gera cliques indesejados na navegação pelo celular. Ao tentar navegar para baixo na seta inferior de controle a barra de progresso é acionada e o slide correspondente é aberto. ]
+			progress: false,
+
+			// Display the page number of the current slide
+			slideNumber: true,
+
+			// Push each slide change to the browser history
+			history: true,
+
+			// Enable keyboard shortcuts for navigation
+			keyboard: true,
+
+			// Enable the slide overview mode
+			overview: false,
+
+			// Vertical centering of slides
+			center: true,
+
+			// Enables touch navigation on devices with touch input
+			touch: true,
+
+			// Loop the presentation
+			loop: false,
+
+			// Change the presentation direction to be RTL
+			rtl: false,
+
+			// Randomizes the order of slides each time the presentation loads
+			shuffle: false,
+
+			// Turns fragments on and off globally
+			fragments: true,
+
+			// Flags whether to include the current fragment in the URL,
+			// so that reloading brings you to the same fragment position
+			fragmentInURL: false,
+
+			// Flags if the presentation is running in an embedded mode,
+			// i.e. contained within a limited portion of the screen
+			embedded: false,
+
+			// Flags if we should show a help overlay when the questionmark
+			// key is pressed
+			help: true,
+
+			// Flags if speaker notes should be visible to all viewers
+			showNotes: false,
+
+			// Global override for autoplaying embedded media (video/audio/iframe)
+			// - null: Media will only autoplay if data-autoplay is present
+			// - true: All media will autoplay, regardless of individual setting
+			// - false: No media will autoplay, regardless of individual setting
+			autoPlayMedia: true,
+
+			// Number of milliseconds between automatically proceeding to the
+			// next slide, disabled when set to 0, this value can be overwritten
+			// by using a data-autoslide attribute on your slides
+			autoSlide: 0,
+
+			// Stop auto-sliding after user input
+			autoSlideStoppable: true,
+
+			// Use this method for navigation when auto-sliding
+			autoSlideMethod: Reveal.navigateNext,
+
+			// Specify the average time in seconds that you think you will spend
+			// presenting each slide. This is used to show a pacing timer in the
+			// speaker view
+			defaultTiming: 120,
+
+			// Enable slide navigation via mouse wheel
+			mouseWheel: true,
+
+			// Hides the address bar on mobile devices
+			hideAddressBar: true,
+
+			// Opens links in an iframe preview overlay
+			// Add `data-preview-link` and `data-preview-link="false"` to customise each link
+			// individually
+			previewLinks: false,
+
+			// Transition style
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Transition speed
+			transitionSpeed: 'default', // default/fast/slow
+
+			// Transition style for full page slide backgrounds
+			backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Number of slides away from the current that are visible
+			viewDistance: 3,
+
+			// Parallax background image
+			// parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+			// Parallax background size
+			// parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+			// Number of pixels to move the parallax background per slide
+			// - Calculated automatically unless specified
+			// - Set to 0 to disable movement along an axis
+			// parallaxBackgroundHorizontal: null,
+			// parallaxBackgroundVertical: null,
+
+			// The display mode that will be used to show slides
+			display: 'block',
+
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			width: 960,
+			height: 700,
+
+			// // Factor of the display size that should remain empty around the content
+			margin: 0.05,
+
+			// // Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 2,
+
+			pdfMaxPagesPerSlide: 1,
+			pdfSeparateFragments: false,
+		});
+
+	</script>
+
+	<script>
+
+	function enterFullscreen() {
+
+		var element = document.documentElement;
+
+		// Check which implementation is available
+		var requestMethod = element.requestFullscreen ||
+							element.webkitRequestFullscreen ||
+							element.webkitRequestFullScreen ||
+							element.mozRequestFullScreen ||
+							element.msRequestFullscreen;
+
+		if( requestMethod ) {
+			requestMethod.apply( element );
+		}
+
+	}
+
+	</script>
+
+</body>
+
+</html>
