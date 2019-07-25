@@ -12,13 +12,13 @@
 
 	<title>NMA380 - Dinâmica Veicular</title>
 
-	<link rel="stylesheet" href="mycss/revealasm.css">
-	<link rel="stylesheet" href="mycss/theme/whiteasm.css" id="theme">
+	<link rel="stylesheet" href="../../mycss/revealasm.css">
+	<link rel="stylesheet" href="../../mycss/theme/whiteasm.css" id="theme">
 	<!-- My class files -->
-	<link rel="stylesheet" href="mycss/asm.css">
+	<link rel="stylesheet" href="../../mycss/asm.css">
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -44,8 +44,8 @@
 				<p>NMA380 - Dinâmica Veicular</p>
 
 				<h2>Dinâmica longitudinal</h2>
-				<h3>Propulsão</h3>
-				<h5>Força de propulsão</h5>
+
+				<h3>Força de propulsão</h3>
 
 			</section>
 
@@ -61,7 +61,20 @@
 
 				<h5>Torque/potência</h5>
 
-				<img style="height: 600px; width: 90%;" src="ilustracoes/dinpropforcaEscort.jpg">
+				<img style="height: 550px; width: 90%;" src="ilustracoes/dinpropforcaEscort.jpg">
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Automobile Catalog: 1993 Ford Escort XR3 2.0i (man. 5)</a></p>
+
+			</section>
+
+			<section>
+				
+				<h5>Objetivos</h5>
+
+				<ul>
+					<li>Relação entre o torque do motor e a força de tração</li>
+					<li>Massa equivalente e efetiva</li>
+				</ul>
 
 			</section>
 
@@ -70,6 +83,21 @@
 				<h5>Aceleração máxima</h5>
 
 				<img style="height: 600px; width: 90%;" src="ilustracoes/dinpropforcaAcelMax.png">
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 1</h5>
+
+				<p style="font-size: 30px; text-align: justify;">Determine a relação peso/potência e o gráfico (\(a_x/g\) x \(v\)) dos veículos: <b>1993 Ford Escort XR3 2.0i</b> &nbsp;&nbsp; e &nbsp;&nbsp; <b>Volvo FH 4X2T</b></p>
+
+				<img style="height: 400px;" src="ilustracoes/dinpropforcaEscortCaminhao.png">
+
+				<p style="font-size: 20px; text-align: left;">Dados: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Automobile Catalog: 1993 Ford Escort XR3 2.0i (man. 5)</a> e <a href="https://www.volvotrucks.com.br/content/dam/volvo/volvo-trucks/markets/brazil/trucks/volvo-fh/datasheets/fh4x2-T.pdf" target="_blank">Volvo Trucks: Volvo FH 4X2T</a></p>
+
+				<p style="font-size: 20px; text-align: left;">OBS: 1 pferdestarkes (PS=CV) = 0.98592325737265 horsepower (hp)</p>
+
 
 			</section>
 
@@ -84,12 +112,18 @@
 			<section>
 
 				<h5>Torque do motor à força de tração</h5>
-				
+
 				<img src="ilustracoes/dinpropforcaBlocosPowertrain.svg">
 
-				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 200px; float: left;">
-					
-					<p style="font-size: 25px;">
+				<div style="width: 65%; height: 400px; float: left;">
+									
+					<img style="width: 100%;" src="ilustracoes/dinpropforcaPowertrain.png">
+
+				</div>
+
+				<div style="width: 35%; height: 400px; float: left;">
+
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px;">
 						\begin{eqnarray}
 						\nonumber
 						\mathrm{T}_{\mathrm{c}}&=&\mathrm{T}_{\mathrm{e}}-\mathrm{I}_{\mathrm{e}} \alpha_{\mathrm{e}} \\
@@ -101,12 +135,7 @@
 						\mathrm{T}_{\mathrm{a}}&=&\mathrm{F}_{\mathrm{X}} \mathrm{r}+\mathrm{I}_{\mathrm{W}} \alpha_{\mathrm{W}}\\
 						\end{eqnarray}
 					</p>
-
-				</div>
-
-				<div class="fragment fade-in" data-fragment-index="2" style="width: 50%; height: 200px; float: left;">
-
-					<p style="font-size: 25px;">
+					<p class="fragment fade-in" data-fragment-index="2"  style="font-size: 25px;">
 						\begin{eqnarray}
 						\nonumber
 						\alpha_{\mathrm{d}}&=&\mathrm{N}_{\mathrm{f}} \alpha_{\mathrm{w}} \\
@@ -121,33 +150,127 @@
 
 				</div>
 
-				<p style="font-size: 25px;">Para um torque \(\mathrm{T}_{\mathrm{e}}\), qual é a força longitudinal \(\mathrm{F}_{\mathrm{x}}\)?</p>
-
-				<p class="fragment fade-in" data-fragment-index="3" style="font-size: 35px;">\(\mathrm{F}_{\mathrm{x}}=\frac{\mathrm{T}_{\mathrm{e}} \mathrm{N}_{\mathrm{tf}}}{\mathrm{r}}-\left\{\left(\mathrm{I}_{\mathrm{e}}+\mathrm{I}_{\mathrm{t}}\right) \mathrm{N}_{\mathrm{tf}}^{2}+\mathrm{I}_{\mathrm{d}} \mathrm{N}_{\mathrm{f}}^{2}+\mathrm{I}_{\mathrm{w}}\right\} \frac{\mathrm{a}_{\mathrm{x}}}{\mathrm{r}^{2}}\)</p>
-
-				<p class="fragment fade-in" data-fragment-index="4" style="font-size: 35px;">\(\mathrm{F}_{\mathrm{x}}=\frac{\mathrm{T}_{\mathrm{e}} \mathrm{N}_{\mathrm{tf}} \eta_{\mathrm{tf}}}{\mathrm{r}}-\left\{\left(\mathrm{I}_{\mathrm{e}}+\mathrm{I}_{\mathrm{t}}\right) \mathrm{N}_{\mathrm{tf}}^{2}+\mathrm{I}_{\mathrm{d}} \mathrm{N}_{\mathrm{f}}^{2}+\mathrm{I}_{\mathrm{w}}\right\} \frac{\mathrm{a}_{\mathrm{x}}}{\mathrm{r}^{2}}\)</p>
+				<p class="fragment fade-in" data-fragment-index="3" style="font-size: 35px;">\(\mathrm{F}_{\mathrm{x}}=\frac{\mathrm{T}_{\mathrm{e}} \mathrm{N}_{\mathrm{tf}} \eta_{\mathrm{tf}}}{\mathrm{r}}-\left\{\left(\mathrm{I}_{\mathrm{e}}+\mathrm{I}_{\mathrm{t}}\right) \mathrm{N}_{\mathrm{tf}}^{2}+\mathrm{I}_{\mathrm{d}} \mathrm{N}_{\mathrm{f}}^{2}+\mathrm{I}_{\mathrm{w}}\right\} \frac{\mathrm{a}_{\mathrm{x}}}{\mathrm{r}^{2}}\)</p>
 
 			</section>
 
 			<section>
 
-				<h5>Massa efetiva</h5>
+				<h5>Dinâmica longitudinal</h5>
 
 				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{x}}=\frac{\mathrm{T}_{\mathrm{e}} \mathrm{N}_{\mathrm{tf}} \eta_{\mathrm{tf}}}{\mathrm{r}}-\left\{\left(\mathrm{I}_{\mathrm{e}}+\mathrm{I}_{\mathrm{t}}\right) \mathrm{N}_{\mathrm{tf}}^{2}+\mathrm{I}_{\mathrm{d}} \mathrm{N}_{\mathrm{f}}^{2}+\mathrm{I}_{\mathrm{w}}\right\} \frac{\mathrm{a}_{\mathrm{x}}}{\mathrm{r}^{2}}\)</p>
 
-				<p style="font-size: 35px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{W}}{\mathrm{g}} \mathrm{a}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
-				<p style="font-size: 25px;">\((\mathrm{M} + \mathrm{M}_{\mathrm{r}}) \mathrm{a}_{\mathrm{x}}=\frac{(\mathrm{W}+\mathrm{W}_{\mathrm{r}})}{\mathrm{g}} \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{T}_{\mathrm{e}} \mathrm{N}_{\mathrm{tf}} \eta_{\mathrm{tf}}}{\mathrm{r}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 35px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{W}}{\mathrm{g}} \mathrm{a}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
 
-
-				<p style="font-size: 25px; text-align: left;">Massa equivalente dos elementos rotativos:</p>
+				<p class="fragment fade-in" data-fragment-index="2">Equação de movimento longitudinal</p>
 				
-				<p style="font-size: 35px;">\(\mathrm{M}_{\mathrm{r}} = \frac{\left\{\left(\mathrm{I}_{\mathrm{e}}+\mathrm{I}_{\mathrm{t}}\right) \mathrm{N}_{\mathrm{tf}}^{2}+\mathrm{I}_{\mathrm{d}} \mathrm{N}_{\mathrm{f}}^{2}+\mathrm{I}_{\mathrm{w}}\right\} }{\mathrm{r}^{2}}\)</p>
+				<p class="fragment fade-in" data-fragment-index="2" style="font-size: 35px;">\((\mathrm{M} + \mathrm{M}_{\mathrm{r}}) \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{T}_{\mathrm{e}} \mathrm{N}_{\mathrm{tf}} \eta_{\mathrm{tf}}}{\mathrm{r}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
 
+				<div style="width: 60%; height: 200px; float: left;">
+
+					<p class="fragment fade-in" data-fragment-index="3" style="font-size: 25px; text-align: left;">Massa equivalente dos elementos rotativos:</p>
+					
+					<p class="fragment fade-in" data-fragment-index="3" style="font-size: 30px; text-align: left;">\(\mathrm{M}_{\mathrm{r}} = \frac{\left\{\left(\mathrm{I}_{\mathrm{e}}+\mathrm{I}_{\mathrm{t}}\right) \mathrm{N}_{\mathrm{tf}}^{2}+\mathrm{I}_{\mathrm{d}} \mathrm{N}_{\mathrm{f}}^{2}+\mathrm{I}_{\mathrm{w}}\right\} }{\mathrm{r}^{2}}\)</p>
+
+				</div>
+
+				<div style="width: 40%; height: 200px; float: left;">
 				
-				<p style="font-size: 25px; text-align: left;">Massa efetiva: \(\mathrm{M} + \mathrm{M}_{\mathrm{r}}\)</p>
-				<p p style="font-size: 25px; text-align: left;">Fator de massa: \(\frac{\mathrm{M} + \mathrm{M}_{\mathrm{r}}}{\mathrm{M}}\)</p>
+				
+					<p class="fragment fade-in" data-fragment-index="3" style="font-size: 25px; text-align: left;">Massa efetiva: \(\mathrm{M} + \mathrm{M}_{\mathrm{r}}\)</p>
+				
+					<p class="fragment fade-in" data-fragment-index="3" p style="font-size: 25px; text-align: left;">Fator de massa: \(\frac{\mathrm{M} + \mathrm{M}_{\mathrm{r}}}{\mathrm{M}}\)</p>
+				
+				</div>
 
 			</section>
+
+			<section>
+				
+				<h5>Exercício 2</h5>
+				<!-- Exemplo 2 do Gillespie -->
+				
+				<p style="font-size: 25px; text-align: justify;">Um veículo de 1145 kg trafega com velocidade constante em terceira marcha numa rodovia.</p>
+
+				<p style="font-size: 25px; text-align: justify;">Motor: Inércia de 0,09 kg&#183;m<sup>2</sup>.</p>
+
+				<p style="font-size: 25px; text-align: justify;">Pneu: 175/70R13 com inércia de 1,24 kg&#183;m<sup>2</sup>.</p>
+
+				<p style="font-size: 25px; text-align: justify;">Transmissão:</p>
+
+				<table style="font-size: 25px;">
+					<tr>
+						<th>Transmissão</th><th>Relação</th><th>Inércia [kg&#183;m<sup>2</sup>]</th><th>Eficiência</th>
+					</tr>
+					<tr>
+						<td>1a marcha</td><td>3,78</td><td>0,1469 </td><td>0,966</td>
+					</tr>
+					<tr>
+						<td>2a marcha</td><td>2,12</td><td>0,1017</td><td>0,967</td>
+					</tr>
+					<tr>
+						<td>3a marcha</td><td>1,46</td><td>0,0791</td><td>0,972</td>
+					</tr>
+					<tr>
+						<td>4a marcha</td><td>1,03</td><td>0,0565 </td><td>0,973</td>
+					</tr>
+					<tr>
+						<td>5a marcha</td><td>0,84</td><td>0,0339</td><td>0,970</td>
+					</tr>
+					<tr>
+						<td>Diferencial</td><td>3,944</td><td>0,1356</td><td>0,990</td>
+					</tr>
+				</table>
+
+				<p style="font-size: 25px; text-align: justify;">Sabendo que o motor gera um torque \(T_e\)=120 Nm, determine a força de tração longitudinal.</p>
+
+				<!-- <p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Automobile Catalog: 1993 Ford Escort XR3 2.0i (man. 5)</a></p> -->
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 3</h5>
+				<!-- Exemplo 2 do Gillespie -->
+				
+				<p style="font-size: 25px; text-align: justify;">Um veículo de 1430 kg trafega com velocidade constante em terceira marcha numa rodovia.</p>
+
+				<p style="font-size: 25px; text-align: justify;">Motor: Inércia de 0,09 kg&#183;m<sup>2</sup>.</p>
+
+				<p style="font-size: 25px; text-align: justify;">Pneu: 175/70R13 com inércia de 1,24 kg&#183;m<sup>2</sup>.</p>
+
+				<p style="font-size: 25px; text-align: justify;">Transmissão:</p>
+
+				<table style="font-size: 25px;">
+					<tr>
+						<th>Transmissão</th><th>Relação</th><th>Inércia [kg&#183;m<sup>2</sup>]</th><th>Eficiência</th>
+					</tr>
+					<tr>
+						<td>1a marcha</td><td>3,78</td><td>0,1469 </td><td>0,966</td>
+					</tr>
+					<tr>
+						<td>2a marcha</td><td>2,12</td><td>0,1017</td><td>0,967</td>
+					</tr>
+					<tr>
+						<td>3a marcha</td><td>1,46</td><td>0,0791</td><td>0,972</td>
+					</tr>
+					<tr>
+						<td>4a marcha</td><td>1,03</td><td>0,0565 </td><td>0,973</td>
+					</tr>
+					<tr>
+						<td>5a marcha</td><td>0,84</td><td>0,0339</td><td>0,970</td>
+					</tr>
+					<tr>
+						<td>Diferencial</td><td>3,944</td><td>0,1356</td><td>0,990</td>
+					</tr>
+				</table>
+
+				<p style="font-size: 25px; text-align: justify;">Determine o fator de massa deste veículo.</p>
+
+				<!-- <p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Automobile Catalog: 1993 Ford Escort XR3 2.0i (man. 5)</a></p> -->
+
+			</section>
+
 
 			<section>
 				
@@ -171,22 +294,51 @@
 
 			<section>
 				
-				<h5>Curvas características de tração</h5>
+				<h5>Exercício 4</h5>
 
-				<img style="width: 80%;" src="ilustracoes/dinpropforcaCaractTracao.png">
+				<p style="font-size: 25px; text-align: justify;">Determine a relação RPM/Velocidade de um carro com os seguintes dados:</p>
 
-			</section>
+				<p style="font-size: 25px; text-align: justify;">Pneu: 175/70R13 com inércia de 1,24 kg&#183;m<sup>2</sup>.</p>
 
-			<section>
 
-				<h5>Exercícios</h5>
-				
-				<p style="text-align: justify;">Conside o trem de potência com os seguintes dados e calcule:</p>
+				<div style="width: 40%; height: 400px; float: left;">
+					
+					<p style="font-size: 25px; text-align: justify;">Transmissão:</p>
 
-				<ul>
-					<li>A massa efetiva do trem de potência em primeira marcha.</li>
-					<li>A força trativa máxima e a respectiva velocidade em primeira marcha e quinta marcha.</li>
-				</ul>
+					<table style="font-size: 25px;">
+						<tr>
+							<th>Transmissão</th><th>Relação</th>
+						</tr>
+						<tr>
+							<td>1a marcha</td><td>3,78</td>
+						</tr>
+						<tr>
+							<td>2a marcha</td><td>2,12</td>
+						</tr>
+						<tr>
+							<td>3a marcha</td><td>1,46</td>
+						</tr>
+						<tr>
+							<td>4a marcha</td><td>1,03</td>
+						</tr>
+						<tr>
+							<td>5a marcha</td><td>0,84</td>
+						</tr>
+						<tr>
+							<td>Diferencial</td><td>3,944</td>
+						</tr>
+					</table>
+
+				</div>
+
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 60%; height: 400px; float: left;">
+
+					<img style="width: 100%;" src="codigos/html/dinlonforcapropulsaoExercicio4_01.png">
+
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Ver resolução: <a href="codigos/html/dinlonforcapropulsaoExercicio4.html" target="_blank">Código</a></p>
+
 
 			</section>
 
@@ -194,12 +346,12 @@
 	</div>
 
 	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
-		<a href="https://portal.fei.edu.br/" target="_blank"><img src="ilustracoes/logoFEI.png" alt="Logo FEI"
+		<a href="https://portal.fei.edu.br/" target="_blank"><img src="../../ilustracoes/logoFEI.png" alt="Logo FEI"
 				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
 	</div>
 
-	<script src="reveal.js/lib/js/head.min.js"></script>
-	<script src="reveal.js/js/reveal.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
 
 	<script>
 		// More info about config & dependencies:
@@ -208,23 +360,23 @@
 		Reveal.initialize({
 			dependencies: [
 				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-				{ src: 'reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: '../../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
 
 				// Interpret Markdown in <section> elements
-				{ src: 'reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 
 				// Syntax highlight for <code> elements
-				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 
 				// Zoom in and out with Alt+click
-				{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
 
 				// Speaker notes
-				{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+				{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
 
 				// MathJax
-				{ src: 'reveal.js/plugin/math/math.js', async: true }
+				{ src: '../../reveal.js/plugin/math/math.js', async: true }
 			],
 
 			// math: {

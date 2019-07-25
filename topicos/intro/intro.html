@@ -12,13 +12,13 @@
 
 	<title>NMA380 - Dinâmica Veicular</title>
 
-	<link rel="stylesheet" href="mycss/revealasm.css">
-	<link rel="stylesheet" href="mycss/theme/whiteasm.css" id="theme">
+	<link rel="stylesheet" href="../../mycss/revealasm.css">
+	<link rel="stylesheet" href="../../mycss/theme/whiteasm.css" id="theme">
 	<!-- My class files -->
-	<link rel="stylesheet" href="mycss/asm.css">
+	<link rel="stylesheet" href="../../mycss/asm.css">
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -39,217 +39,119 @@
 
 		<div class="slides">
 
-			<section>
-
-				<p>NMA380 - Dinâmica Veicular</p>
-
-				<h2>Dinâmica longitudinal</h2>
-				<h3>Frenagem</h3>
-				<h5>Força de frenagem</h5>
-
-			</section>
-
-			<section>
-
-				<h5>Objetivos</h5>
-
-				<p>Frenagem com aceleração constante</p>
-				<p>Tempo e distância de frenagem</p>
-				<p>Fator de frenagem</p>
-
-			</section>
-
-			<section>
-
-				<h5>Equação de movimento</h5>
-				
-				<img style="width: 90%;" src="ilustracoes/dinlongfrenagemDCL.png">
-
-				<p style="font-size: 35px;">\(\mathrm{Ma}_{\mathrm{x}}=-\frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=-\mathrm{F}_{\mathrm{xf}}-\mathrm{F}_{\mathrm{xr}}-\mathrm{D}_{\mathrm{A}}-\mathrm{W} \sin \Theta\)</p>
-
-			</section>
-
-			<section>
-				
-				<h5>Desaceleração constante</h5>
-
-				<p>\(\mathrm{D}_{\mathrm{X}}=\frac{\mathrm{F}_{\mathrm{Xt}}}{\mathrm{M}}=-\frac{\mathrm{d} \mathrm{V}}{\mathrm{dt}}\)</p>
-
-				<p style="text-align: justify;">Distância de frenagem:</p>
-
-				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{SD}=\frac{\mathrm{V}_{\mathrm{O}}^{2}}{2 \frac{\mathrm{F}_{\mathrm{xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{o}}^{2}}{2 \mathrm{D}_{\mathrm{x}}}\)</p>
-
-				<p style="text-align: justify;">Tempo de frenagem</p>
-
-				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{t}_{\mathrm{S}}=\frac{\mathrm{V}_{\mathrm{O}}}{\frac{\mathrm{F}_{\mathrm{Xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{O}}}{\mathrm{D}_{\mathrm{X}}}\)</p>
-
-			</section>
-
-			<section>
-				
-				<h5>Exercício</h5>
-
-				Qual é a distância e tempo de frenagem até o repouso de um carro de 1200 kg a 80 km/h?
-
-				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{SD}=\frac{\mathrm{V}_{\mathrm{O}}^{2}}{2 \frac{\mathrm{F}_{\mathrm{xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{o}}^{2}}{2 \mathrm{D}_{\mathrm{x}}}\)</p>
-
-				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{t}_{\mathrm{S}}=\frac{\mathrm{V}_{\mathrm{O}}}{\frac{\mathrm{F}_{\mathrm{Xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{O}}}{\mathrm{D}_{\mathrm{X}}}\)</p>
-
-			</section>
-
-			<section>
-				
-				<h5>Desaceleração com resistência aerodinâmica</h5>
-
-				<p>\(\mathrm{SD}=\frac{\mathrm{M}}{2 \mathrm{C}} \ln \left[\frac{\mathrm{F}_{\mathrm{b}}+\mathrm{C} \mathrm{V}_{\mathrm{O}}^{2}}{\mathrm{F}_{\mathrm{b}}}\right]\)</p>
-
-				<p>\(\mathrm{t}_{\mathrm{S}}=\frac{M\,\mathrm{atan}\left(\frac{\sqrt{c}\,v}{\sqrt{\mathrm{Fb}}}\right)}{\sqrt{\mathrm{Fb}}\,\sqrt{c}}\)</p>
-
-			</section>
-
-			<section>
-				
-				<h5>Exercício</h5>
-
-				Qual é a distância
-
-			</section>
-
-			<section>
-				
-				<h5>Energia e potência consumida</h5>
-
-				<p>\(E = \frac{M}{2}\left(V_{0}^{2}-V_{f}^{2}\right)\)</p>
-				<p>\(P = \frac{M}{2} \frac{V_{0}^{2}}{t_{s}}\)</p>
-
-			</section>
-
-			<section>
-				
-				<h5>Exercício 1</h5>
-
-				<p>Qual é a quantidade de energia necessária para freiar um carro de 1200 kg a 80 km/h até o repouso?</p>
-
-				<p>\(E = \frac{M}{2}\left(V_{0}^{2}-V_{f}^{2}\right)\)</p>
-				<p>\(P = \frac{M}{2} \frac{V_{0}^{2}}{t_{s}}\)</p>
-
-
-			</section>
-
-			<section>
-				
-				<h5>Freio a tambor</h5>
-
-				<div style="width: 60%;height: 500px; float: left;">
+				<section>
 					
-				<img style="width: 100%;" src="ilustracoes/dinlongfrenagemTambor.png">
+					<p>NMA380 - Dinâmica Veicular</p>
 
-				</div>
-				<div style="width: 40%;height: 500px; float: left;">
+					<h2>Introdução ao curso</h2>
 
-				<p class="fragment fade-in" data-fragment-index="1">Fator de frenagem</p>
+				</section>
 
-				<p class="fragment fade-in" data-fragment-index="1">\(\frac{\mathrm{F}_{\mathrm{A}}}{\mathrm{P}_{\mathrm{a}}}=\frac{\mu \mathrm{e}}{(\mathrm{m}-\mu \mathrm{n})}\)</p>
+				<section>
 
-				<p class="fragment fade-in" data-fragment-index="1">\(\frac{\mathrm{F}_{\mathrm{B}}}{\mathrm{P}_{\mathrm{a}}}=\frac{\mu \mathrm{e}}{(\mathrm{m}+\mu \mathrm{n})}\)</p>
-				</div>
+					<h5>O primeiro automóvel</h5>
 
-				<p>\(\Sigma \mathrm{M}_{\mathrm{p}}=\mathrm{e} \mathrm{P}_{\mathrm{a}}+\mathrm{n} \mu \mathrm{N}_{\mathrm{A}}-\mathrm{m} \mathrm{N}_{\mathrm{A}}=0\)</p>
+					<img src="ilustracoes/introTime1.svg">
+					<img style="height: 400px;" src="ilustracoes/introFardierdeCugnotCar.jpg">
 
-			</section>			
+					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://pt.wikipedia.org/wiki/Joseph_Cugnot" target="_blank">Wikipedia: Joseph Cugnot</a></p>
 
-			<section>
+				</section>
 				
-				<h5>Freio a tambor</h5>
+				<section>
 
-				<div style="width: 60%;height: 500px; float: left;">
+					<h5>O primeiro automóvel à gasolina</h5>
+					<img src="ilustracoes/introTime2.svg">
+
+					<img style="height: 400px;" src="ilustracoes/introKarlBenzGasoline.png">
+
+					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.daimler.com/company/tradition/company-history/1885-1886.html" target="_blank">Daimler: Company History</a></p>
+
+				</section>
+
+				<section>
+
+					<h5>Modelo T</h5>
+					<img src="ilustracoes/introTime3.svg">
+					<img style="height: 400px;" src="ilustracoes/introModelT.jpg">
+
+					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://en.wikipedia.org/wiki/Ford_Model_T" target="_blank">Wikipedia: Ford Model T</a></p>
+
+				</section>
+
+				<section>
+
+					<h5>Dinamômetro de pneu</h5>
+					<img src="ilustracoes/introTime4.svg">
+
+					<img style="height: 400px;" src="ilustracoes/introFlatBelt.jpg">
+
+					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://aanddtech.com/fbttr/" target="_blank">A&D Tech: Flat Belt Tire Test Rig</a></p>
+
+				</section>
+
+				<section>
+
+					<h5>Volkswagen Fusca e Toyota Corolla</h5>
+					<img src="ilustracoes/introTime5.svg">
+
+					<img style="height: 280px; margin-top: 60px; margin-bottom: 60px;" src="ilustracoes/introCorollaFusca.jpg">
+
+					<p style="font-size: 20px; text-align: left; ">Fonte: <a href="https://en.wikipedia.org/wiki/Volkswagen_Beetle" target="_blank">Wikipedia: Volkswagen Beetle</a> e <a href="https://en.wikipedia.org/wiki/Toyota_Corolla" target="_blank">Wikipedia: Toyota Corolla</a></p>
+
+				</section>
+
+				<section>
+
+					<h5>Fundamentals of Vehicle Dynamics</h5>
+					<img src="ilustracoes/introTime6.svg">
+
+					<img style="height: 400px" src="ilustracoes/introGillespieCover.jpg">
+
+					<p style="font-size: 20px; text-align: left;">Fonte: <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Bilbioteca FEI</a></p>
+
+				</section>
+
+					<section>
+						
+						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/tlThdr3O5Qo?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+					</section>
+
+					<section>
+						
+						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/ncsRS-eIdAo?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+					</section>
+
+					<section>
+						
+						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/2Gc1zz5bl8I?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+					</section>
+
+					<section>
+						
+						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/i8yChqU4mBE?start=48;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+					</section>
 					
-				<img style="width: 100%;" src="ilustracoes/dinlongfrenagemTambor.png">
+					<section>
+						
+						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/GZgbqfFGPHM?start=37	;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
 
-				</div>
-				<div style="width: 40%;height: 500px; float: left;">
-
-					<ul>
-						<li>Quando o freio trava?</li>
-						<li>Diferença entre a sapata A e a B.</li>
-						<li>Aumento da sensibilidade com o aumento do fator</li>
-						<li>Oscilações de torque de frenagem</li>
-					</ul>
-
-					Pg. 52
-
-				</div>
-
-			</section>
-
-			<section>
-				
-				<h5>Freio a tambor</h5>
-
-				<div style="width: 60%;height: 500px; float: left;">
-					
-				<img style="width: 100%;" src="ilustracoes/dinlongfrenagemTambor.png">
-
-				</div>
-				<div style="width: 40%;height: 500px; float: left;">
-
-				<p style="text-align: left;">Força de desaceleraçao</p>
-				<p>\(\mathrm{F}_{\mathrm{b}}=\frac{\left(\mathrm{T}_{\mathrm{b}}-\mathrm{I}_{\mathrm{W}} \alpha_{\mathrm{w}}\right)}{\mathrm{r}}\)</p>
-
-				<p style="text-align: left;">Força de travamento</p>
-				<p>\(\mathrm{F}_{\mathrm{b}}=\frac{\mathrm{T}_{\mathrm{b}}}{\mathrm{r}}\)</p>
-
-				</div>
-
-			</section>
-
-			<section>
-
-				<h5>Wheel Slip</h5>
-				
-				<div style="width: 50%;height: 500px; float: left;">
-					
-				<img style="width: 100%;" src="ilustracoes/dinlongfrenagemPneuSlip.png">
-
-				</div>				
-				<div style="width: 50%;height: 500px; float: left;">
-					
-				<img style="width: 100%;" src="ilustracoes/dinlongfrenagemWheelSlip.png">
-
-				</div>
-
-				<p>\(\mathrm{Slip}=\frac{\mathrm{V}-\omega \mathrm{r}}{\mathrm{V}}\)</p>
-
-			</section>
-
-			<section>
-				
-				<p>Video?</p>
-
-			</section>
-
-			<section>
-				
-				<h5>Exercício 1</h5>
-
-			</section>
-
-			<section>
-				
-				<h5>Exercício 2</h5>
-
-			</section>
+					</section>
 
 		</div>
 	</div>
 
 	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
-		<a href="https://portal.fei.edu.br/" target="_blank"><img src="ilustracoes/logoFEI.png" alt="Logo FEI"
+		<a href="https://portal.fei.edu.br/" target="_blank"><img src="../../ilustracoes/logoFEI.png" alt="Logo FEI"
 				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
 	</div>
 
-	<script src="reveal.js/lib/js/head.min.js"></script>
-	<script src="reveal.js/js/reveal.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
 
 	<script>
 		// More info about config & dependencies:
@@ -258,23 +160,23 @@
 		Reveal.initialize({
 			dependencies: [
 				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-				{ src: 'reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: '../../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
 
 				// Interpret Markdown in <section> elements
-				{ src: 'reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 
 				// Syntax highlight for <code> elements
-				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 
 				// Zoom in and out with Alt+click
-				{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
 
 				// Speaker notes
-				{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+				{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
 
 				// MathJax
-				{ src: 'reveal.js/plugin/math/math.js', async: true }
+				{ src: '../../reveal.js/plugin/math/math.js', async: true }
 			],
 
 			// math: {

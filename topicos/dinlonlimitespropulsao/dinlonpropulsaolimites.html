@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=.2, user-scalable=yes">
+	<meta name="description" content="Apresentações do curso de Dinâmica Veicular">
+	<meta name="author" content="André de S. Mendes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<title>NMA380 - Dinâmica Veicular</title>
+
+	<link rel="stylesheet" href="../../mycss/revealasm.css">
+	<link rel="stylesheet" href="../../mycss/theme/whiteasm.css" id="theme">
+	<!-- My class files -->
+	<link rel="stylesheet" href="../../mycss/asm.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Para pinch zoom no celular, é preciso insterir este "data-prevent-swipe" para evitar conflito. -->
+	<div class="reveal">
+	<!-- <div class="reveal" onclick="closeNav()" data-prevent-swipe> -->
+
+		<div class="slides">
+
+			<section>
+
+				<p>NMA380 - Dinâmica Veicular</p>
+
+				<h2>Dinâmica longitudinal</h2>
+				<h3>Limites de propulsão</h3>
+
+			</section>
+
+			<section>
+				
+				<h5>Objetivos</h5>
+
+				<ul>
+					<li>Limite de potência</li>
+					<ul>
+						<li>Força de tração máxima</li>
+						<li>Curvas de força trativa</li>
+						<li>Velocidade máxima</li>
+					</ul>
+					<li>Limite de aderência</li>
+					<ul>
+						<li>Tração traseira com diferencial aberto</li>
+						<li>Tração traseira com diferencial bloqueado</li>
+						<li>Tração dianteira com diferencial aberto</li>
+						<li>Tração dianteira com diferencial bloqueado</li>
+					</ul>
+				</ul>
+				
+			</section>
+
+			<section>
+				
+				<h5>Limite de potência</h5>
+
+			</section>
+
+			<section>
+
+				<h5>Curvas de força trativa</h5>
+				
+				<p style="font-size: 30px;">\((\mathrm{M} + \mathrm{M}_{\mathrm{r}}) \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{T}_{\mathrm{e}} \mathrm{N}_{\mathrm{tf}} \eta_{\mathrm{tf}}}{\mathrm{r}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
+
+				<p style="font-size: 30px;">\(\mathrm{v}_{\mathrm{x}} =  \frac{2 \pi}{60} \frac{\mathrm{r}}{\mathrm{N}_{\mathrm{tf}}} \mathrm{RPM} \)</p>
+
+				<img  class="fragment fade-in" data-fragment-index="1" style="height: 450px;" src="ilustracoes/dinpropforcaCaractTracao.png">
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 1</h5>
+
+				<p style="font-size: 25px; text-align: justify;">Considere o Escort XR3. Qual é a força de tração máxima em 3a marcha e em que velocidade ela ocorre? Motor: 174 Nm @ 3200 e 85 kW @ 5600. Pneu: 185/60R14.</p>
+
+				<div style="width: 40%; height: 450px; float: left;">
+					
+					<p style="font-size: 25px; text-align: justify;">Transmissão (\(\eta\)=0.96):</p>
+
+					<table style="font-size: 25px;">
+						<tr>
+							<th>Transmissão</th><th>Relação</th>
+						</tr>
+						<tr>
+							<td>1a marcha</td><td>3,78</td>
+						</tr>
+						<tr>
+							<td>2a marcha</td><td>2,12</td>
+						</tr>
+						<tr>
+							<td>3a marcha</td><td>1,46</td>
+						</tr>
+						<tr>
+							<td>4a marcha</td><td>1,03</td>
+						</tr>
+						<tr>
+							<td>5a marcha</td><td>0,84</td>
+						</tr>
+						<tr>
+							<td>Diferencial</td><td>3,944</td>
+						</tr>
+					</table>
+
+				</div>
+
+				<div style="width: 60%; height: 450px; float: left;">
+
+					<img style="width: 100%" src="codigos/html/dinlonlimitespropulsaoExercicio1_01.png">
+
+				</div>
+				
+				<p style="font-size: 20px; text-align: left;">Complementos: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Dados do carro</a>, <a href="codigos/html/dinlonlimitespropulsaoExercicio1.html" target="_blank">Código</a>, <a href="codigos/engineData.csv" target="_blank">Curva do motor (csv)</a></p>
+
+				<!-- https://en.wikipedia.org/wiki/Horsepower#SAE_gross_power -->
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 2</h5>
+
+				<p style="font-size: 25px; text-align: justify;">Determine as curvas da força de tração do Escort para cada marcha em função da velocidade longitudinal. Motor: 174 Nm @ 3200 e 85 kW @ 5600. Pneu: 185/60R14.</p>
+
+				<div style="width: 40%; height: 450px; float: left;">
+					
+					<p style="font-size: 25px; text-align: justify;">Transmissão (\(\eta\)=0.96):</p>
+
+					<table style="font-size: 25px;">
+						<tr>
+							<th>Transmissão</th><th>Relação</th>
+						</tr>
+						<tr>
+							<td>1a marcha</td><td>3,78</td>
+						</tr>
+						<tr>
+							<td>2a marcha</td><td>2,12</td>
+						</tr>
+						<tr>
+							<td>3a marcha</td><td>1,46</td>
+						</tr>
+						<tr>
+							<td>4a marcha</td><td>1,03</td>
+						</tr>
+						<tr>
+							<td>5a marcha</td><td>0,84</td>
+						</tr>
+						<tr>
+							<td>Diferencial</td><td>3,944</td>
+						</tr>
+					</table>
+
+				</div>
+
+				<div style="width: 60%; height: 450px; float: left;">
+
+					<img style="width: 100%" src="codigos/html/dinlonlimitespropulsaoExercicio2_01.png">
+
+				</div>
+				
+				<p style="font-size: 20px; text-align: left;">Complementos: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Dados do carro</a>, <a href="codigos/html/dinlonlimitespropulsaoExercicio2.html" target="_blank">Código</a>, <a href="codigos/engineData.csv" target="_blank">Curva do motor (csv)</a></p>
+
+				<!-- https://en.wikipedia.org/wiki/Horsepower#SAE_gross_power -->
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 2 (cont.)</h5>
+
+				<img style="height: 600px;" src="codigos/html/dinlonlimitespropulsaoExercicio2_02.png">
+				
+				<!-- https://en.wikipedia.org/wiki/Horsepower#SAE_gross_power -->
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 3</h5>
+
+				<p style="font-size: 25px; text-align: justify;">Inclua as forças resistivas no gráfico de força de tração desenvolvido até aqui. Considere as forças \(D_A\), \(R_X\) e \(R_g\).</p>
+
+
+				<div style="width: 40%; height: 400px; float: left;">
+
+				<p style="font-size: 25px; text-align: justify;">Dados: </p>
+
+					<ul style="font-size: 25px;">
+						<li>\(m\)=1145kg</li>
+						<li>\(C\)=0.35</li>
+						<li>\(A\)=1.91 m<sup>2</sup></li>
+					</ul>
+
+					<img style="width: 100%; height: 200px;" src="ilustracoes/dinlonlimitespropulsaoFatoresModelo.png">
+					
+				</div>
+
+				<div style="width: 60%; height: 400px; float: left;">
+
+					<img style="width: 100%;" src="codigos/html/dinlonlimitespropulsaoExercicio2_02.png">
+
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Complementos: <a href="https://www.automobile-catalog.com/make/ford_brasil/escort_brasil_3gen/escort_brasil_3gen_xr/1993.html" target="_blank">Dados do carro</a>, <a href="codigos/html/dinlonlimitespropulsaoExercicio3.html" target="_blank">Código</a>, <a href="codigos/engineData.csv" target="_blank">Curva do motor (csv)</a></p>
+
+				<!-- https://en.wikipedia.org/wiki/Horsepower#SAE_gross_power -->
+
+			</section>			
+
+			<section>
+				
+				<h5>Exercício 3 (cont.)</h5>
+
+					<img style="height: 600px;" src="codigos/html/dinlonlimitespropulsaoExercicio3_02.png">
+
+			</section>			
+
+			<section>
+				
+				<h5>Limite de aderência</h5>
+
+			</section>
+
+			<section>
+				
+				<h5>Limite de aderência</h5>
+
+					<img style="width: 90%;" src="ilustracoes/dinproplimitesDCL.png">
+
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px;">Se houver potência suficientemente alta, a tração é limitada pelo atrito disponível:</p>
+
+					<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{F}_{\mathrm{x}}=\mu \mathrm{W}\)</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Transferência de carga lateral - 2D</h5>
+
+					<img style="width: 90%;" src="ilustracoes/dinproplimitesTorqueLateral.png">
+					
+			</section>
+
+			<section>
+				
+				<h5>Transferência de carga lateral - 3D</h5>
+
+				<img style="width: 75%;" src="ilustracoes/dinproplimitesTorque3D.png">
+
+				<!-- Veja que, se fixarmos o cardan, quem gira é o motor. A suspensão absorve esta tendência de movimento. -->
+					
+			</section>
+
+			<section>
+
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/fTiW-4Y2ad0?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+
+			<section>
+
+				<h5>Tração traseira e dianteira</h5>
+				
+				<div style="width: 60%; height: 600px; float: left;">
+					
+					<img style="width: 70%;" src="ilustracoes/dinproplimitesTorqueLateral.png">
+					<img style="width: 90%;" src="ilustracoes/dinproplimitesTorque3D.png">
+
+				</div>
+
+				<div style="width: 40%; height: 600px; float: left;">
+
+					<p style="font-size: 20px; text-align: left;">Limite de aderência</p>
+					<p style="font-size: 22px; text-align: left;">(1) &nbsp; &nbsp; \(\mathrm{F}_{\mathrm{x}}=\mu \mathrm{W}\)</p>
+					<p style="font-size: 20px; text-align: left;">Transferência de carga lateral</p>
+					<p style="font-size: 22px; text-align: left;">(2) &nbsp; &nbsp; \(\mathrm{W}_{\mathrm{y}}=\left(\mathrm{T}_{\mathrm{d}}-\mathrm{T}_{\mathrm{s}}\right) / \mathrm{t}\)</p>
+					<p style="font-size: 20px; text-align: left;">Lei de Hooke</p>
+					<p style="font-size: 22px; text-align: left;">(3) &nbsp; &nbsp; \(\mathrm{T}_{\mathrm{sf}}=\mathrm{K}_{\phi \mathrm{f}} \mathrm{T}_{\mathrm{d}} /\left(\mathrm{K}_{\phi \mathrm{f}}+\mathrm{K}_{\phi \mathrm{r}}\right)\)</p>
+					<p style="font-size: 22px; text-align: left;">(4) &nbsp; &nbsp; \(\mathrm{T}_{\mathrm{sr}}=\mathrm{K}_{\phi \mathrm{r}} \mathrm{T}_{\mathrm{d}} /\left(\mathrm{K}_{\phi \mathrm{f}}+\mathrm{K}_{\phi \mathrm{r}}\right)\)</p>
+					<p style="font-size: 20px; text-align: left;">Lei de Hooke</p>
+					<p style="font-size: 22px; text-align: left;">(5) &nbsp; &nbsp; \(\mathrm{T}_{\mathrm{d}}=\mathrm{F}_{\mathrm{x}} \mathrm{r} / \mathrm{N}_{\mathrm{f}}\)</p>
+					<p style="font-size: 20px; text-align: left;">Carga sobre o eixo</p>
+					<p style="font-size: 22px; text-align: left;">(6) &nbsp; &nbsp; \(\mathrm{W}_{\mathrm{f}}=\mathrm{W}\left(\frac{\mathrm{c}}{\mathrm{L}}-\frac{\mathrm{a}_{\mathrm{x}}}{\mathrm{g}} \frac{\mathrm{h}}{\mathrm{L}}\right)\)</p>
+					<p style="font-size: 22px; text-align: left;">(7) &nbsp; &nbsp; \(\mathrm{W}_{\mathrm{r}}=\mathrm{W}\left(\frac{\mathrm{b}}{\mathrm{L}}+\frac{\mathrm{a}_{\mathrm{x}}}{\mathrm{g}} \frac{\mathrm{h}}{\mathrm{L}}\right)\)</p>
+
+				</div>
+
+			</section>
+
+<!-- 			<section>
+
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/yYAw79386WI?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+ -->
+<!-- 			<section>
+
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/gIGvhvOhLHU?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+ -->
+				<!-- Source: https://en.wikipedia.org/wiki/Differential_(mechanical_device) -->
+				<!-- An open (non-locking or otherwise traction-aided) differential always supplies close to equal torque to each side. To illustrate how this can limit torque applied to the driving wheels, imagine a simple rear-wheel drive vehicle, with one rear roadwheel on asphalt with good grip, and the other on a patch of slippery ice. It takes very little torque to spin the side on slippery ice, and because a differential splits torque equally to each side, the torque that is applied to the side that is on asphalt is limited to this amount. -->
+
+			<section>
+				
+				<p style="text-align: left;">Tração traseira</p>
+
+				<div style="width: 50%; height:250px; float: left">
+					
+					<p style="font-size: 35px;">Com diferencial aberto</p>
+
+					<p>\(\mathrm{F}_{\mathrm{xmax}}=\frac{\mu \frac{\mathrm{Wb}}{\mathrm{L}}}{1-\frac{\mathrm{h}}{\mathrm{L}} \mu+\frac{2 \mu \mathrm{r}}{\mathrm{N}_{\mathrm{f}} \mathrm{t}} \frac{\mathrm{K}_{\phi}}{\mathrm{K}_{\phi}}}\)</p>
+
+				</div>
+
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height:250px; float: left">
+				
+					<p style="font-size: 35px;">Com diferencial bloqueado</p>
+
+					<p>\(\mathrm{F}_{\mathrm{xmax}}=\frac{\mu \frac{\mathrm{Wb}}{\mathrm{L}}}{1-\frac{\mathrm{h}}{\mathrm{L}} \mu}\)</p>
+
+				</div>		
+
+				<p style="text-align: left;">Tração dianteira</p>
+
+				<div style="width: 50%; height:250px; float: left">
+					
+					<p style="font-size: 35px;">Com diferencial aberto</p>
+
+					<p>\(\mathrm{F}_{\mathrm{xmax}}=\frac{\mu \frac{\mathrm{Wc}}{\mathrm{L}}}{1+\frac{\mathrm{h}}{\mathrm{L}} \mu+\frac{2 \mu \mathrm{r}}{\mathrm{N}_{\mathrm{f}} \mathrm{t}} \frac{\mathrm{K}_{\phi \mathrm{r}}}{\mathrm{K}_{\phi}}}\)</p>
+					
+
+				</div>
+
+				<div class="fragment fade-in" data-fragment-index="2" style="width: 50%; height:250px; float: left">
+				
+					<p style="font-size: 35px;">Com diferencial bloqueado</p>
+
+					<p>\(\mathrm{F}_{\mathrm{xmax}}=\frac{\mu \frac{\mathrm{W} \mathrm{c}}{\mathrm{L}}}{1+\frac{\mathrm{h}}{\mathrm{L}} \mu}\)</p>
+
+				</div>
+
+			</section>
+			
+			<section>
+				
+				<h5>Exercício 4</h5>
+
+				<p style="font-size: 30px; text-align: justify;">Considere um veículo de tração traseira sobre uma pista de atrito \(\mu\)=0.62. Determine a força de tração máxima disponível para a propulsão do veículo e a aceleração máxima associada com diferencial aberto e bloqueado.</p>
+
+				<table style="font-size: 25px; width: 90%;">
+					<tr>
+						<th>Parâmetro</th><th>Valor</th><th>Unidade </th>
+					</tr>
+					<tr>
+						<td>Massa sobre eixo dianteiro</td><td>952,544</td><td>kg </td>
+					</tr>
+					<tr>
+						<td>Massa sobre eixo traseiro</td><td>839,1459</td><td>kg</td>
+					</tr>
+					<tr>
+						<td>Altura do centro de massa</td><td>0,5334</td><td>m</td>
+					</tr>
+					<tr>
+						<td>Distância entre eixos</td><td>2,7432</td><td>m</td>
+					</tr>
+					<tr>
+						<td>Bitola</td><td>1,4986</td><td>m</td>
+					</tr>
+					<tr>
+						<td>Relação de transmissão do diferencial</td><td>2,9</td><td>Nm/grau</td>
+					</tr>
+					<tr>
+						<td>Rigidez à rolagem da suspensão dianteira</td><td>1559.190641</td><td>Nm/grau</td>
+					</tr>
+					<tr>
+						<td>Rigidez à rolagem da suspensão traseira</td><td>379.629026</td><td>Nm/grau</td>
+					</tr>
+				</table>
+
+				<p style="font-size: 20px; text-align: left;">Complementos: <a href="codigos/html/dinlonlimitespropulsaoExercicio4.html" target="_blank">Código</a></p>
+
+			</section>
+
+		</div>
+	</div>
+
+	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
+		<a href="https://portal.fei.edu.br/" target="_blank"><img src="../../ilustracoes/logoFEI.png" alt="Logo FEI"
+				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
+	</div>
+
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+				{ src: '../../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+
+				// Interpret Markdown in <section> elements
+				{ src: '../../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+
+				// Syntax highlight for <code> elements
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+
+				// Zoom in and out with Alt+click
+				{ src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+
+				// Speaker notes
+				{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
+
+				// MathJax
+				{ src: '../../reveal.js/plugin/math/math.js', async: true }
+			],
+
+			// math: {
+			// 	mathjax: 'MathJax/MathJax.js',
+			// 	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			// },
+			math: {
+				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			},
+
+			// Display presentation control arrows
+			controls: true,
+
+			// Help the user learn the controls by providing hints, for example by
+			// bouncing the down arrow when they first encounter a vertical slide
+			controlsTutorial: true,
+
+			// Determines where controls appear, "edges" or "bottom-right"
+			controlsLayout: 'bottom-right',
+
+			// Visibility rule for backwards navigation arrows; "faded", "hidden"
+			// or "visible"
+			controlsBackArrows: 'faded',
+
+			// Display a presentation progress bar 
+			// [removido, pois gera cliques indesejados na navegação pelo celular. Ao tentar navegar para baixo na seta inferior de controle a barra de progresso é acionada e o slide correspondente é aberto. ]
+			progress: false,
+
+			// Display the page number of the current slide
+			slideNumber: true,
+
+			// Push each slide change to the browser history
+			history: true,
+
+			// Enable keyboard shortcuts for navigation
+			keyboard: true,
+
+			// Enable the slide overview mode
+			overview: false,
+
+			// Vertical centering of slides
+			center: true,
+
+			// Enables touch navigation on devices with touch input
+			touch: true,
+
+			// Loop the presentation
+			loop: false,
+
+			// Change the presentation direction to be RTL
+			rtl: false,
+
+			// Randomizes the order of slides each time the presentation loads
+			shuffle: false,
+
+			// Turns fragments on and off globally
+			fragments: true,
+
+			// Flags whether to include the current fragment in the URL,
+			// so that reloading brings you to the same fragment position
+			fragmentInURL: false,
+
+			// Flags if the presentation is running in an embedded mode,
+			// i.e. contained within a limited portion of the screen
+			embedded: false,
+
+			// Flags if we should show a help overlay when the questionmark
+			// key is pressed
+			help: true,
+
+			// Flags if speaker notes should be visible to all viewers
+			showNotes: false,
+
+			// Global override for autoplaying embedded media (video/audio/iframe)
+			// - null: Media will only autoplay if data-autoplay is present
+			// - true: All media will autoplay, regardless of individual setting
+			// - false: No media will autoplay, regardless of individual setting
+			autoPlayMedia: true,
+
+			// Number of milliseconds between automatically proceeding to the
+			// next slide, disabled when set to 0, this value can be overwritten
+			// by using a data-autoslide attribute on your slides
+			autoSlide: 0,
+
+			// Stop auto-sliding after user input
+			autoSlideStoppable: true,
+
+			// Use this method for navigation when auto-sliding
+			autoSlideMethod: Reveal.navigateNext,
+
+			// Specify the average time in seconds that you think you will spend
+			// presenting each slide. This is used to show a pacing timer in the
+			// speaker view
+			defaultTiming: 120,
+
+			// Enable slide navigation via mouse wheel
+			mouseWheel: false,
+
+			// Hides the address bar on mobile devices
+			hideAddressBar: true,
+
+			// Opens links in an iframe preview overlay
+			// Add `data-preview-link` and `data-preview-link="false"` to customise each link
+			// individually
+			previewLinks: false,
+
+			// Transition style
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Transition speed
+			transitionSpeed: 'default', // default/fast/slow
+
+			// Transition style for full page slide backgrounds
+			backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Number of slides away from the current that are visible
+			viewDistance: 3,
+
+			// Parallax background image
+			// parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+			// Parallax background size
+			// parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+			// Number of pixels to move the parallax background per slide
+			// - Calculated automatically unless specified
+			// - Set to 0 to disable movement along an axis
+			// parallaxBackgroundHorizontal: null,
+			// parallaxBackgroundVertical: null,
+
+			// The display mode that will be used to show slides
+			display: 'block',
+
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			width: 960,
+			height: 700,
+
+			// // Factor of the display size that should remain empty around the content
+			margin: 0,
+
+			// // Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 2,
+
+			pdfMaxPagesPerSlide: 1,
+			pdfSeparateFragments: false,
+		});
+
+	</script>
+
+	<script>
+
+	function enterFullscreen() {
+
+		var element = document.documentElement;
+
+		// Check which implementation is available
+		var requestMethod = element.requestFullscreen ||
+							element.webkitRequestFullscreen ||
+							element.webkitRequestFullScreen ||
+							element.mozRequestFullScreen ||
+							element.msRequestFullscreen;
+
+		if( requestMethod ) {
+			requestMethod.apply( element );
+		}
+
+	}
+
+	</script>
+
+</body>
+
+</html>

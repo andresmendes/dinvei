@@ -1,0 +1,293 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Din&acirc;mica longitudinal - Limites de propuls&atilde;o - Exerc&iacute;cio 3</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-07-23"><meta name="DC.source" content="dinlonlimitespropulsaoExercicio3.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Din&acirc;mica longitudinal - Limites de propuls&atilde;o - Exerc&iacute;cio 3</h1><!--introduction--><p>Curvas de tra&ccedil;&atilde;o para cada marcha com for&ccedil;as resistivas.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Par&acirc;metros</a></li><li><a href="#2">Curvas do motor</a></li><li><a href="#3">Curvas de tra&ccedil;&atilde;o</a></li><li><a href="#4">For&ccedil;as resistivas</a></li><li><a href="#5">Resultado</a></li></ul></div><h2 id="1">Par&acirc;metros</h2><pre class="codeinput">clear ; close <span class="string">all</span> ; clc
+
+<span class="comment">% Motor</span>
+data = load(<span class="string">'engineData.csv'</span>);
+
+RPM = data(:,1);                    <span class="comment">% Rota&ccedil;&atilde;o do motor [rpm]</span>
+Te  = data(:,2);                    <span class="comment">% Engine Torque [Nm]</span>
+Pe  = data(:,3);                    <span class="comment">% Engine Power [kW]</span>
+
+<span class="comment">% Net Power</span>
+<span class="comment">% i.e., j&aacute; descontando acess&oacute;rios, sem descontar efici&ecirc;ncia da transmiss&atilde;o.</span>
+PmaxkW = max(Pe) ;                  <span class="comment">% Max power net [kW]</span>
+PmaxW = PmaxkW*1000;                <span class="comment">% Max power net [W]</span>
+
+<span class="comment">% Transmiss&atilde;o</span>
+Nt = [3.78 2.12 1.46 1.03 0.84];    <span class="comment">% Rela&ccedil;&atilde;o de transmiss&atilde;o cada marcha</span>
+Nf = 3.944;                         <span class="comment">% Final drive ratio</span>
+<span class="comment">% A curva de pot&ecirc;ncia j&aacute; &eacute; na roda.</span>
+eta = 0.96;           <span class="comment">% Efici&ecirc;ncia da transmiss&atilde;o (estimado)</span>
+
+<span class="comment">% Pneu 185/60R14</span>
+aro = 14;       <span class="comment">% [pol]</span>
+largura = 185;  <span class="comment">% [mm]</span>
+perfil = 60;    <span class="comment">% [%]</span>
+diametro = 25.4*aro/1000 + 2*(perfil/100*largura/1000);
+raio = diametro/2;
+</pre><h2 id="2">Curvas do motor</h2><pre class="codeinput">figure
+hold <span class="string">on</span> ; grid <span class="string">on</span> ; box <span class="string">on</span>
+set(gca,<span class="string">'fontsize'</span>,15,<span class="string">'ylim'</span>,[0 1.1*max(Te)],<span class="string">'xlim'</span>,[RPM(1,1) RPM(end,end)])
+yyaxis <span class="string">left</span>
+plot(RPM,Te,<span class="string">'linewidth'</span>,3)
+ylabel(<span class="string">'Torque [Nm]'</span>)
+yyaxis <span class="string">right</span>
+plot(RPM,Pe,<span class="string">'linewidth'</span>,3)
+ylabel(<span class="string">'Pot&ecirc;ncia [kW]'</span>)
+xlabel(<span class="string">'Rota&ccedil;&atilde;o [RPM]'</span>)
+</pre><img vspace="5" hspace="5" src="dinlonlimitespropulsaoExercicio3_01.png" alt=""> <h2 id="3">Curvas de tra&ccedil;&atilde;o</h2><pre class="codeinput">omegaE = RPM*2*pi/60;       <span class="comment">% Velocidade angular do motor [rad/s]</span>
+
+<span class="comment">% Gera&ccedil;&atilde;o de uma curva para cada marcha</span>
+<span class="keyword">for</span> i=1:length(Nt)
+    <span class="comment">% Combined ratio of transmission and final drive</span>
+    Ntf = Nt(i)*Nf;
+    omegaW = omegaE/Ntf;
+
+    vMS(:,i) = omegaW*raio;
+    Fx(:,i) = Te*Ntf*eta/raio;
+<span class="keyword">end</span>
+
+<span class="comment">% Velocidade para as for&ccedil;as de propuls&atilde;o</span>
+vKPH = vMS*3.6;         <span class="comment">% Faixa de velocidade [km/h]</span>
+
+<span class="comment">% Velocidade para a for&ccedil;a de pot&ecirc;ncia m&aacute;xima</span>
+vTr = 32:1:400;         <span class="comment">% Velocidade para a curva de pot&ecirc;ncia m&aacute;xima [km/h]</span>
+vTrMS = vTr/3.6;        <span class="comment">% Velocidade para a curva de pot&ecirc;ncia m&aacute;xima [m/s]</span>
+Tr = PmaxW./vTrMS;      <span class="comment">% Tra&ccedil;&atilde;o com pot&ecirc;ncia m&aacute;xima [N]</span>
+</pre><h2 id="4">For&ccedil;as resistivas</h2><pre class="codeinput"><span class="comment">% Velocidade para a for&ccedil;a de pot&ecirc;ncia m&aacute;xima</span>
+vResist = 10:1:400;         <span class="comment">% Velocidade para a curva de pot&ecirc;ncia m&aacute;xima [km/h]</span>
+vResistMS = vResist/3.6;        <span class="comment">% Velocidade para a curva de pot&ecirc;ncia m&aacute;xima [m/s]</span>
+
+<span class="comment">% Par&acirc;metros</span>
+m = 1145;              <span class="comment">% Massa [kg]</span>
+g = 9.81;           <span class="comment">% Acelera&ccedil;&atilde;o da gravidade [m/s2]</span>
+C = 0.35;           <span class="comment">% Drag coefficient [-]</span>
+A = 1.91;           <span class="comment">% Area frontal [m2]</span>
+rho = 1;            <span class="comment">% Densidade do ar [kg/m2]</span>
+inc = [0 5 9];      <span class="comment">% Inclina&ccedil;&atilde;o da pista [%]</span>
+theta = atan(inc/100); <span class="comment">% Inclina&ccedil;&atilde;o da pista [rad]</span>
+<span class="comment">% For&ccedil;as</span>
+W = m*g;        <span class="comment">% Massa do carro [kg]</span>
+Ch = 1;
+vMPH = vResist/1.609;          <span class="comment">% Velocidade [mph]</span>
+
+<span class="comment">% Modelo 1 - coeficientes para 28 psi</span>
+f0 = 0.012;
+fs = 0.007;
+fr = f0 + 3.24*fs*(vMPH/100).^2.5;
+<span class="comment">% Modelo 2</span>
+<span class="comment">% fr = (0.0041 + 0.000041*vMPH)*Ch;</span>
+
+Rx = fr*W;      <span class="comment">% [N]</span>
+
+Da = 0.5*rho*C*A*vResistMS.^2;
+G1 = m*g*sin(theta(1));
+G2 = m*g*sin(theta(2));
+G3 = m*g*sin(theta(3));
+
+R1 = Rx + Da + G1;
+R2 = Rx + Da + G2;
+R3 = Rx + Da + G3;
+</pre><h2 id="5">Resultado</h2><pre class="codeinput">figure
+hold <span class="string">on</span> ; grid <span class="string">on</span> ; box <span class="string">on</span>
+set(gca,<span class="string">'fontsize'</span>,15,<span class="string">'ylim'</span>,[0 max(Tr)],<span class="string">'xlim'</span>,[vKPH(1,1) vKPH(end,end)])
+plot(vKPH,Fx,<span class="string">'linewidth'</span>,3)
+plot(vResist,R1,<span class="string">'linewidth'</span>,3)
+plot(vResist,R2,<span class="string">'linewidth'</span>,3)
+plot(vResist,R3,<span class="string">'linewidth'</span>,3)
+plot(vTr,Tr,<span class="string">'k--'</span>)
+xlabel(<span class="string">'Velocidade [km/h]'</span>)
+ylabel(<span class="string">'For&ccedil;a trativa [N]'</span>)
+legend(<span class="string">'1a'</span>,<span class="string">'2a'</span>,<span class="string">'3a'</span>,<span class="string">'4a'</span>,<span class="string">'5a'</span>,<span class="string">'th=0'</span>,<span class="string">'th=5%'</span>,<span class="string">'th=9%'</span>,<span class="string">'Pot. Const.'</span>,<span class="string">'Location'</span>,<span class="string">'NorthEast'</span>)
+</pre><img vspace="5" hspace="5" src="dinlonlimitespropulsaoExercicio3_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Dinâmica longitudinal - Limites de propulsão - Exercício 3
+% Curvas de tração para cada marcha com forças resistivas.
+%
+%% Parâmetros
+
+clear ; close all ; clc
+
+% Motor
+data = load('engineData.csv');
+
+RPM = data(:,1);                    % Rotação do motor [rpm]
+Te  = data(:,2);                    % Engine Torque [Nm]
+Pe  = data(:,3);                    % Engine Power [kW]
+
+% Net Power
+% i.e., já descontando acessórios, sem descontar eficiência da transmissão.
+PmaxkW = max(Pe) ;                  % Max power net [kW]
+PmaxW = PmaxkW*1000;                % Max power net [W]
+
+% Transmissão
+Nt = [3.78 2.12 1.46 1.03 0.84];    % Relação de transmissão cada marcha
+Nf = 3.944;                         % Final drive ratio
+% A curva de potência já é na roda.
+eta = 0.96;           % Eficiência da transmissão (estimado)
+
+% Pneu 185/60R14
+aro = 14;       % [pol]
+largura = 185;  % [mm]
+perfil = 60;    % [%]
+diametro = 25.4*aro/1000 + 2*(perfil/100*largura/1000);
+raio = diametro/2;
+
+%% Curvas do motor
+
+figure
+hold on ; grid on ; box on
+set(gca,'fontsize',15,'ylim',[0 1.1*max(Te)],'xlim',[RPM(1,1) RPM(end,end)])
+yyaxis left
+plot(RPM,Te,'linewidth',3)
+ylabel('Torque [Nm]')
+yyaxis right
+plot(RPM,Pe,'linewidth',3)
+ylabel('Potência [kW]')
+xlabel('Rotação [RPM]')
+
+%% Curvas de tração
+
+omegaE = RPM*2*pi/60;       % Velocidade angular do motor [rad/s]
+
+% Geração de uma curva para cada marcha
+for i=1:length(Nt)
+    % Combined ratio of transmission and final drive
+    Ntf = Nt(i)*Nf;
+    omegaW = omegaE/Ntf;
+    
+    vMS(:,i) = omegaW*raio;
+    Fx(:,i) = Te*Ntf*eta/raio;
+end
+
+% Velocidade para as forças de propulsão
+vKPH = vMS*3.6;         % Faixa de velocidade [km/h]
+
+% Velocidade para a força de potência máxima
+vTr = 32:1:400;         % Velocidade para a curva de potência máxima [km/h]
+vTrMS = vTr/3.6;        % Velocidade para a curva de potência máxima [m/s]
+Tr = PmaxW./vTrMS;      % Tração com potência máxima [N]
+
+%% Forças resistivas
+
+% Velocidade para a força de potência máxima
+vResist = 10:1:400;         % Velocidade para a curva de potência máxima [km/h]
+vResistMS = vResist/3.6;        % Velocidade para a curva de potência máxima [m/s]
+
+% Parâmetros
+m = 1145;              % Massa [kg]
+g = 9.81;           % Aceleração da gravidade [m/s2]
+C = 0.35;           % Drag coefficient [-]
+A = 1.91;           % Area frontal [m2]
+rho = 1;            % Densidade do ar [kg/m2]
+inc = [0 5 9];      % Inclinação da pista [%]
+theta = atan(inc/100); % Inclinação da pista [rad]
+% Forças 
+W = m*g;        % Massa do carro [kg]
+Ch = 1;
+vMPH = vResist/1.609;          % Velocidade [mph]
+
+% Modelo 1 - coeficientes para 28 psi
+f0 = 0.012;
+fs = 0.007;
+fr = f0 + 3.24*fs*(vMPH/100).^2.5;
+% Modelo 2
+% fr = (0.0041 + 0.000041*vMPH)*Ch;
+
+Rx = fr*W;      % [N]
+
+Da = 0.5*rho*C*A*vResistMS.^2;
+G1 = m*g*sin(theta(1));
+G2 = m*g*sin(theta(2));
+G3 = m*g*sin(theta(3));
+
+R1 = Rx + Da + G1;
+R2 = Rx + Da + G2;
+R3 = Rx + Da + G3;
+
+%% Resultado
+
+figure
+hold on ; grid on ; box on
+set(gca,'fontsize',15,'ylim',[0 max(Tr)],'xlim',[vKPH(1,1) vKPH(end,end)])
+plot(vKPH,Fx,'linewidth',3)
+plot(vResist,R1,'linewidth',3)
+plot(vResist,R2,'linewidth',3)
+plot(vResist,R3,'linewidth',3)
+plot(vTr,Tr,'kREPLACE_WITH_DASH_DASH')
+xlabel('Velocidade [km/h]')
+ylabel('Força trativa [N]')
+legend('1a','2a','3a','4a','5a','th=0','th=5%','th=9%','Pot. Const.','Location','NorthEast')
+
+
+
+
+##### SOURCE END #####
+--></body></html>

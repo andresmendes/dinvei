@@ -12,13 +12,13 @@
 
 	<title>NMA380 - Dinâmica Veicular</title>
 
-	<link rel="stylesheet" href="mycss/revealasm.css">
-	<link rel="stylesheet" href="mycss/theme/whiteasm.css" id="theme">
+	<link rel="stylesheet" href="../../mycss/revealasm.css">
+	<link rel="stylesheet" href="../../mycss/theme/whiteasm.css" id="theme">
 	<!-- My class files -->
-	<link rel="stylesheet" href="mycss/asm.css">
+	<link rel="stylesheet" href="../../mycss/asm.css">
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -45,43 +45,30 @@
 
 				<h2>Dinâmica longitudinal</h2>
 
-				<h3>Frenagem</h3>
-
-				<h5>Limites de frenagem</h5>
+				<h3>Limites de frenagem</h3>
 
 			</section>
 
 			<section>
 
-				<h5>Requisitos de segurança</h5>
-
-				<ul>
-					<li>Carga do veículo</li>
-					<li>Estado de conservação do freio</li>
-					<li>Velocidade do carro</li>
-					<li>Condição de pista: seco (\(\mu\) alto) e molhado (\(\mu\) baixo)</li>
-					<li>Meta:</li>
-					<ul>
-						<li>Desacelerações médias</li>
-						<li>Distância de frenagem</li>
-					</ul>
-				</ul>
-
-			</section>
-
-			<section>
-
-				<h5>Transferência de carga</h5>
+				<h5>Wheel Slip</h5>
 				
-				<img style="width: 90%;" src="ilustracoes/dinlonfrenagemlimitesDCL.png">
+				<div style="width: 50%;height: 500px; float: left;">
+					
+				<img style="width: 100%;" src="ilustracoes/dinlonlimitesfrenagemPneuSlip.png">
 
-				<p style="font-size: 30px;">\(\mathrm{W}_{\mathrm{f}}=\frac{\mathrm{c}}{\mathrm{L}} \mathrm{W}+\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=\mathrm{W}_{\mathrm{fs}}+\mathrm{W}_{\mathrm{d}}\)</p>
+				</div>				
+				<div style="width: 50%;height: 500px; float: left;">
+					
+				<img style="width: 100%;" src="ilustracoes/dinlonlimitesfrenagemWheelSlip.png">
 
-				<p style="font-size: 30px;">\(\mathrm{W}_{\mathrm{r}}=\frac{\mathrm{b}}{\mathrm{L}} \mathrm{W}-\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=\mathrm{W}_{\mathrm{rs}}-\mathrm{W}_{\mathrm{d}}\)</p>
+				</div>
+
+				<p>\(\mathrm{Slip}=\frac{\mathrm{V}-\omega \mathrm{r}}{\mathrm{V}}\)</p>
 
 			</section>
 
-			<section>
+<!-- 			<section>
 				
 				<h5>Força máxima de frenagem</h5>
 
@@ -96,10 +83,10 @@
 				<p style="font-size: 25px;">\(\mathrm{F}_{\mathrm{xmr}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{r}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{rs}}-\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}\right)\)</p>
 
 			</section>
-
+ -->
 			<section>
 				
-				<h5>Força máxima de frenagem em função da desaceleração</h5>
+				<h5>Força máxima de frenagem</h5>
 
 				<p style="font-size: 35px;">\(\mathrm{F}_{\mathrm{xmf}}=\mu_{\mathrm{p}} \mathrm{W}_{\mathrm{f}}=\mu_{\mathrm{p}}\left(\mathrm{W}_{\mathrm{fs}}+\frac{\mathrm{h}}{\mathrm{L}} \frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{X}}\right)\)</p>
 
@@ -119,7 +106,7 @@
 
 			</section>
 
-			<section>
+<!-- 			<section>
 				
 				<h5>Relação de frenagem</h5>
 
@@ -148,7 +135,7 @@
 				</div>
 
 			</section>
-
+ -->
 			<section>
 
 				<h5>Relação de frenagem</h5>
@@ -214,12 +201,12 @@
 	</div>
 
 	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
-		<a href="https://portal.fei.edu.br/" target="_blank"><img src="ilustracoes/logoFEI.png" alt="Logo FEI"
+		<a href="https://portal.fei.edu.br/" target="_blank"><img src="../../ilustracoes/logoFEI.png" alt="Logo FEI"
 				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
 	</div>
 
-	<script src="reveal.js/lib/js/head.min.js"></script>
-	<script src="reveal.js/js/reveal.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
 
 	<script>
 		// More info about config & dependencies:
@@ -228,23 +215,23 @@
 		Reveal.initialize({
 			dependencies: [
 				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-				{ src: 'reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: '../../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
 
 				// Interpret Markdown in <section> elements
-				{ src: 'reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 
 				// Syntax highlight for <code> elements
-				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 
 				// Zoom in and out with Alt+click
-				{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
 
 				// Speaker notes
-				{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+				{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
 
 				// MathJax
-				{ src: 'reveal.js/plugin/math/math.js', async: true }
+				{ src: '../../reveal.js/plugin/math/math.js', async: true }
 			],
 
 			// math: {

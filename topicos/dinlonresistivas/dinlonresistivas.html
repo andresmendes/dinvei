@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=.2, user-scalable=yes">
+	<meta name="description" content="Apresentações do curso de Dinâmica Veicular">
+	<meta name="author" content="André de S. Mendes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<title>NMA380 - Dinâmica Veicular</title>
+
+	<link rel="stylesheet" href="../../mycss/revealasm.css">
+	<link rel="stylesheet" href="../../mycss/theme/whiteasm.css" id="theme">
+	<!-- My class files -->
+	<link rel="stylesheet" href="../../mycss/asm.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Para pinch zoom no celular, é preciso insterir este "data-prevent-swipe" para evitar conflito. -->
+	<div class="reveal">
+	<!-- <div class="reveal" onclick="closeNav()" data-prevent-swipe> -->
+
+		<div class="slides">
+
+			<section>
+
+				<p>NMA380 - Dinâmica Veicular</p>
+
+				<h2>Dinâmica longitudinal</h2>
+				<h3>Forças resistivas</h3>
+
+			</section>
+
+			<section>
+
+				<h5>TMB na direção X</h5>
+
+				<img style="width: 90%;" src="ilustracoes/dinlonresistivasDCL.png">
+
+				<p style="font-size: 30px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{W}}{\mathrm{g}} \mathrm{a}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
+
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 100px; float: left;">
+				
+					<p>\(\mathrm{D}_{\mathrm{A}}= ?\)</p>
+				
+				</div>
+				
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 100px; float: left;">
+				
+					<p>\(\mathrm{R}_{\mathrm{X}}= ?\)</p>
+				
+				</div>
+
+			</section>
+
+			<section>
+				
+				<h5>Objetivos:</h5>
+
+				<p style="text-align: justify;">Forças resistivas:</p>
+
+				<ul>
+					<li>Resistência aerodinâmica \(\mathrm{D}_{\mathrm{A}}\)</li>
+					<li>Resistência ao rolamento \(\mathrm{R}_{\mathrm{X}}\)</li>
+				</ul>
+
+			</section>
+
+			<section>
+
+				<h5>Resistência aerodinâmica</h5>
+
+			</section>
+
+			<section>
+				
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/E9ZSAX56m0E?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+
+			<section>
+
+				<h5>Resistência aerodinâmica</h5>
+
+				<img style="width: 90%;" src="ilustracoes/dinlonresistivasDCL.png">
+				
+				<p>\(\mathrm{D}_{\mathrm{A}}=1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}\)</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Coeficiente de arrasto aerodinâmico</h5>
+				
+				<p>\(\mathrm{D}_{\mathrm{A}}=1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}\)</p>
+
+				<img style="width: 100%;" src="ilustracoes/dinlonresistivasExemplosCd.png">
+
+			</section>
+
+			<section>
+
+				<h5>Carros convencionais</h5>
+
+				<img style="width: 90%;" src="ilustracoes/dinlonresistivasConventional.png">
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.elsevier.com/books/aerodynamics-of-road-vehicles/hucho/978-0-7506-1267-8" target="_blank">Wolf-Heinrich Hucho - Aerodynamics of Road Vehicles</a></p>
+
+			</section>
+
+			<section>
+
+				<h5>Carros de corrida</h5>
+
+				<img style="height: 550px;" src="ilustracoes/dinlonresistivasRace.png">
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.elsevier.com/books/aerodynamics-of-road-vehicles/hucho/978-0-7506-1267-8" target="_blank">Wolf-Heinrich Hucho - Aerodynamics of Road Vehicles</a></p>
+
+				
+			</section>
+
+			<section>
+
+				<h5>Caminhões</h5>
+
+				<img style="height: 550px;" src="ilustracoes/dinlonresistivasTruckFairing.png">
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.elsevier.com/books/aerodynamics-of-road-vehicles/hucho/978-0-7506-1267-8" target="_blank">Wolf-Heinrich Hucho - Aerodynamics of Road Vehicles</a> (<a href="https://i0.wp.com/atri-online.org/wp-content/uploads/2014/09/truck-diagram.jpg" target="_blank">Mais detalhes</a>)</p>
+
+			</section>
+
+			<section>
+
+				<h5>Comboio</h5>
+
+				<img style="height: 550px;" src="ilustracoes/dinlonresistivasPlatoon.png">
+				
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.elsevier.com/books/aerodynamics-of-road-vehicles/hucho/978-0-7506-1267-8" target="_blank">Wolf-Heinrich Hucho - Aerodynamics of Road Vehicles</a></p>
+
+				
+			</section>
+
+			<section>
+				
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/ncsRS-eIdAo?start=44;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+
+			<section>
+				
+				<h5>Efeito do vento</h5>
+
+				<div style="width: 50%; height: 450px; float: left;">
+
+					<p>Velocidade relativa</p>
+
+					<p>\(\mathrm{V}=\mathrm{v}_{\mathrm{X}}+\mathrm{V}_{\mathrm{w}}\)</p>
+
+					<p>Força resistiva</p>
+
+					<p>\(\mathrm{D}_{\mathrm{A}}=1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}\)</p>
+
+				</div>
+
+				<div style="width: 50%; height: 450px; float: left;">
+
+					<p>Ângulo de incidência</p>
+
+					<img style="width: 100%; height: 350px;" src="ilustracoes/dinlonresistivasAnguloIncidencia.png">
+	
+				</div>
+
+				<p class="fragment fade-in" data-fragment-index="1" style="font-size: 35px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\mathrm{M} \dot{\mathrm{v}}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
+				
+				<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\mathrm{M} \dot{\mathrm{v}}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 1</h5>
+
+				<p style="font-size: 25px; text-align: justify;">Considere o carro Porsche 917 de 1970 (<a href="https://en.wikipedia.org/wiki/Porsche_917#/media/File:2006FOS_1970Porsche917KGulf.jpg" target="_blank">Foto</a>/<a href="https://www.automobile-catalog.com/make/porsche/917/917_coupe/1970.html" target="_blank">Dados adicionais</a>). Esboçe os seguintes gráficos:</p>
+
+				<ul style="font-size: 25px;">
+					<li>Força de arrasto aerodinâmico em função da velocidade</li>
+					<li>Potência exercida pela força de arrasto aerodinâmico em função da velocidade</li>
+				</ul>
+				
+				<p style="font-size: 20px; text-align: justify;">OBS: Considere a faixa de 100-400 km/h.</p>
+					
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio1_01.png">
+
+				</div>
+
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio1_02.png">
+
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Ver resolução: <a href="codigos/html/dinlonresistivasExercicio1.html" target="_blank">Código</a></p>
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 2</h5>
+
+				<p style="font-size: 25px; text-align: justify;">Considere um caminhão com os seguintes dados: \(C_d\)=0.65, \(A\)=10 m<sup>2</sup>. Esboçe os seguintes gráficos: </p>
+
+				<ul style="font-size: 25px;">
+					<li>Força de arrasto aerodinâmico em função da velocidade</li>
+					<li>Potência exercida pela força de arrasto aerodinâmico em função da velocidade</li>
+				</ul>
+				
+				<p style="font-size: 20px; text-align: justify;">OBS: Considere a faixa de 85-110 km/h.</p>
+					
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio2_01.png">
+
+				</div>
+
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio2_02.png">
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Ver resolução: <a href="codigos/html/dinlonresistivasExercicio2.html" target="_blank">Código</a></p>
+
+			</section>
+
+			<section>
+
+				<h5>Resistência ao rolamento</h5>
+
+			</section>
+
+			<section>
+				
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/Z0AJqOVN9IE?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+
+			<section>
+
+				<h5>TMB na direção X</h5>
+
+				<img style="width: 90%;" src="ilustracoes/dinlonresistivasDCL.png">
+
+				<p style="font-size: 30px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\mathrm{M} \dot{\mathrm{v}}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
+
+			</section>
+
+			<section>
+				
+				<h5>Resistência ao rolamento</h5>
+
+				<img style="height: 240px;" src="ilustracoes/dinlonresistivasPneuDeformado.png">
+
+				<div style="width: 50%; height: 250px; float: left;">
+				<p style="text-align: left; font-size: 30px;">Mecanismos de perda de energia:</p>
+					<ul style="font-size: 30px;">
+						<li>Deflexão circunferencial do pneu ao girar</li>
+						<li>Escorregamento do pneu</li>
+					</ul>
+				</div>
+
+				<div style="width: 50%; height: 250px; float: left;">
+				<p style="font-size: 30px;">Principais fatores:</p>
+					<ul style="font-size: 30px;">
+						<li>Temperatura</li>
+						<li>Pressão</li>
+						<li>Velocidade</li>
+					</ul>
+				</div>
+
+				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{R}_{\mathrm{x}}=\mathrm{R}_{\mathrm{xf}}+\mathrm{R}_{\mathrm{xr}}=\mathrm{f}_{\mathrm{r}} \mathrm{W}\)</p>
+
+			</section>
+
+			<section>	
+
+				<h5>Temperatura, pressão e velocidade</h5>
+
+				<div style="width: 50%; height: 300px; float: left;">
+					
+					<img style="height: 100%;" src="ilustracoes/dinlonresistivasEfeitoTemp.png">
+
+				</div>
+
+				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 300px; float: left;">
+					
+					<img style="height: 100%;" src="ilustracoes/dinlonresistivasEfeitoPressao.png">
+				
+				</div>
+				
+				<div class="fragment fade-in" data-fragment-index="2" style="width: 50%; height: 300px; float: left;">
+				
+					<img style="height: 100%;" src="ilustracoes/dinlonresistivasEfeitoVel.png">
+				
+				</div>
+				
+				<div class="fragment fade-in" data-fragment-index="2" style="width: 50%; height: 300px; float: left;">
+				
+					<img style="height: 100%;" src="ilustracoes/dinlonresistivasPneuEstrutura.png">
+				
+				</div>
+
+			</section>
+
+			<section>	
+
+				<h5>Modelo de coeficiente (Fancher)</h5>
+
+				<p style="text-align: left; font-size: 30px;">Para veículos pesados:</p>
+
+				<p style="font-size: 30px; text-align: justify;">Pneu radial</p>
+				<p style="font-size: 30px;">\(\mathrm{f}_{\mathrm{r}}=(0.0041+0.000041 \mathrm{V}) \mathrm{C}_{\mathrm{h}}\)</p>
+
+				<p style="font-size: 30px; text-align: justify;">Pneu diagonal</p>
+				<p style="font-size: 30px;">\(\mathrm{f}_{\mathrm{r}}=(0.0066+0.000046 \mathrm{V}) \mathrm{C}_{\mathrm{h}}\)</p>
+			
+				<p style="font-size: 30px; text-align: justify;">Onde:</p>
+				<p style="font-size: 30px; text-align: justify;">\(V\): Velocidade [mph] (1 mph = 1.609 km/h)</p>
+				<p style="font-size: 30px; text-align: justify;">\(C\): Parâmetro associado à rugosidade da pista. (1.0 - 1.5)</p>
+
+			</section>
+
+			<section>	
+
+				<h5>Modelo de coeficiente (Cole)</h5>
+				
+				<p style="text-align: left; font-size: 30px;">Para carros convencionais:</p>
+
+				<p style="font-size: 30px;">\(\mathrm{f}_{\mathrm{r}}=\mathrm{f}_{\mathrm{O}}+3.24 \mathrm{f}_{\mathrm{S}}(\mathrm{V} / 100)^{2.5}\)</p>
+
+				<p style="font-size: 30px; text-align: justify;">Onde:</p>
+				<p style="font-size: 30px; text-align: justify;">\(V\): Velocidade [mph] (1 mph = 1.609 km/h)</p>
+				<p style="font-size: 30px; text-align: justify;">\(\mathrm{f}_{\mathrm{r}}\) e \(\mathrm{f}_{\mathrm{r}}\): Coeficientes do modelo. Verificar valor no gráfico abaixo.</p>
+
+				<img style="height: 300px;" src="ilustracoes/dinlonresistivasFatoresModelo.png">
+
+			</section>
+
+			<section>
+
+				<h5>Medição do coeficiente de resistência ao rolamento</h5>
+				
+				<img style="width: 90%;" src="ilustracoes/dinlonresistivasTireRollingMeasurement.png">
+
+				<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://tyre-asia.com/2018/02/17/tyre-rolling-resistance-measurement-systems/" target="_blank">Tyre Asia</a></p>
+
+			</section>
+
+			<section>
+				
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/OCdi5u5m8jM?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+			</section>
+
+
+			<section>	
+
+				<h5>Exercício 3</h5>
+
+				<p style="font-size: 25px; text-align: justify;">Considere novamente o caminhão de \(m\)=32874 kg equipado com um pneu radial trafegando sobre um asfalto de alta qualidade (\(C_h\)=1.0). Esboçe os seguintes gráficos:</p>
+
+				<ul style="font-size: 25px;">
+					<li>Força de resistência ao rolamento em função da velocidade</li>
+					<li>Potência exercida pela força de resistência ao rolamento em função da velocidade</li>
+				</ul>
+				
+				<p style="font-size: 20px; text-align: justify;">OBS: Considere a faixa de 85-110 km/h.</p>
+					
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio3_01.png">
+
+				</div>
+
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio3_02.png">
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Ver resolução: <a href="codigos/html/dinlonresistivasExercicio3.html" target="_blank">Código</a></p>
+
+			</section>
+
+			<section>	
+
+				<h5>Forças resistivas</h5>
+
+				<p>\(\mathrm{R}_{\mathrm{RL}}=\mathrm{f}_{\mathrm{r}} \mathrm{W}+1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}+\mathrm{W} \sin \theta\)</p>
+
+				<img style="height: 500px;" src="ilustracoes/dinlonresistivasRoadLoads.png">
+
+			</section>
+
+			<section>
+				
+				<h5>Exercício 4</h5>
+
+				<p style="font-size: 25px; text-align: justify;">Considere o mesmo caminhão do exercício anterior subindo uma ladeira de inclinação 2% com velocidade constante. Esboçe as curvas das três forças resistivas abaixo em função da velocidade. </p>
+
+				<p>\(\mathrm{R}_{\mathrm{RL}}=\mathrm{f}_{\mathrm{r}} \mathrm{W}+1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}+\mathrm{W} \sin \theta\)</p>
+				
+					
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio4_01.png">
+
+				</div>
+
+				<div  class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 350px; float: left">
+
+					<img style="width: 100%;" src="codigos/html/dinlonresistivasExercicio4_02.png">
+				</div>
+
+				<p style="font-size: 20px; text-align: left;">Ver resolução: <a href="codigos/html/dinlonresistivasExercicio4.html" target="_blank">Código</a></p>
+
+			</section>
+
+
+		</div>
+	</div>
+
+	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
+		<a href="https://portal.fei.edu.br/" target="_blank"><img src="../../ilustracoes/logoFEI.png" alt="Logo FEI"
+				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
+	</div>
+
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+				{ src: '../../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+
+				// Interpret Markdown in <section> elements
+				{ src: '../../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+
+				// Syntax highlight for <code> elements
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+
+				// Zoom in and out with Alt+click
+				{ src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+
+				// Speaker notes
+				{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
+
+				// MathJax
+				{ src: '../../reveal.js/plugin/math/math.js', async: true }
+			],
+
+			// math: {
+			// 	mathjax: 'MathJax/MathJax.js',
+			// 	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			// },
+			math: {
+				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			},
+
+			// Display presentation control arrows
+			controls: true,
+
+			// Help the user learn the controls by providing hints, for example by
+			// bouncing the down arrow when they first encounter a vertical slide
+			controlsTutorial: true,
+
+			// Determines where controls appear, "edges" or "bottom-right"
+			controlsLayout: 'bottom-right',
+
+			// Visibility rule for backwards navigation arrows; "faded", "hidden"
+			// or "visible"
+			controlsBackArrows: 'faded',
+
+			// Display a presentation progress bar 
+			// [removido, pois gera cliques indesejados na navegação pelo celular. Ao tentar navegar para baixo na seta inferior de controle a barra de progresso é acionada e o slide correspondente é aberto. ]
+			progress: false,
+
+			// Display the page number of the current slide
+			slideNumber: true,
+
+			// Push each slide change to the browser history
+			history: true,
+
+			// Enable keyboard shortcuts for navigation
+			keyboard: true,
+
+			// Enable the slide overview mode
+			overview: false,
+
+			// Vertical centering of slides
+			center: true,
+
+			// Enables touch navigation on devices with touch input
+			touch: true,
+
+			// Loop the presentation
+			loop: false,
+
+			// Change the presentation direction to be RTL
+			rtl: false,
+
+			// Randomizes the order of slides each time the presentation loads
+			shuffle: false,
+
+			// Turns fragments on and off globally
+			fragments: true,
+
+			// Flags whether to include the current fragment in the URL,
+			// so that reloading brings you to the same fragment position
+			fragmentInURL: false,
+
+			// Flags if the presentation is running in an embedded mode,
+			// i.e. contained within a limited portion of the screen
+			embedded: false,
+
+			// Flags if we should show a help overlay when the questionmark
+			// key is pressed
+			help: true,
+
+			// Flags if speaker notes should be visible to all viewers
+			showNotes: false,
+
+			// Global override for autoplaying embedded media (video/audio/iframe)
+			// - null: Media will only autoplay if data-autoplay is present
+			// - true: All media will autoplay, regardless of individual setting
+			// - false: No media will autoplay, regardless of individual setting
+			autoPlayMedia: true,
+
+			// Number of milliseconds between automatically proceeding to the
+			// next slide, disabled when set to 0, this value can be overwritten
+			// by using a data-autoslide attribute on your slides
+			autoSlide: 0,
+
+			// Stop auto-sliding after user input
+			autoSlideStoppable: true,
+
+			// Use this method for navigation when auto-sliding
+			autoSlideMethod: Reveal.navigateNext,
+
+			// Specify the average time in seconds that you think you will spend
+			// presenting each slide. This is used to show a pacing timer in the
+			// speaker view
+			defaultTiming: 120,
+
+			// Enable slide navigation via mouse wheel
+			mouseWheel: false,
+
+			// Hides the address bar on mobile devices
+			hideAddressBar: true,
+
+			// Opens links in an iframe preview overlay
+			// Add `data-preview-link` and `data-preview-link="false"` to customise each link
+			// individually
+			previewLinks: false,
+
+			// Transition style
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Transition speed
+			transitionSpeed: 'default', // default/fast/slow
+
+			// Transition style for full page slide backgrounds
+			backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Number of slides away from the current that are visible
+			viewDistance: 3,
+
+			// Parallax background image
+			// parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+			// Parallax background size
+			// parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+			// Number of pixels to move the parallax background per slide
+			// - Calculated automatically unless specified
+			// - Set to 0 to disable movement along an axis
+			// parallaxBackgroundHorizontal: null,
+			// parallaxBackgroundVertical: null,
+
+			// The display mode that will be used to show slides
+			display: 'block',
+
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			width: 960,
+			height: 700,
+
+			// // Factor of the display size that should remain empty around the content
+			margin: 0,
+
+			// // Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 2,
+
+			pdfMaxPagesPerSlide: 1,
+			pdfSeparateFragments: false,
+		});
+
+	</script>
+
+	<script>
+
+	function enterFullscreen() {
+
+		var element = document.documentElement;
+
+		// Check which implementation is available
+		var requestMethod = element.requestFullscreen ||
+							element.webkitRequestFullscreen ||
+							element.webkitRequestFullScreen ||
+							element.mozRequestFullScreen ||
+							element.msRequestFullscreen;
+
+		if( requestMethod ) {
+			requestMethod.apply( element );
+		}
+
+	}
+
+	</script>
+
+</body>
+
+</html>

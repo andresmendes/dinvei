@@ -1,0 +1,136 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Din&acirc;mica longitudinal - For&ccedil;as resisitivas - Exerc&iacute;cio 1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-07-22"><meta name="DC.source" content="dinlonresistivasExercicio1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Din&acirc;mica longitudinal - For&ccedil;as resisitivas - Exerc&iacute;cio 1</h1><!--introduction--><p>For&ccedil;a de resist&ecirc;ncia aerodin&acirc;mica do carro de corrida Porsche 917.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Par&acirc;metros</a></li><li><a href="#2">For&ccedil;a aero</a></li><li><a href="#3">Pot&ecirc;ncia</a></li><li><a href="#4">Resultado</a></li></ul></div><h2 id="1">Par&acirc;metros</h2><pre class="codeinput">rho = 1;                    <span class="comment">% Densidade do ar [kg/m3]</span>
+Cd  = 0.44;                 <span class="comment">% Coeficiente de arrasto [-]</span>
+A   = 1.55;                 <span class="comment">% Proje&ccedil;&atilde;o da &aacute;rea frontal [m2]</span>
+
+<span class="comment">% Vetores velocidade</span>
+vKPH = 100:1:400;            <span class="comment">% Velocidade [km/h]</span>
+vMS  = vKPH/3.6;            <span class="comment">% Velocidade [m/s]</span>
+</pre><h2 id="2">For&ccedil;a aero</h2><pre class="codeinput">DA = 1/2 * rho * Cd * A * vMS.^2;
+</pre><h2 id="3">Pot&ecirc;ncia</h2><pre class="codeinput">PDA   = DA.*vMS;            <span class="comment">% Pot&ecirc;ncia [w]</span>
+PDAhp = PDA/745.7;          <span class="comment">% Pot&ecirc;ncia [HP]</span>
+</pre><h2 id="4">Resultado</h2><pre class="codeinput">figure
+hold <span class="string">on</span> ; grid <span class="string">on</span> ; box <span class="string">on</span>
+set(gca,<span class="string">'fontsize'</span>,15,<span class="string">'xlim'</span>,[vKPH(1) vKPH(end)])
+plot(vMS*3.6,DA,<span class="string">'linewidth'</span>,3)
+xlabel(<span class="string">'velocidade [km/h]'</span>)
+ylabel(<span class="string">'DA [N]'</span>)
+<span class="comment">% print(gcf,'-dpng','dinlonresistivasExercicio1Forca.png')</span>
+
+figure
+hold <span class="string">on</span> ; grid <span class="string">on</span> ; box <span class="string">on</span>
+set(gca,<span class="string">'fontsize'</span>,15,<span class="string">'xlim'</span>,[vKPH(1) vKPH(end)])
+plot(vMS*3.6,PDAhp,<span class="string">'linewidth'</span>,3)
+xlabel(<span class="string">'velocidade [km/h]'</span>)
+ylabel(<span class="string">'PDA [HP]'</span>)
+<span class="comment">% print(gcf,'-dpng','dinlonresistivasExercicio1Potencia.png')</span>
+</pre><img vspace="5" hspace="5" src="dinlonresistivasExercicio1_01.png" alt=""> <img vspace="5" hspace="5" src="dinlonresistivasExercicio1_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Dinâmica longitudinal - Forças resisitivas - Exercício 1
+% Força de resistência aerodinâmica do carro de corrida Porsche 917.
+%
+%% Parâmetros
+rho = 1;                    % Densidade do ar [kg/m3]
+Cd  = 0.44;                 % Coeficiente de arrasto [-]
+A   = 1.55;                 % Projeção da área frontal [m2]
+
+% Vetores velocidade
+vKPH = 100:1:400;            % Velocidade [km/h]
+vMS  = vKPH/3.6;            % Velocidade [m/s]
+
+%% Força aero
+
+DA = 1/2 * rho * Cd * A * vMS.^2;
+
+%% Potência
+
+PDA   = DA.*vMS;            % Potência [w]
+PDAhp = PDA/745.7;          % Potência [HP]
+
+%% Resultado
+
+figure
+hold on ; grid on ; box on
+set(gca,'fontsize',15,'xlim',[vKPH(1) vKPH(end)])
+plot(vMS*3.6,DA,'linewidth',3)
+xlabel('velocidade [km/h]')
+ylabel('DA [N]')
+% print(gcf,'-dpng','dinlonresistivasExercicio1Forca.png')
+
+figure
+hold on ; grid on ; box on
+set(gca,'fontsize',15,'xlim',[vKPH(1) vKPH(end)])
+plot(vMS*3.6,PDAhp,'linewidth',3)
+xlabel('velocidade [km/h]')
+ylabel('PDA [HP]')
+% print(gcf,'-dpng','dinlonresistivasExercicio1Potencia.png')
+
+##### SOURCE END #####
+--></body></html>

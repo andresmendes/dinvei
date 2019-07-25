@@ -12,13 +12,13 @@
 
 	<title>NMA380 - Dinâmica Veicular</title>
 
-	<link rel="stylesheet" href="mycss/revealasm.css">
-	<link rel="stylesheet" href="mycss/theme/whiteasm.css" id="theme">
+	<link rel="stylesheet" href="../../mycss/revealasm.css">
+	<link rel="stylesheet" href="../../mycss/theme/whiteasm.css" id="theme">
 	<!-- My class files -->
-	<link rel="stylesheet" href="mycss/asm.css">
+	<link rel="stylesheet" href="../../mycss/asm.css">
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -44,143 +44,82 @@
 				<p>NMA380 - Dinâmica Veicular</p>
 
 				<h2>Dinâmica longitudinal</h2>
-				<h3>Forças resistivas</h3>
+				<h3>Força de frenagem</h3>
 
 			</section>
-
+<!-- 
 			<section>
 
-				<h5>Forças resistivas</h5>
+				<h5>Objetivos</h5>
 
-				<img style="width: 90%;" src="ilustracoes/modelagemDCL.png">
+				<p>Frenagem com aceleração constante</p>
+				<p>Tempo e distância de frenagem</p>
+				<p>Fator de frenagem</p>
 
-				<p style="font-size: 30px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{W}}{\mathrm{g}} \mathrm{a}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
+			</section> -->
 
-				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 100px; float: left;">
+<!-- 			<section>
+
+				<h5>Equação de movimento</h5>
 				
-					<p>\(\mathrm{D}_{\mathrm{A}}= ?\)</p>
-				
-				</div>
-				
-				<div class="fragment fade-in" data-fragment-index="1" style="width: 50%; height: 100px; float: left;">
-				
-					<p>\(\mathrm{R}_{\mathrm{X}}= ?\)</p>
-				
-				</div>
+				<img style="width: 90%;" src="ilustracoes/dinlonforcafrenagemDCL.png">
 
-			</section>
-
-			<section>
-				
-				<h5>Objetivos:</h5>
-
-				<p style="text-align: justify;">Compreender os fenômenos envolvidos no surgimento de forças resistivas:</p>
-
-				<ul>
-					<li>Resistência aerodinâmica \(\mathrm{D}_{\mathrm{A}}\)</li>
-					<li>Resistência ao rolamento \(\mathrm{R}_{\mathrm{X}}\)</li>
-				</ul>
-
-			</section>
-
-			<section>
-
-				<h5>Resistência aerodinâmica</h5>
+				<p style="font-size: 35px;">\(\mathrm{Ma}_{\mathrm{x}}=-\frac{\mathrm{W}}{\mathrm{g}} \mathrm{D}_{\mathrm{x}}=-\mathrm{F}_{\mathrm{xf}}-\mathrm{F}_{\mathrm{xr}}-\mathrm{D}_{\mathrm{A}}-\mathrm{W} \sin \Theta\)</p>
 
 			</section>
 
 			<section>
 				
-				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/E9ZSAX56m0E?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+				<h5>Desaceleração constante</h5>
+
+				<p>\(\mathrm{D}_{\mathrm{X}}=\frac{\mathrm{F}_{\mathrm{Xt}}}{\mathrm{M}}=-\frac{\mathrm{d} \mathrm{V}}{\mathrm{dt}}\)</p>
+
+				<p style="text-align: justify;">Distância de frenagem:</p>
+
+				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{SD}=\frac{\mathrm{V}_{\mathrm{O}}^{2}}{2 \frac{\mathrm{F}_{\mathrm{xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{o}}^{2}}{2 \mathrm{D}_{\mathrm{x}}}\)</p>
+
+				<p style="text-align: justify;">Tempo de frenagem</p>
+
+				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{t}_{\mathrm{S}}=\frac{\mathrm{V}_{\mathrm{O}}}{\frac{\mathrm{F}_{\mathrm{Xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{O}}}{\mathrm{D}_{\mathrm{X}}}\)</p>
 
 			</section>
 
 			<section>
-
-				<h5>Resistência aerodinâmica</h5>
-
-				<img style="width: 90%;" src="ilustracoes/modelagemDCL.png">
 				
-				<p>\(\mathrm{D}_{\mathrm{A}}=1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}\)</p>
+				<h5>Exercício</h5>
+
+				Qual é a distância e tempo de frenagem até o repouso de um carro de 1200 kg a 80 km/h?
+
+				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{SD}=\frac{\mathrm{V}_{\mathrm{O}}^{2}}{2 \frac{\mathrm{F}_{\mathrm{xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{o}}^{2}}{2 \mathrm{D}_{\mathrm{x}}}\)</p>
+
+				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{t}_{\mathrm{S}}=\frac{\mathrm{V}_{\mathrm{O}}}{\frac{\mathrm{F}_{\mathrm{Xt}}}{\mathrm{M}}}=\frac{\mathrm{V}_{\mathrm{O}}}{\mathrm{D}_{\mathrm{X}}}\)</p>
 
 			</section>
 
 			<section>
 				
-				<h5>Coeficiente de arrasto aerodinâmico</h5>
-				
-				<p>\(\mathrm{D}_{\mathrm{A}}=1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}\)</p>
+				<h5>Desaceleração com resistência aerodinâmica</h5>
 
-				<img style="width: 100%;" src="ilustracoes/dinlonresistivasExemplosCd.png">
+				<p>\(\mathrm{SD}=\frac{\mathrm{M}}{2 \mathrm{C}} \ln \left[\frac{\mathrm{F}_{\mathrm{b}}+\mathrm{C} \mathrm{V}_{\mathrm{O}}^{2}}{\mathrm{F}_{\mathrm{b}}}\right]\)</p>
 
-			</section>
-
-
-			<section>
-
-				<h5>Referência</h5>
-
-				<img style="height: 400px;" src="ilustracoes/dinlonresistivasHucho.jpg">
-				
-				<p style="font-size: 25px;">Fonte: <a href="https://www.elsevier.com/books/aerodynamics-of-road-vehicles/hucho/978-0-7506-1267-8" target="_blank">Wolf-Heinrich Hucho - Aerodynamics of Road Vehicles</a></p>
+				<p>\(\mathrm{t}_{\mathrm{S}}=\frac{M\,\mathrm{atan}\left(\frac{\sqrt{c}\,v}{\sqrt{\mathrm{Fb}}}\right)}{\sqrt{\mathrm{Fb}}\,\sqrt{c}}\)</p>
 
 			</section>
 
 			<section>
-
-				<h5>Carros convencionais</h5>
-
-				<img style="width: 90%;" src="ilustracoes/dinlonresistivasConventional.png">
 				
-			</section>
+				<h5>Exercício</h5>
 
-			<section>
+				Qual é a distância
 
-				<h5>Carros de corrida</h5>
-
-				<img style="width: 90%;" src="ilustracoes/dinlonresistivasRace.png">
-				
-			</section>
-
-			<section>
-
-				<h5>Caminhões</h5>
-
-				<img style="height: 600px;" src="ilustracoes/dinlonresistivasTruckFairing.png">
-				
-			</section>
-
-			<section>
-
-				<h5>Comboio</h5>
-
-				<img style="height: 600px;" src="ilustracoes/dinlonresistivasPlatoon.png">
-				
 			</section>
 
 			<section>
 				
-				<h5>Efeito do vento</h5>
+				<h5>Energia e potência consumida</h5>
 
-				<div style="width: 50%; height: 450px; float: left;">
-
-					<p>Velocidade relativa</p>
-
-					<p>\(\mathrm{V}=\mathrm{V}_{\mathrm{v}}+\mathrm{V}_{\mathrm{w}}\)</p>
-
-				</div>
-
-				<div style="width: 50%; height: 450px; float: left;">
-
-					<p>Ângulo de incidência</p>
-
-					<img style="width: 100%; height: 350px;" src="ilustracoes/dinlonresistivasAnguloIncidencia.png">
-	
-				</div>
-
-				<p style="font-size: 35px;">\(\mathrm{M} \mathrm{a}_{\mathrm{x}}=\frac{\mathrm{W}}{\mathrm{g}} \mathrm{a}_{\mathrm{x}}=\mathrm{F}_{\mathrm{X}}-\mathrm{R}_{\mathrm{X}}-\mathrm{D}_{\mathrm{A}}-\mathrm{R}_{\mathrm{hx}}-\mathrm{W} \sin \Theta\)</p>
-
-				<p>\(\mathrm{D}_{\mathrm{A}}=1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}\)</p>
+				<p>\(E = \frac{M}{2}\left(V_{0}^{2}-V_{f}^{2}\right)\)</p>
+				<p>\(P = \frac{M}{2} \frac{V_{0}^{2}}{t_{s}}\)</p>
 
 			</section>
 
@@ -188,118 +127,114 @@
 				
 				<h5>Exercício 1</h5>
 
-				<p>Sobre força resistiva aerodinâmica</p>
+				<p>Qual é a quantidade de energia necessária para freiar um carro de 1200 kg a 80 km/h até o repouso?</p>
+
+				<p>\(E = \frac{M}{2}\left(V_{0}^{2}-V_{f}^{2}\right)\)</p>
+				<p>\(P = \frac{M}{2} \frac{V_{0}^{2}}{t_{s}}\)</p>
+
+
+			</section>
+ -->
+<!-- 			<section>
+				
+				<h5>Freio a tambor</h5>
+
+				<div style="width: 60%;height: 500px; float: left;">
+					
+					<img style="width: 100%;" src="ilustracoes/dinlonforcafrenagemTambor.png">
+
+				</div>
+
+				<div style="width: 40%;height: 500px; float: left;">
+
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px; text-align: left;">Fator de frenagem</p>
+
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 35px;">\(\frac{\mathrm{F}_{\mathrm{A}}}{\mathrm{P}_{\mathrm{a}}}=\frac{\mu \mathrm{e}}{(\mathrm{m}-\mu \mathrm{n})}\)</p>
+
+					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 35px;">\(\frac{\mathrm{F}_{\mathrm{B}}}{\mathrm{P}_{\mathrm{a}}}=\frac{\mu \mathrm{e}}{(\mathrm{m}+\mu \mathrm{n})}\)</p>
+
+					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 25px; text-align: left;">Força de desaceleraçao</p>
+					
+					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 35px;">\(\mathrm{F}_{\mathrm{b}}=\frac{\left(\mathrm{T}_{\mathrm{b}}-\mathrm{I}_{\mathrm{W}} \alpha_{\mathrm{w}}\right)}{\mathrm{r}}\)</p>
+
+					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 25px; text-align: left;">Força de travamento</p>
+					
+					<p class="fragment fade-in" data-fragment-index="2" style="font-size: 35px;">\(\mathrm{F}_{\mathrm{b}}=\frac{\mathrm{T}_{\mathrm{b}}}{\mathrm{r}}\)</p>
+
+				</div>
+
+				<p>\(\Sigma \mathrm{M}_{\mathrm{p}}=\mathrm{e} \mathrm{P}_{\mathrm{a}}+\mathrm{n} \mu \mathrm{N}_{\mathrm{A}}-\mathrm{m} \mathrm{N}_{\mathrm{A}}=0\)</p>
+
+			</section>			 -->
+
+			<section>
+				
+				<h5>Freio a disco</h5>
+
+				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/80sjvvdj-sg?start=0;autoplay=1" width="100%" height="500px" frameborder="0"></iframe>
 
 			</section>
 
-			<section>
-
-				<h5>Resistência ao rolamento</h5>
 
 			</section>
 
 			<section>
 				
-				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/Z0AJqOVN9IE?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+				<h5>Freio a tambor</h5>
 
-			</section>
+				<div style="width: 45%;height: 500px; float: left;">
+					
+					<img style="width: 100%;" src="ilustracoes/dinlonforcafrenagemTambor.png">
+
+				</div>
+
+				<div style="width: 55%;height: 500px; float: left;">
+
+					<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/bnc3VnQ8kUY?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
+
+					<p style="font-size: 20px; text-align: right;"><a href="https://www.youtube.com/watch?v=g5n8OqS1Fow">Vídeo extra</a></p>
+
+				</div>
+
+			</section>		
 
 			<section>
+
+					<h5>Tambor Vs. Disco</h5>
 				
-				<h5>Resistência ao rolamento</h5>
+					<img style="width: 100%;" src="ilustracoes/dinlonforcafrenagemCurvasTamborDisco.png">
 
-				<img style="height: 240px;" src="ilustracoes/dinlonresistivasPneuDeformado.png">
+			</section>	
 
-				<div style="width: 50%; height: 250px; float: left;">
-				<p style="text-align: left; font-size: 30px;">Mecanismos de perda de energia:</p>
-					<ul style="font-size: 30px;">
-						<li>Deflexão circunferencial do pneu ao girar</li>
-						<li>Escorregamento do pneu</li>
-					</ul>
+			<section>
+
+				<h5>Wheel Slip</h5>
+				
+				<div style="width: 50%;height: 500px; float: left;">
+					
+				<img style="width: 100%;" src="ilustracoes/dinlonforcafrenagemPneuSlip.png">
+
+				</div>				
+				<div style="width: 50%;height: 500px; float: left;">
+					
+				<img style="width: 100%;" src="ilustracoes/dinlonforcafrenagemWheelSlip.png">
+
 				</div>
 
-				<div style="width: 50%; height: 250px; float: left;">
-				<p style="font-size: 30px;">Principais fatores:</p>
-					<ul style="font-size: 30px;">
-						<li>Temperatura</li>
-						<li>Pressão</li>
-						<li>Velocidade</li>
-					</ul>
-				</div>
-
-				<p class="fragment fade-in" data-fragment-index="1">\(\mathrm{R}_{\mathrm{x}}=\mathrm{R}_{\mathrm{xf}}+\mathrm{R}_{\mathrm{xr}}=\mathrm{f}_{\mathrm{r}} \mathrm{W}\)</p>
+				<p>\(\mathrm{Slip}=\frac{\mathrm{V}-\omega \mathrm{r}}{\mathrm{V}}\)</p>
 
 			</section>
-
-			<section>	
-
-				<h5>Efeito da temperatura</h5>
-
-				<img style="width: 100%;" src="ilustracoes/dinlonresistivasEfeitoTemp.png">
-
-			</section>
-
-			<section>	
-
-				<h5>Efeito da pressão</h5>
-
-				<img style="height: 600px;" src="ilustracoes/dinlonresistivasEfeitoPressao.png">
-
-			</section>
-
-			<section>	
-
-				<h5>Efeito da velocidade</h5>
-
-				<img style="height: 600px;" src="ilustracoes/dinlonresistivasEfeitoVel.png">
-
-			</section>
-
-			<section>	
-
-
-				<h5>Modelos de coeficientes</h5>
-
-				<p>\(\mathrm{f}_{\mathrm{r}}=\frac{\mathrm{R}_{\mathrm{X}}}{\mathrm{W}}=\mathrm{C} \frac{\mathrm{W}}{\mathrm{D}} \sqrt{\frac{\mathrm{h}_{\mathrm{t}}}{\mathrm{w}}}\)</p>
-
-				<p>\(\mathrm{f}_{\mathrm{r}}=0.01(1+\mathrm{V} / 100)\)</p>
-
-				<p>\(\mathrm{f}_{\mathrm{r}}=\mathrm{f}_{\mathrm{O}}+3.24 \mathrm{f}_{\mathrm{S}}(\mathrm{V} / 100)^{2.5}\)</p>
-
-				<p>\(\mathrm{f}_{\mathrm{r}}=(0.0041+0.000041 \mathrm{V}) \mathrm{C}_{\mathrm{h}}\)</p>
-
-				<p>\(\mathrm{f}_{\mathrm{r}}=(0.0066+0.000046 \mathrm{V}) \mathrm{C}_{\mathrm{h}}\)</p>
-			
-			</section>
-
-			<section>	
-
-				<h5>Forças resistivas</h5>
-
-				<p>\(\mathrm{R}_{\mathrm{RL}}=\mathrm{f}_{\mathrm{r}} \mathrm{W}+1 / 2 \rho \mathrm{V}^{2} \mathrm{C}_{\mathrm{D}} \mathrm{A}+\mathrm{W} \sin \theta\)</p>
-
-				<img style="height: 500px;" src="ilustracoes/dinlonresistivasRoadLoads.png">
-
-			</section>
-
-			<section>	
-
-					<h5>Exercício</h5>
-					<p>	Aero</p>
-
-			</section>
-
 
 		</div>
 	</div>
 
 	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
-		<a href="https://portal.fei.edu.br/" target="_blank"><img src="ilustracoes/logoFEI.png" alt="Logo FEI"
+		<a href="https://portal.fei.edu.br/" target="_blank"><img src="../../ilustracoes/logoFEI.png" alt="Logo FEI"
 				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
 	</div>
 
-	<script src="reveal.js/lib/js/head.min.js"></script>
-	<script src="reveal.js/js/reveal.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
 
 	<script>
 		// More info about config & dependencies:
@@ -308,23 +243,23 @@
 		Reveal.initialize({
 			dependencies: [
 				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-				{ src: 'reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: '../../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
 
 				// Interpret Markdown in <section> elements
-				{ src: 'reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: '../../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 
 				// Syntax highlight for <code> elements
-				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 
 				// Zoom in and out with Alt+click
-				{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
 
 				// Speaker notes
-				{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+				{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
 
 				// MathJax
-				{ src: 'reveal.js/plugin/math/math.js', async: true }
+				{ src: '../../reveal.js/plugin/math/math.js', async: true }
 			],
 
 			// math: {

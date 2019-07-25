@@ -1,0 +1,221 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Din&acirc;mica longitudinal - For&ccedil;as resisitivas - Exerc&iacute;cio 4</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-07-22"><meta name="DC.source" content="dinlonresistivasExercicio4.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Din&acirc;mica longitudinal - For&ccedil;as resisitivas - Exerc&iacute;cio 4</h1><!--introduction--><p>For&ccedil;as resistivas.</p><p>Fonte: Gillespie Cap4Ex1.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Par&acirc;metros</a></li><li><a href="#2">For&ccedil;as</a></li><li><a href="#3">Pot&ecirc;ncia</a></li><li><a href="#4">Resultado</a></li></ul></div><h2 id="1">Par&acirc;metros</h2><pre class="codeinput">m  = 32874;                 <span class="comment">% Massa do carro [kg]</span>
+g  = 9.81;                  <span class="comment">% Acelera&ccedil;&atilde;o da gravidade [m/s2]</span>
+Ch = 1.0;                   <span class="comment">% Coeficiente da qualidade da pista.</span>
+
+rho = 1;                    <span class="comment">% Densidade do ar [kg/m3]</span>
+Cd  = 0.65;                 <span class="comment">% Coeficiente de arrasto [-]</span>
+A   = 10;                   <span class="comment">% Proje&ccedil;&atilde;o da &aacute;rea frontal [m2]</span>
+
+<span class="comment">% Faixa de velocidade</span>
+vKPH = 10:1:130;            <span class="comment">% Velocidade [km/h]</span>
+vMPH = vKPH/1.609;          <span class="comment">% Velocidade [mph]</span>
+vMS  = vKPH/3.6;            <span class="comment">% Velocidade [m/s]</span>
+
+<span class="comment">% Rodovia</span>
+grade = 1;                  <span class="comment">% inclina&ccedil;&atilde;o da rodovia [%]</span>
+theta = ones(1,length(vKPH))*atan(grade/100); <span class="comment">% Angula&ccedil;&atilde;o da rodovia [rad]</span>
+</pre><h2 id="2">For&ccedil;as</h2><pre class="codeinput"><span class="comment">% Aerodin&acirc;mica</span>
+DA = 1/2 * rho * Cd * A * vMS.^2;   <span class="comment">% [N]</span>
+
+<span class="comment">% Rolamento</span>
+W = m*g;                            <span class="comment">% [N]</span>
+fr = (0.0041 + 0.000041*vMPH)*Ch;
+Rx = fr*W;                          <span class="comment">% [N]</span>
+
+<span class="comment">% Peso</span>
+Rg = m*g*sin(theta);                <span class="comment">% [N]</span>
+
+<span class="comment">% Total</span>
+Rtotal = DA + Rx + Rg;
+</pre><h2 id="3">Pot&ecirc;ncia</h2><pre class="codeinput"><span class="comment">% Aero</span>
+PDA = DA.*vMS;              <span class="comment">% Pot&ecirc;ncia [w]</span>
+PDAhp = PDA/745.7;          <span class="comment">% Pot&ecirc;ncia [HP]</span>
+
+<span class="comment">% Rolamento</span>
+PRx = Rx.*vMS;             <span class="comment">% Pot&ecirc;ncia [w]</span>
+PRxhp = PRx/745.7;          <span class="comment">% Pot&ecirc;ncia [HP]</span>
+
+<span class="comment">% Gravidade</span>
+PRg = Rg.*vMS;              <span class="comment">% Pot&ecirc;ncia [w]</span>
+PRghp = PRg/745.7;          <span class="comment">% Pot&ecirc;ncia [HP]</span>
+
+<span class="comment">% Total</span>
+Ptotalhp = PDAhp + PRxhp + PRghp;
+</pre><h2 id="4">Resultado</h2><pre class="codeinput">figure
+hold <span class="string">on</span> ; grid <span class="string">on</span> ; box <span class="string">on</span>
+set(gca,<span class="string">'fontsize'</span>,15,<span class="string">'xlim'</span>,[vKPH(1) vKPH(end)])
+plot(vKPH,Rx,<span class="string">'linewidth'</span>,3)
+plot(vKPH,DA,<span class="string">'linewidth'</span>,3)
+plot(vKPH,Rg,<span class="string">'linewidth'</span>,3)
+plot(vKPH,Rtotal,<span class="string">'linewidth'</span>,3)
+xlabel(<span class="string">'velocidade [km/h]'</span>)
+ylabel(<span class="string">'Rx [N]'</span>)
+legend(<span class="string">'Rx'</span>,<span class="string">'DA'</span>,<span class="string">'Rg'</span>,<span class="string">'Total'</span>,<span class="string">'Location'</span>,<span class="string">'NorthWest'</span>)
+<span class="comment">% print(gcf,'-dpng','dinlonresistivasExercicio4Forca.png')</span>
+
+figure
+hold <span class="string">on</span> ; grid <span class="string">on</span> ; box <span class="string">on</span>
+set(gca,<span class="string">'fontsize'</span>,15,<span class="string">'xlim'</span>,[vKPH(1) vKPH(end)])
+plot(vKPH,PRxhp,<span class="string">'linewidth'</span>,3)
+plot(vKPH,PDAhp,<span class="string">'linewidth'</span>,3)
+plot(vKPH,PRghp,<span class="string">'linewidth'</span>,3)
+plot(vKPH,Ptotalhp,<span class="string">'linewidth'</span>,3)
+xlabel(<span class="string">'velocidade [km/h]'</span>)
+ylabel(<span class="string">'PRx [HP]'</span>)
+legend(<span class="string">'Rx'</span>,<span class="string">'DA'</span>,<span class="string">'Rg'</span>,<span class="string">'Total'</span>,<span class="string">'Location'</span>,<span class="string">'NorthWest'</span>)
+<span class="comment">% print(gcf,'-dpng','dinlonresistivasExercicio4Potencia.png')</span>
+</pre><img vspace="5" hspace="5" src="dinlonresistivasExercicio4_01.png" alt=""> <img vspace="5" hspace="5" src="dinlonresistivasExercicio4_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Dinâmica longitudinal - Forças resisitivas - Exercício 4
+% Forças resistivas.
+%
+% Fonte: Gillespie Cap4Ex1.
+%
+%% Parâmetros
+m  = 32874;                 % Massa do carro [kg]
+g  = 9.81;                  % Aceleração da gravidade [m/s2]
+Ch = 1.0;                   % Coeficiente da qualidade da pista.
+
+rho = 1;                    % Densidade do ar [kg/m3]
+Cd  = 0.65;                 % Coeficiente de arrasto [-]
+A   = 10;                   % Projeção da área frontal [m2]
+
+% Faixa de velocidade
+vKPH = 10:1:130;            % Velocidade [km/h]
+vMPH = vKPH/1.609;          % Velocidade [mph]
+vMS  = vKPH/3.6;            % Velocidade [m/s]
+
+% Rodovia
+grade = 1;                  % inclinação da rodovia [%]
+theta = ones(1,length(vKPH))*atan(grade/100); % Angulação da rodovia [rad]
+
+%% Forças
+
+% Aerodinâmica
+DA = 1/2 * rho * Cd * A * vMS.^2;   % [N]
+
+% Rolamento
+W = m*g;                            % [N]
+fr = (0.0041 + 0.000041*vMPH)*Ch;
+Rx = fr*W;                          % [N]
+
+% Peso
+Rg = m*g*sin(theta);                % [N]
+
+% Total
+Rtotal = DA + Rx + Rg;
+
+%% Potência
+
+% Aero
+PDA = DA.*vMS;              % Potência [w]
+PDAhp = PDA/745.7;          % Potência [HP]
+
+% Rolamento
+PRx = Rx.*vMS;             % Potência [w]
+PRxhp = PRx/745.7;          % Potência [HP]
+
+% Gravidade
+PRg = Rg.*vMS;              % Potência [w]
+PRghp = PRg/745.7;          % Potência [HP]
+
+% Total
+Ptotalhp = PDAhp + PRxhp + PRghp;
+
+%% Resultado
+
+figure
+hold on ; grid on ; box on
+set(gca,'fontsize',15,'xlim',[vKPH(1) vKPH(end)])
+plot(vKPH,Rx,'linewidth',3)
+plot(vKPH,DA,'linewidth',3)
+plot(vKPH,Rg,'linewidth',3)
+plot(vKPH,Rtotal,'linewidth',3)
+xlabel('velocidade [km/h]')
+ylabel('Rx [N]')
+legend('Rx','DA','Rg','Total','Location','NorthWest')
+% print(gcf,'-dpng','dinlonresistivasExercicio4Forca.png')
+
+figure
+hold on ; grid on ; box on
+set(gca,'fontsize',15,'xlim',[vKPH(1) vKPH(end)])
+plot(vKPH,PRxhp,'linewidth',3)
+plot(vKPH,PDAhp,'linewidth',3)
+plot(vKPH,PRghp,'linewidth',3)
+plot(vKPH,Ptotalhp,'linewidth',3)
+xlabel('velocidade [km/h]')
+ylabel('PRx [HP]')
+legend('Rx','DA','Rg','Total','Location','NorthWest')
+% print(gcf,'-dpng','dinlonresistivasExercicio4Potencia.png')
+
+
+##### SOURCE END #####
+--></body></html>

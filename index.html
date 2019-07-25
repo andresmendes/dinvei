@@ -12,771 +12,169 @@
 
 	<title>NMA380 - Dinâmica Veicular</title>
 
-	<link rel="stylesheet" href="mycss/revealasm.css">
-	<link rel="stylesheet" href="mycss/theme/whiteasm.css" id="theme">
-	<!-- My class files -->
-	<link rel="stylesheet" href="mycss/asm.css">
-
-	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
-
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-		document.getElementsByTagName('head')[0].appendChild(link);
-	</script>
-
 </head>
 
 <body>
 
-	<!-- Para pinch zoom no celular, é preciso insterir este "data-prevent-swipe" para evitar conflito. -->
-	<div class="reveal" onclick="closeNav()" data-prevent-swipe>
-
-		<div id="mySidenav" class="sidenav">
-
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-			<p style="padding: 0px 0px 0px 16px;">Tópicos</p>
-
-			<div style="padding-left: 32px;">
-			<a href="#/inicial">Página inicial</a><br>
-			<a href="#/intro">0 - Introdução ao curso</a><br>
-			<a href="#/modelagem">1 - Fundamentos de modelagem da dinâmica veicular</a><br>
-			<a href="#/dinpropforca">2 - Dinâmica da propulsão: Força de tração</a><br>
-			<a href="#/dinproplimites">3 - Dinâmica da propulsão: Limites de tração</a><br>
-			<a href="#/dinfrenforca">4 - Dinâmica da frenagem: Força de frenagem</a><br>
-			<a href="#/dinfrenlimites">5 - Dinâmica da frenagem: Limites de frenagem</a><br>
-			<a href="#/dinfrenforcas">6 - Dinâmica da frenagem: Forças resistivas</a><br>
-			<a href="#/dinsuspquarto">7 - Dinâmica da suspensão: Modelo de um quarto de carro</a><br>
-			<a href="#/dinsuspmeio">8 - Dinâmica da suspensão: Modelo de meio carro</a><br>
-			<a href="#/dindircaract">9 - Dinâmica da dirigibilidade: Características de dirigibilidade</a><br>
-			<a href="#/dindirdesempenho">10 - Dinâmica da dirigibilidade: Desempenho em curva</a>
-			</div>
-
-			<p>&nbsp;</p>	
-
-		</div>
-
-		<div class="slides">
-
-			<section>
-				<section id="inicial">
-
-
-					<div style="width:100%;position: relative; height: 700px;">
-						<div style="width:100%; position:absolute ; top:300px; text-align: center">
-
-							<h3>NMA380 - Dinâmica Veicular</h3>
-
-						</div>
-						<div style="width:100%; position:absolute; bottom:30px;">
-
-							<a href="#ajuda" class="button1" title="Ajuda"
-								style="position:absolute ; left:30px; bottom:0px">?</a>
-
-							<a href="#pdfexport" title="PDF Export" style="position:absolute ; left:90px; bottom:0"><img
-									style="height:65px; vertical-align: middle;" src="ilustracoes/logoPDF.svg"
-									alt="PDF"></a>
-
-						</div>
-					</div>
-
-				</section>
-
-				<section id="ajuda">
-					<h3>Primeiros passos</h3>
-
-					<ul style="padding:20px">
-						<li>Navegue pelas páginas utilizando as <span style="color:#2a76dd">setas de controle</span> à
-							direita.</li>
-						<li>Acesse diretamente os tópico através do menu à esquerda (<span
-								style="font-family: Helvetica, sans-serif ;font-size:25px;cursor:pointer;">&#9776;</span>).
-						</li>
-						<li>Os diferentes tópicos estão distribuídos na horizontal.</li>
-						<li>O conteúdo de cada tópico está na vertical.</li>
-					</ul>
-				</section>
-
-				<section id="pdfexport">
-					<h3>PDF</h3>
-
-					<ul style="padding:20px">
-						<li>Utilize o navegador <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>.
-						</li>
-						<li>Acesse: <a href="https://andresmendes.github.io/cindin/?print-pdf" target="_blank">CinDin Printable</a>.
-						</li>
-						<li>Abra as opções de impressão (<span style="font-weight: bold">Ctrl + P</span>)</li>
-						<li>Escolha o destino <span style="font-weight: bold"> Salvar como PDF</span>.</li>
-						<li>Escolha <span style="font-weight: bold"> Layout</span> como <span style="font-weight: bold">
-								Paisagem</span>.</li>
-						<li>Escolha <span style="font-weight: bold"> Margem</span> como <span style="font-weight: bold">
-								Nenhum</span>.</li>
-						<li>Marque a opção <span style="font-weight: bold"> Gráficos de segundo plano</span>.</li>
-						<li>Clique em <span style="font-weight: bold">Imprimir</span>.</li>
-					</ul>
-				</section>
-			</section>
-
-			<section>
-				<section id="intro">
-					<h3>
-						Introdução ao curso
-					</h3>
-				</section>
-
-				<section>
-
-					<h5>O primeiro automóvel</h5>
-
-					<img src="ilustracoes/introTime1.svg">
-					<img style="height: 400px;" src="ilustracoes/introFardierdeCugnotCar.jpg">
-
-					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://pt.wikipedia.org/wiki/Joseph_Cugnot" target="_blank">Wikipedia: Joseph Cugnot</a></p>
-
-				</section>
-				
-				<section>
-
-					<h5>O primeiro automóvel à gasolina</h5>
-					<img src="ilustracoes/introTime2.svg">
-
-					<img style="height: 400px;" src="ilustracoes/introKarlBenzGasoline.png">
-
-					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://www.daimler.com/company/tradition/company-history/1885-1886.html" target="_blank">Daimler: Company History</a></p>
-
-				</section>
-
-				<section>
-
-					<h5>Model T</h5>
-					<img src="ilustracoes/introTime3.svg">
-					<img style="height: 400px;" src="ilustracoes/introModelT.jpg">
-
-					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://en.wikipedia.org/wiki/Ford_Model_T" target="_blank">Wikipedia: Ford Model T</a></p>
-
-				</section>
-
-				<section>
-
-					<h5>Dinamômetro de pneu</h5>
-					<img src="ilustracoes/introTime4.svg">
-
-					<img style="height: 400px;" src="ilustracoes/introFlatBelt.jpg">
-
-					<p style="font-size: 20px; text-align: left;">Fonte: <a href="https://aanddtech.com/fbttr/" target="_blank">A&D Tech: Flat Belt Tire Test Rig</a></p>
-
-				</section>
-
-				<section>
-
-					<h5>Volkswagen Fusca e Toyota Corolla</h5>
-					<img src="ilustracoes/introTime5.svg">
-
-					<img style="height: 280px; margin-top: 60px; margin-bottom: 60px;" src="ilustracoes/introCorollaFusca.jpg">
-
-					<p style="font-size: 20px; text-align: left; ">Fonte: <a href="https://en.wikipedia.org/wiki/Volkswagen_Beetle" target="_blank">Wikipedia: Volkswagen Beetle</a> e <a href="https://en.wikipedia.org/wiki/Toyota_Corolla" target="_blank">Wikipedia: Toyota Corolla</a></p>
-
-				</section>
-
-				<section>
-
-					<h5>Fundamentals of Vehicle Dynamics</h5>
-					<img src="ilustracoes/introTime6.svg">
-
-					<img style="height: 400px" src="ilustracoes/introGillespieCover.jpg">
-
-					<p style="font-size: 20px; text-align: left;">Fonte: <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Bilbioteca FEI</a></p>
-
-				</section>
-
-					<section>
-						
-						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/tlThdr3O5Qo?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-					</section>
-
-					<section>
-						
-						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/ncsRS-eIdAo?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-					</section>
-
-					<section>
-						
-						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/2Gc1zz5bl8I?start=1;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-					</section>
-
-					<section>
-						
-						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/i8yChqU4mBE?start=48;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-					</section>
-					
-					<section>
-						
-						<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/GZgbqfFGPHM?start=37	;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-					</section>
-
-					<section>
-						
-						<h5>Resumo</h5>
-
-						<p style="text-align: left;">Foco do curso</p>
-						 <ul style="font-size: 30px;">
-						 	<li>Veículo com pneus - Não tratamos de aviões, navios ou trens.</li>
-						 	<li>Carro - Os conceitos se aplicam a caminhões, ônibus e tratores.</li>
-						 </ul>
-
-						<p class="fragment fade-in" data-fragment-index="1" style="text-align: left;">Áreas de estudo</p>
-
-						<ul class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">
-							<li>Aceleração</li>
-							<li>Frenagem</li>
-							<li>Cruzeiro</li>
-							<li>Curva</li>
-						</ul>
-						<ul class="fragment fade-in" data-fragment-index="2" style="font-size: 40px;">
-							<li>Dinâmica longitudinal</li>
-							<li>Dinâmica lateral</li>
-							<li>Dinâmica vertical</li>
-						</ul>
-
-						<p class="fragment fade-in" data-fragment-index="3" style="text-align: left;">Objetivo</p>
-						<p class="fragment fade-in" data-fragment-index="3" style="font-size: 30px;">Veículo mais rápido, confortável e confiável</p>
-
-					</section>
-
-			</section>
-
-			<section>
-				<section id="modelagem">
-
-					<h3>Fundamentos de modelagem da dinâmica veicular</h3>
-
-				</section>
-
-				<section>
-
-					<h5>SAE Vehicle Axis System</h5>
-
-					<img style="height: 400px" src="ilustracoes/modelagemSAEcon.png">
-
-					<div style="width: 50%; float: left; height: 150px;">
-					<ul class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">
-						<li><b>x</b> - Longitudinal (para frente)</li>
-						<li><b>y</b> - Lateral (para a direita)</li>
-						<li><b>z</b> - Vertical (para baixo)</li>
-					</ul>
-					</div>
-
-					<div style="width: 50%; float: left; height: 150px;">
-					<ul class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">
-						<li><b>p</b> - Rolagem (em torno de <b>x</b>)</li>
-						<li><b>q</b> - Arfagem (em torno de <b>y</b>)</li>
-						<li><b>r</b> - Guinada (em torno de <b>z</b>)</li>
-					</ul>
-					</div>
-
-					<p style="font-size: 20px; text-align: left;">Maiores detalhes em: <a href="https://www.sae.org/standards/content/j670_200801/" target="_blank">Vehicle Dynamics Terminology J670_200801</a></p>
-
-				</section>
-				
-				<section>
-
-					<p style="font-size: 40px;">Teorema do movimento do baricentro (TMB)</h5>
-
-					<p style="font-size: 30px; text-align: justify;">Em um referencial absoluto ou inercial, um ponto material de massa \(m\) sujeito à força resultante \(\vec{f}_{RES}\) move-se com aceleração.</p>
-	
-					<p class="fragment fade-in" data-fragment-index="1">\(m \vec{a} = \sum_{i=1}^{n} \vec{f}_i = \vec{f}_{RES}\)</p>
-					
-					<div style="width: 50%; height: 400px;float: left;">
-						<img style="height: 400px" src="ilustracoes/modelagemPontoForcas.svg">
-					</div>
-
-					<div style="width: 50%; height: 400px;float: left;" class="fragment fade-in" data-fragment-index="2">
-						<p>\(m a_x = \sum f_x\)</p>
-						<p>\(m a_y = \sum f_y\)</p>
-						<p>\(m a_z = \sum f_z\)</p>
-					</div>
-
-				</section>
-
-				<section>
-
-					<p style="font-size: 40px;">Teorema do momento angular (TMA)</p>
-
-					<p style="font-size: 30px; text-align: justify;">O produto da aceleração angular de um corpo rígido com o momento de inérica em relação a um eixo fixo é igual ao somatório dos momentos em relação ao mesmo eixo.</p>
-	
-					<div style="width: 50%; height: 400px;float: left;">
-						<img style="height: 400px" src="ilustracoes/modelagemCorpoMomento.svg">
-					</div>
-
-					<div style="width: 50%; height: 400px;float: left;">
-						<p>\( J_{xx} \alpha_x = \sum M_x\)</p>
-						<p>\( J_{yy} \alpha_y = \sum M_y\)</p>
-						<p>\( J_{zz} \alpha_z = \sum M_z\)</p>
-					</div>
-
-				</section>
-
-				<section>
-
-					<h5>TMB e TMA no carro</h5>
-
-					<img style="height: 400px" src="ilustracoes/modelagemSAEcon.png">
-
-					<div style="width: 50%; float: left; height: 150px;">
-						<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_x = \sum f_x\)</p>
-						<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_y = \sum f_y\)</p>
-						<p class="fragment fade-in" data-fragment-index="1" style="font-size: 30px;">\(m a_z = \sum f_z\)</p>
-					</div>
-					
-					<div style="width: 50%; float: left; height: 150px;">
-						<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( J_{xx} \alpha_x = \sum M_x\)</p>
-						<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( J_{yy} \alpha_y = \sum M_y\)</p>
-						<p class="fragment fade-in" data-fragment-index="2" style="font-size: 30px;">\( J_{zz} \alpha_z = \sum M_z\)</p>
-					</div>
-
-				</section>
-
-				<section>
-					
-					<h5>Exemplos</h5>
-
-					<p>Considere os três cenários abaixo e determine: </p>
-					<ul>
-						<li>Equação de movimento na direção longitudinal.</li>
-						<li>Velocidade em função do tempo.</li>
-					</ul>
-
-					<p>
-					<img style="width: 250px" src="ilustracoes/modelagemSedanExemplo1.svg"> &nbsp; &nbsp; &nbsp;
-					<img style="width: 250px" src="ilustracoes/modelagemSedanExemplo2.svg"> &nbsp; &nbsp; &nbsp;
-					<img style="width: 250px" src="ilustracoes/modelagemSedanExemplo3.svg">
-					</p>
-
-				</section>
-
-				<section>
-					
-					<h5>Diagrama de corpo livre</h5>
-
-					<img style="width: 850px;" src="ilustracoes/modelagemDCL.png">
-
-					<p class="fragment fade-in" data-fragment-index="1">Aplicando o TMA em relação ao ponto A</p>
-					
-					<p class="fragment fade-in" data-fragment-index="1" style="font-size: 25px;">\(W_{f} L+D_{A} h_{a}+\frac{W}{g} a_{x} h+R_{h x} h_{h}+R_{h z} d_{h}+W h \sin \Theta-W c \cos \Theta=0\)</p>
-
-				</section>
-
-
-				<section>
-
-					<h5>Exercícios</h5>
-					
-					<img style="width: 700px;" src="ilustracoes/modelagemDCL.png">
-
-					<ul style="font-size: 25px;">
-						<li>Aplique o TMA considerando todas as forças do DCL acima.</li>
-						<ul>
-							<li>Qual é a força peso sobre os eixos dianteiro e traseiro?</li>
-						</ul>
-						<li>Qual é a distribuição de peso sobre os eixos quando carro</li> 
-						<ul>
-							<li>está parado sobre uma pista de inclinação zero?</li>
-							<li>se movimenta com baixa aceleração sobre uma pista de inclinação zero?</li>
-							<li>esta parado numa rampa?</li>
-						</ul>
-					</ul>
-
-				</section>
-			
-			</section>
-
-			<section>
-				<section id="dinpropforca">
-
-					<h3>Dinâmica da propulsão: Força de tração</h3>
-
-				</section>
-
-				<section>
-
-					<p>Slide 1</p>
-
-				</section>
-
-			</section>
-
-			<section>
-				<section id="dinproplimites">
-
-					<h3>Dinâmica da propulsão: Limites de tração</h3>
-
-				</section>
-
-				<section>
-
-					<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/fTiW-4Y2ad0?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-				</section>
-
-
-				<section>
-
-										<iframe allowfullscreen=""
-						data-src="https://www.youtube.com/embed/WBkgs4u5tW0?start=85;end=166;cc_load_policy=1;autoplay=1"
-						width="100%" height="700px" frameborder="0"></iframe>
-
-				</section>
-<!-- 				<section>
-
-					<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/fTiW-4Y2ad0?start=85;end=166;cc_load_policy=1;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-				</section>
- -->
-			</section>
-
-			<section>
-				<section id="dinfrenforca">
-
-					<h3>Dinâmica da frenagem: Força de frenagem</h3>
-
-				</section>
-
-				<section>
-
-					<p>Slide 1</p>
-
-				</section>
-
-			</section>
-
-			<section>
-				<section id="dinfrenlimites">
-
-					<h3>Dinâmica da frenagem: Limites de frenagem</h3>
-
-				</section>
-
-				<section>
-
-					<p>Slide 1</p>
-
-				</section>
-
-			</section>
-
-			<section>
-				<section id="dinfrenforcas">
-
-					<h3>Dinâmica da frenagem: Forças resistivas</h3>
-
-				</section>
-
-				<section>
-
-					<p>Slide 1</p>
-
-				</section>
-
-			</section>
-
-			<section>
-				<section id="dinsuspquarto">
-
-					<h3>Dinâmica da suspensão: Modelo de um quarto de carro</h3>
-
-				</section>
-
-				<section>
-
-				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/3KPYIaks1UY?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-				</section>
-
-			</section>
-
-			<section>
-				<section id="dinsuspmeio">
-
-					<h3>Dinâmica da suspensão: Modelo de meio carro</h3>
-
-				</section>
-
-				<section>
-
-				<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/kwS9lulymSc?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-				</section>
-
-			</section>
-
-			<section>
-				<section id="dindircaract">
-
-					<h3>Dinâmica da dirigibilidade: Características de dirigibilidade</h3>
-
-				</section>
-
-				<section>
-
-					<p>Slide 1</p>
-
-				</section>
-
-			</section>
-
-			<section>
-				<section id="dindirdesempenho">
-
-					<h3>Dinâmica da dirigibilidade: Desempenho em curva</h3>
-
-				</section>
-
-				<section>
-
-					<iframe allowfullscreen="" data-src="https://www.youtube.com/embed/Mdx1cGWStx0?start=0;autoplay=1" width="100%" height="700px" frameborder="0"></iframe>
-
-				</section>
-
-			</section>
-
-		</div>
-	</div>
-
-	<div style="position:absolute; z-index:1; float:right; top:10px; right:10px;margin:0;padding:0">
-		<a href="https://portal.fei.edu.br/" target="_blank"><img src="ilustracoes/logoFEI.png" alt="Logo FEI"
-				title="Centro Universitário FEI" style="width:80px; margin-top:0"></a>
-	</div>
-
-	<div style="position:absolute;float:left;z-index:1; margin:10px;top:0px;">
-		<!-- <p style="margin:0; padding:0;"> -->
-
-		<span title="Tópicos"
-			style="font-family: Helvetica, sans-serif ;font-size:22px;font-weight: bolder;cursor:pointer;background-color: rgba(255, 255, 255, 0.8);padding: 0px 5px 3px 5px ; margin:0;"
-			onclick="openNav();">&#9776;</span>
-
-	</div>
-
-	<script src="reveal.js/lib/js/head.min.js"></script>
-	<script src="reveal.js/js/reveal.js"></script>
-
-	<script>
-		// More info about config & dependencies:
-		// - https://github.com/hakimel/reveal.js#configuration
-		// - https://github.com/hakimel/reveal.js#dependencies
-		Reveal.initialize({
-			dependencies: [
-				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-				{ src: 'reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
-
-				// Interpret Markdown in <section> elements
-				{ src: 'reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-
-				// Syntax highlight for <code> elements
-				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
-
-				// Zoom in and out with Alt+click
-				{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-
-				// Speaker notes
-				{ src: 'reveal.js/plugin/notes/notes.js', async: true },
-
-				// MathJax
-				{ src: 'reveal.js/plugin/math/math.js', async: true }
-			],
-
-			// math: {
-			// 	mathjax: 'MathJax/MathJax.js',
-			// 	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-			// },
-			math: {
-				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
-				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-			},
-
-			// Display presentation control arrows
-			controls: true,
-
-			// Help the user learn the controls by providing hints, for example by
-			// bouncing the down arrow when they first encounter a vertical slide
-			controlsTutorial: true,
-
-			// Determines where controls appear, "edges" or "bottom-right"
-			controlsLayout: 'bottom-right',
-
-			// Visibility rule for backwards navigation arrows; "faded", "hidden"
-			// or "visible"
-			controlsBackArrows: 'faded',
-
-			// Display a presentation progress bar 
-			// [removido, pois gera cliques indesejados na navegação pelo celular. Ao tentar navegar para baixo na seta inferior de controle a barra de progresso é acionada e o slide correspondente é aberto. ]
-			progress: false,
-
-			// Display the page number of the current slide
-			slideNumber: true,
-
-			// Push each slide change to the browser history
-			history: true,
-
-			// Enable keyboard shortcuts for navigation
-			keyboard: true,
-
-			// Enable the slide overview mode
-			overview: false,
-
-			// Vertical centering of slides
-			center: true,
-
-			// Enables touch navigation on devices with touch input
-			touch: true,
-
-			// Loop the presentation
-			loop: false,
-
-			// Change the presentation direction to be RTL
-			rtl: false,
-
-			// Randomizes the order of slides each time the presentation loads
-			shuffle: false,
-
-			// Turns fragments on and off globally
-			fragments: true,
-
-			// Flags whether to include the current fragment in the URL,
-			// so that reloading brings you to the same fragment position
-			fragmentInURL: false,
-
-			// Flags if the presentation is running in an embedded mode,
-			// i.e. contained within a limited portion of the screen
-			embedded: false,
-
-			// Flags if we should show a help overlay when the questionmark
-			// key is pressed
-			help: true,
-
-			// Flags if speaker notes should be visible to all viewers
-			showNotes: false,
-
-			// Global override for autoplaying embedded media (video/audio/iframe)
-			// - null: Media will only autoplay if data-autoplay is present
-			// - true: All media will autoplay, regardless of individual setting
-			// - false: No media will autoplay, regardless of individual setting
-			autoPlayMedia: true,
-
-			// Number of milliseconds between automatically proceeding to the
-			// next slide, disabled when set to 0, this value can be overwritten
-			// by using a data-autoslide attribute on your slides
-			autoSlide: 0,
-
-			// Stop auto-sliding after user input
-			autoSlideStoppable: true,
-
-			// Use this method for navigation when auto-sliding
-			autoSlideMethod: Reveal.navigateNext,
-
-			// Specify the average time in seconds that you think you will spend
-			// presenting each slide. This is used to show a pacing timer in the
-			// speaker view
-			defaultTiming: 120,
-
-			// Enable slide navigation via mouse wheel
-			mouseWheel: false,
-
-			// Hides the address bar on mobile devices
-			hideAddressBar: true,
-
-			// Opens links in an iframe preview overlay
-			// Add `data-preview-link` and `data-preview-link="false"` to customise each link
-			// individually
-			previewLinks: false,
-
-			// Transition style
-			transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-			// Transition speed
-			transitionSpeed: 'default', // default/fast/slow
-
-			// Transition style for full page slide backgrounds
-			backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
-
-			// Number of slides away from the current that are visible
-			viewDistance: 3,
-
-			// Parallax background image
-			// parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
-
-			// Parallax background size
-			// parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
-
-			// Number of pixels to move the parallax background per slide
-			// - Calculated automatically unless specified
-			// - Set to 0 to disable movement along an axis
-			// parallaxBackgroundHorizontal: null,
-			// parallaxBackgroundVertical: null,
-
-			// The display mode that will be used to show slides
-			display: 'block',
-
-			// The "normal" size of the presentation, aspect ratio will be preserved
-			// when the presentation is scaled to fit different resolutions. Can be
-			// specified using percentage units.
-			width: 960,
-			height: 700,
-
-			// // Factor of the display size that should remain empty around the content
-			margin: 0,
-
-			// // Bounds for smallest/largest possible scale to apply to content
-			minScale: 0.2,
-			maxScale: 2,
-
-			pdfMaxPagesPerSlide: 1,
-			pdfSeparateFragments: false,
-		});
-
-	</script>
-
-	<script>
-		function openNav() {
-			document.getElementById("mySidenav").style.width = "900px";
-			// document.getElementById("main").style.marginLeft = "250px";
-		}
-
-		function closeNav() {
-			var x = document.getElementById("mySidenav").style.width;
-			if (x == "900px") {
-				document.getElementById("mySidenav").style.width = "0";
-				// document.getElementById("main").style.marginLeft = "0";
-			}
-		}
-
-	function enterFullscreen() {
-
-		var element = document.documentElement;
-
-		// Check which implementation is available
-		var requestMethod = element.requestFullscreen ||
-							element.webkitRequestFullscreen ||
-							element.webkitRequestFullScreen ||
-							element.mozRequestFullScreen ||
-							element.msRequestFullscreen;
-
-		if( requestMethod ) {
-			requestMethod.apply( element );
-		}
-
-	}
-
-	</script>
+	<h5>Semana 1</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 1 pág. 1 - 20</li>
+	    </ul>
+	    <li>Dinâmica longitudinal: Desempenho em rampa (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128864">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129015">Questionário 1</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129021">Trabalho 1</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 2</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 4 pág. 97 - 124</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica longitudinal: Forças resistivas (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128914">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129015">Questionário 1</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129021">Trabalho 1</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 3</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 2 pág. 21 - 35</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica longitudinal: Força de propulsão (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128910">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129015">Questionário 1</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129021">Trabalho 1</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 4</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 2 pág. 35 - 43</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica longitudinal: Limites de propulsão (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128911">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129016">Questionário 2</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129021">Trabalho 1</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 5</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 3 pág. 45 - 59</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica longitudinal: Força de frenagem (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128912">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129016">Questionário 2</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129021">Trabalho 1</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 6</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 3 pág. 59 - 77</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica longitudinal: Limites de frenagem (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128913">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129016">Questionário 2</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129021">Trabalho 1</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 7</h5>
+	<ul>
+	    <li>P1</li>
+	</ul>
+	<hr>
+	<h5>Semana 8</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 6 pág. 195 - 208</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica lateral: Características em curva (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128916">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129017">Questionário 3</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129022">Trabalho 2</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 9</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 6 pág. 210 - 236</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica lateral: Desempenho em curva (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128917">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129017">Questionário 3</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129022">Trabalho 2</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 10</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 9 pág. 309 - 317</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica lateral: Tombamento (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128917">Acertar link</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129017">Questionário 3</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129022">Trabalho 2</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 11</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 5 pág. 146 - 168</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica vertical: Modelo de um quarto de carro (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128918">Apresentação</a>)</li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129018">Questionário 4</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129022">Trabalho 2</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 12</h5>
+	<ul>
+	    <li>Leitura obrigatória</li>
+	    <ul>
+	        <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 5 pág. 169 - 193</li>
+	        <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    </ul>
+	    <li>Dinâmica vertical: Modelo de meio carro (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128915">Apresentação</a>)</li>
+	    	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129018">Questionário 4</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129022">Trabalho 2</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 13</h5>
+	<ul>
+	    <!-- <li>Leitura obrigatória</li> -->
+	    <!-- <ul> -->
+	    <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=14563" target="_blank">Gillespie</a>: Cap. 5 e 7 </li> -->
+	    <!-- <li><a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php?codAcervo=106092" target="_blank">Wong</a>: Cap. 1</li> -->
+	    <!-- </ul> -->
+	    <!-- <li>Tópico (<a href="https://moodle.fei.edu.br/moodle/mod/url/view.php?id=128864">Apresentação</a>)</li> -->
+	    <!-- <li>Projeto CarSim</li> -->
+	    <li>Exercícios</li>
+	    	    <li><a href="https://moodle.fei.edu.br/moodle/mod/quiz/view.php?id=129018">Questionário 4</a></li>
+	    <li><a href="https://moodle.fei.edu.br/moodle/mod/assign/view.php?id=129022">Trabalho 2</a></li>
+	</ul>
+	<hr>
+	<h5>Semana 14</h5>
+	<ul>
+	    <li>P</li>
+	</ul>
+	<hr>
+	<h5>Semana 15</h5>
+	<ul>
+	    <li>Psub (P3)</li>
+	</ul>
 
 </body>
 
