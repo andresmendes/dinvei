@@ -1,15 +1,15 @@
-%% Dinâmica longitudinal - Forças resisitivas - Exercício 3
+%% Dinâmica longitudinal - Forças resisitivas - Exercício 2
 % Força de resistência ao rolamento do caminhão.
 %
 % Fonte: Gillespie Cap4Ex1.
 %
-%% Parâmetros
+%% Dados
 m  = 32874;                 % Massa do carro [kg]
 g  = 9.81;                  % Aceleração da gravidade [m/s2]
 Ch = 1.0;                   % Coeficiente da qualidade da pista.
 
 % Vetores velocidade
-vKPH = 80:1:110;            % Velocidade [km/h]
+vKPH = 85:1:110;            % Velocidade [km/h]
 vMS  = vKPH/3.6;            % Velocidade [m/s]
 vMPH = vKPH/1.609;          % Velocidade [mph]
 
@@ -29,15 +29,15 @@ PRxhp = PRx/745.7;          % Potência [HP]
 figure
 hold on ; grid on ; box on
 set(gca,'fontsize',15,'xlim',[vKPH(1) vKPH(end)])
-plot(vMPH*1.609,Rx,'linewidth',3)
+plot(vKPH,Rx,'linewidth',3)
 xlabel('velocidade [km/h]')
 ylabel('Rx [N]')
-% print(gcf,'-dpng','dinlonresistivasExercicio3Forca.png')
 
 figure
 hold on ; grid on ; box on
 set(gca,'fontsize',15,'xlim',[vKPH(1) vKPH(end)])
-plot(vMPH*1.609,PRxhp,'linewidth',3)
+plot(vKPH,PRxhp,'linewidth',3)
+plot([vKPH(1) vKPH(end)],[PRxhp(1) PRxhp(end)],'k--')
 xlabel('velocidade [km/h]')
 ylabel('PRx [HP]')
-% print(gcf,'-dpng','dinlonresistivasExercicio3Potencia.png')
+legend('curva','reta ref.','Location','NorthWest')

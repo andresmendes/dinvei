@@ -1,4 +1,4 @@
-%% Dinâmica longitudinal - Forças resisitivas - Exercício 4
+%% Dinâmica longitudinal - Forças resisitivas - Exercício 3
 % Forças resistivas.
 %
 % Fonte: Gillespie Cap4Ex1.
@@ -66,7 +66,6 @@ plot(vKPH,Rtotal,'linewidth',3)
 xlabel('velocidade [km/h]')
 ylabel('Rx [N]')
 legend('Rx','DA','Rg','Total','Location','NorthWest')
-% print(gcf,'-dpng','dinlonresistivasExercicio4Forca.png')
 
 figure
 hold on ; grid on ; box on
@@ -78,5 +77,4 @@ plot(vKPH,Ptotalhp,'linewidth',3)
 xlabel('velocidade [km/h]')
 ylabel('PRx [HP]')
 legend('Rx','DA','Rg','Total','Location','NorthWest')
-% print(gcf,'-dpng','dinlonresistivasExercicio4Potencia.png')
 
